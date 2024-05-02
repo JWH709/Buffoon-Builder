@@ -1,0 +1,8 @@
+body {
+  background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202402/1416/081d7231762c748a7c25becc18d90ec8fa18360311e1f453.png');
+}
+
+.main-flex-row {
+  display: flex;
+  flex-direction: row;
+}
