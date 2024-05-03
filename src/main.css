@@ -1,8 +1,49 @@
+@font-face {
+  font-family: 'balatro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('m6x11plus'), url('./assets/m6x11plus.ttf') format('truetype');
+}
+/* MAIN */
+
 body {
-  background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202402/1416/081d7231762c748a7c25becc18d90ec8fa18360311e1f453.png');
+  background-image: url('./assets/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'balatro';
 }
 
 .main-flex-row {
   display: flex;
   flex-direction: row;
+}
+
+/* NAVBAR */
+
+.title {
+  color: aliceblue;
+  font-family: 'balatro';
+}
+
+/* BUILDING SPACE */
+
+.building-space {
+  height: 800px;
+  width: 1200px;
+  background-color: rgb(70, 70, 70);
+  border-radius: 25px;
+  opacity: 0.5;
+}
+
+/* SIDE PANEL */
+
+.side-panel-container {
+  font-family: 'balatro';
+  color: aliceblue;
+}
+
+.grey-box {
+  background-color: rgb(70, 70, 70);
+  opacity: 0.5;
 }

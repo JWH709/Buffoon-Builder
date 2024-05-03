@@ -1,4 +1,4 @@
-import "./BuildingSpace.css";
+import "./main.css";
 
 function BuildingSpace() {
   return <div className="building-space"></div>;
