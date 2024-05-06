@@ -26,6 +26,13 @@ body {
   font-family: 'balatro';
 }
 
+.navbar-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 /* BUILDING SPACE */
 
 .building-space {
@@ -34,6 +41,7 @@ body {
   background-color: rgb(70, 70, 70);
   border-radius: 25px;
   opacity: 0.5;
+  margin: 30px;
 }
 
 /* SIDE PANEL */
@@ -46,4 +54,29 @@ body {
 .grey-box {
   background-color: rgb(70, 70, 70);
   opacity: 0.5;
+}
+
+.item-image-title {
+  height: fit-content;
+  width: 300px
+}
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+  width: 600px
+}
+
+.tab-content {
+  max-height: 700px;
+  overflow: scroll;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(70, 70, 70);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  opacity: 0.5; */ 
+  /* I need to find a way to make sure this doesn't apply to the content inside the div */
 }

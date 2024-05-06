@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css"; //This breaks the rows
 import "./main.css";
 import { useState } from "react";
 import React from "react";
@@ -51,8 +51,10 @@ const JokerTab = () => {
   };
   return (
     <>
-      <Search search={searchTerms} onSearch={handleSearch} />
-      <ItemDisplay items={searchedItem} itemImage={getItemImage} />
+      <div className="column container">
+        <Search search={searchTerms} onSearch={handleSearch} />
+        <ItemDisplay items={searchedItem} itemImage={getItemImage} />
+      </div>
     </>
   );
 };
@@ -74,7 +76,7 @@ const ItemDisplay = ({ items, itemImage }) => {
   let rows = [];
   items.map((item) => {
     allItems.push(
-      <div>
+      <div className="item-image-title" key={item.Joker}>
         <img src={itemImage(item)} />
         <h6>{item.Joker}</h6>
       </div>
@@ -86,7 +88,7 @@ const ItemDisplay = ({ items, itemImage }) => {
   }
   for (let i = 0; i < numberOfRows; i++) {
     rows.push(
-      <div className="row item-row">
+      <div className="item-row">
         {allItems[i * 3]}
         {allItems[i * 3 + 1]}
         {allItems[i * 3 + 2]}
