@@ -6,10 +6,10 @@ import React from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import jokers from "./jokers.js";
-
+import { ItemTypes } from "./Constants.jsx";
+import { useDrag } from "react-dnd";
 function SidePanel() {
   const [key, setKey] = useState("home");
-
   return (
     <div className="container-column side-panel-container">
       <Tabs
@@ -30,9 +30,26 @@ function SidePanel() {
 }
 
 const BlockTab = () => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ItemTypes.BLOCK,
+    item: { type: ItemTypes.BLOCK },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
   return (
-    <div className="container-column grey-box">
-      <h1>hi</h1>
+    <div
+      className="container-column red-box"
+      ref={drag}
+      style={{
+        opacity: isDragging ? 0.5 : 1,
+        fontSize: 25,
+        fontWeight: "bold",
+        cursor: "move",
+      }}
+    >
+      <h2>Mult</h2>
     </div>
   );
 };

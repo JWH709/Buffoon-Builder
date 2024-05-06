@@ -44,6 +44,10 @@ body {
   margin: 30px;
 }
 
+.highlight {
+  background-color: lightblue;
+}
+
 /* SIDE PANEL */
 
 .side-panel-container {
@@ -51,9 +55,14 @@ body {
   color: aliceblue;
 }
 
-.grey-box {
-  background-color: rgb(70, 70, 70);
-  opacity: 0.5;
+.red-box {
+  background-color: rgb(255, 76, 76);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px #ff0000;
+
 }
 
 .item-image-title {
