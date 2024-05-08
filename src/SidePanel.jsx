@@ -6,8 +6,9 @@ import React from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import jokers from "./jokers.js";
-import { useBlockDrag } from "./useBlockDrag.jsx";
 import blocks from "./blocks.js";
+import { useDrag } from "react-dnd";
+import { ItemTypes } from "./Constants";
 function SidePanel() {
   const [key, setKey] = useState("home");
   return (
@@ -30,54 +31,38 @@ function SidePanel() {
 }
 
 const BlockTab = () => {
-  const { isDragging, drag } = useBlockDrag();
-
   return (
     <>
-      <LogicBlock
-        isDragging={isDragging}
-        drag={drag}
-        title={blocks[0].title}
-        styles={blocks[0].styles}
-      />
-      <LogicBlock
-        isDragging={isDragging}
-        drag={drag}
-        title={blocks[1].title}
-        styles={blocks[1].styles}
-      />
+      <div className="column container">
+        <LogicBlock title={blocks[0].title} styles={blocks[0].styles} />
+        <LogicBlock title={blocks[1].title} styles={blocks[1].styles} />
+      </div>
     </>
   );
 };
 
-const LogicBlock = ({ isDragging, drag, title, styles }) => {
-  const [selectedBlock, setSelectedBlock] = React.useState(false);
-  const blockRef = React.useRef(null);
-  React.useEffect(() => {
-    if (selectedBlock) {
-      drag(blockRef.current);
-    } else {
-      drag(null);
-    }
-  }, [selectedBlock, drag, blockRef]);
+const LogicBlock = ({ title, styles }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ItemTypes.BLOCK,
+    item: { title, styles }, // Include necessary data in the item object
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }));
 
   return (
-    <>
-      <div
-        className={styles}
-        ref={blockRef}
-        style={{
-          opacity: isDragging ? 0.5 : 1,
-          fontSize: 25,
-          fontWeight: "bold",
-          cursor: "move",
-        }}
-        onMouseOver={() => setSelectedBlock(true)}
-        onMouseOut={() => setSelectedBlock(false)}
-      >
-        <h2>{title}</h2>
-      </div>
-    </>
+    <div
+      className={styles}
+      ref={drag}
+      style={{
+        opacity: isDragging ? 0.5 : 1,
+        fontSize: 25,
+        fontWeight: "bold",
+        cursor: "move",
+      }}
+    >
+      <h2>{title}</h2>
+    </div>
   );
 };
 

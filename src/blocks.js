@@ -2,12 +2,12 @@ const blocks = [
   {
     title: "Mult",
     LUA: null,
-    styles: "container-column red-block",
+    styles: "red-block",
   },
   {
     title: "Chips",
     LUA: null,
-    styles: "container-column blue-block",
+    styles: "blue-block",
   },
 ];
 
