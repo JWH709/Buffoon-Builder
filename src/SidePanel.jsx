@@ -6,8 +6,8 @@ import React from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import jokers from "./jokers.js";
-import { ItemTypes } from "./Constants.jsx";
-import { useDrag } from "react-dnd";
+import { useBlockDrag } from "./useBlockDrag.jsx";
+import blocks from "./blocks.js";
 function SidePanel() {
   const [key, setKey] = useState("home");
   return (
@@ -30,27 +30,54 @@ function SidePanel() {
 }
 
 const BlockTab = () => {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: ItemTypes.BLOCK,
-    item: { type: ItemTypes.BLOCK },
-    collect: (monitor) => ({
-      isDragging: !!monitor.isDragging(),
-    }),
-  }));
+  const { isDragging, drag } = useBlockDrag();
 
   return (
-    <div
-      className="container-column red-box"
-      ref={drag}
-      style={{
-        opacity: isDragging ? 0.5 : 1,
-        fontSize: 25,
-        fontWeight: "bold",
-        cursor: "move",
-      }}
-    >
-      <h2>Mult</h2>
-    </div>
+    <>
+      <LogicBlock
+        isDragging={isDragging}
+        drag={drag}
+        title={blocks[0].title}
+        styles={blocks[0].styles}
+      />
+      <LogicBlock
+        isDragging={isDragging}
+        drag={drag}
+        title={blocks[1].title}
+        styles={blocks[1].styles}
+      />
+    </>
+  );
+};
+
+const LogicBlock = ({ isDragging, drag, title, styles }) => {
+  const [selectedBlock, setSelectedBlock] = React.useState(false);
+  const blockRef = React.useRef(null);
+  React.useEffect(() => {
+    if (selectedBlock) {
+      drag(blockRef.current);
+    } else {
+      drag(null);
+    }
+  }, [selectedBlock, drag, blockRef]);
+
+  return (
+    <>
+      <div
+        className={styles}
+        ref={blockRef}
+        style={{
+          opacity: isDragging ? 0.5 : 1,
+          fontSize: 25,
+          fontWeight: "bold",
+          cursor: "move",
+        }}
+        onMouseOver={() => setSelectedBlock(true)}
+        onMouseOut={() => setSelectedBlock(false)}
+      >
+        <h2>{title}</h2>
+      </div>
+    </>
   );
 };
 

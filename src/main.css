@@ -55,13 +55,23 @@ body {
   color: aliceblue;
 }
 
-.red-box {
+.red-block {
   background-color: rgb(255, 76, 76);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px #ff0000;
+
+}
+
+.blue-block {
+  background-color: rgb(0,147,255);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px rgb(0,90,166);
 
 }
 
