@@ -85,6 +85,34 @@ body {
   margin: 10px;
 }
 
+.yellow-block {
+  background-color: rgb(255,152,0);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px rgb(225,136,0);
+  height: 50px;
+  width: 110px;
+  font-family: 'balatro';
+  color: aliceblue;
+  margin: 10px;
+}
+
+.green-block {
+  background-color: rgb(53,108,85);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px rgb(45,95,74);
+  height: 50px;
+  width: 110px;
+  font-family: 'balatro';
+  color: aliceblue;
+  margin: 10px;
+}
+
 .item-image-title {
   height: fit-content;
   width: 300px
