@@ -76,6 +76,34 @@ body {
   justify-content: center;
   align-items: center;
 }
+.rarity-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'balatro';
+  color: aliceblue;
+}
+.rarity-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rarity-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 76, 76);
+  font-family: 'balatro';
+  color: aliceblue;
+  text-shadow: 2px 2px #ff0000;
+  border: #ff0000;
+
+}
 /* SIDE PANEL */
 
 .side-panel-container {

@@ -3,6 +3,7 @@ import React from "react";
 import "./main.css";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./Constants";
+import Rarity from "./RarityStickers";
 const JokerDetails = () => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
@@ -28,7 +29,7 @@ const JokerDetails = () => {
         )}
       </div>
       <input type="text" className="joker-details-input" />
-      <input type="text" className="joker-details-input" />
+      <Rarity />
       <input type="text" className="joker-details-input" />
       <input type="text" className="joker-details-input" />
     </div>
