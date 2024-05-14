@@ -55,8 +55,8 @@ const Rarity = () => {
           style={{
             backgroundImage: `url(${getRarityImg()})`,
             backgroundSize: "cover",
-            width: "153px",
-            height: "45px",
+            width: "230px",
+            height: "60px",
           }}
         >
           <h3>{getRarityText()}</h3>

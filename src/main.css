@@ -83,6 +83,7 @@ body {
   align-items: center;
   font-family: 'balatro';
   color: aliceblue;
+  margin: 10px;
 }
 .rarity-button-container {
   display: flex;
