@@ -17,6 +17,8 @@ body {
 .main-flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /* NAVBAR */
@@ -57,7 +59,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid #ff0000;
+  height: 800px;
+  width: 600px;
+  border-radius: 25px;
+  border: solid 5px rgb(46,58,60);
+  background-color: rgb(27,38,41);
 }
 
 .joker-details-input {
@@ -66,7 +72,9 @@ body {
 }
 
 .art-asset-container {
-  border: solid seagreen;
+  border: solid;
+  border-radius: 50px;
+  background-color: rgb(58,80,85);
   width: 152px;
   height: 200px;
   border-radius: 5px;
@@ -103,7 +111,38 @@ body {
   color: aliceblue;
   text-shadow: 2px 2px #ff0000;
   border: #ff0000;
-
+}
+.joker-cost-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 80px;
+  background-color: rgb(18,27,29);
+  border: solid;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.joker-cost-oval {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'balatro';
+  color: rgb(245,178,68);
+  text-shadow: 2px 2px rgb(28,35,36);
+  background-color: rgb(53,63,66);
+  height: 40px;
+  width: 60px;
+  border-radius: 20px;
+}
+.joker-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'balatro';
+  color: aliceblue;
 }
 /* SIDE PANEL */
 
