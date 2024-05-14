@@ -50,6 +50,32 @@ body {
   background-color: lightblue;
 }
 
+/* CENTER TAB */
+
+.joker-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid #ff0000;
+}
+
+.joker-details-input {
+  width: 20%;
+  margin: 1%;
+}
+
+.art-asset-container {
+  border: solid seagreen;
+  width: 152px;
+  height: 200px;
+  border-radius: 5px;
+}
+.dropped-art-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* SIDE PANEL */
 
 .side-panel-container {

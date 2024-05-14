@@ -4,6 +4,7 @@ import "./main.css";
 import BuildingSpace from "./BuildingSpace.jsx";
 import SidePanel from "./SidePanel.jsx";
 import Navbar from "./Navbar.jsx";
+import JokerDetails from "./JokerDetails.jsx";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <DndProvider backend={HTML5Backend}>
       <div className="main-flex-row">
         <BuildingSpace />
+        <JokerDetails />
         <SidePanel />
       </div>
     </DndProvider>
