@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import inputRight from "./assets/input_right.png";
 import inputLeft from "./assets/input_left.png";
-const JokerInput = ({ inputTitle, inputType }) => {
+const JokerDescription = ({ inputTitle, inputType }) => {
   return (
     <>
       <div className="joker-input-container">
@@ -12,17 +12,17 @@ const JokerInput = ({ inputTitle, inputType }) => {
             style={{
               backgroundImage: `url(${inputLeft})`,
               backgroundSize: "cover",
-              height: "63px",
+              height: "100px",
               width: "18px",
             }}
           ></div>
-          <input type="text" className={inputType} />
+          <textarea name="effect" id="" className={inputType}></textarea>
           <div
             className="input-right"
             style={{
               backgroundImage: `url(${inputRight})`,
               backgroundSize: "cover",
-              height: "63px",
+              height: "100px",
               width: "18px",
             }}
           ></div>
@@ -32,4 +32,4 @@ const JokerInput = ({ inputTitle, inputType }) => {
   );
 };
 
-export default JokerInput;
+export default JokerDescription;

@@ -144,6 +144,43 @@ body {
   font-family: 'balatro';
   color: aliceblue;
 }
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.input-joker-name {
+  height: 63px;
+  width: 192px;
+  font-family: 'balatro';
+  font-size: x-large;
+  color: black;
+  text-shadow: 2px 2px rgb(197, 197, 197);
+  text-align: center;
+  border: none;
+}
+.input-joker-cost {
+  height: 63px;
+  width: 192px;
+  font-family: 'balatro';
+  font-size: xx-large;
+  color: rgb(225,136,0);
+  text-shadow: 2px 2px rgb(28,35,36);
+  text-align: center;
+  border: none;
+}
+.input-joker-effect {
+  height: 100px;
+  width: 192px;
+  font-family: 'balatro';
+  font-size: larger;
+  color: black;
+  text-shadow: 2px 2px rgb(197, 197, 197);
+  text-align: center;
+  border: none;
+  overflow-y:auto;
+}
 /* SIDE PANEL */
 
 .side-panel-container {

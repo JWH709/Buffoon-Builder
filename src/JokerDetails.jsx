@@ -3,9 +3,10 @@ import React from "react";
 import "./main.css";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./Constants";
-import Rarity from "./RarityStickers";
+import Rarity from "./JokerRarity";
 import JokerCostTab from "./JokerCost";
 import JokerInput from "./JokerInputs";
+import JokerDescription from "./JokerDescription";
 const JokerDetails = () => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
@@ -32,10 +33,13 @@ const JokerDetails = () => {
             </div>
           )}
         </div>
-        <JokerInput inputTitle={"Joker Name:"} />
+        <JokerInput inputTitle={"Joker Name:"} inputType={"input-joker-name"} />
         <Rarity />
-        <JokerInput inputTitle={"Joker Cost:"} />
-        <JokerInput />
+        <JokerDescription
+          inputTitle={"Joker Effect:"}
+          inputType={"input-joker-effect"}
+        />
+        <JokerInput inputTitle={"Joker Cost:"} inputType={"input-joker-cost"} />
       </div>
     </>
   );
