@@ -181,6 +181,22 @@ body {
   border: none;
   overflow-y:auto;
 }
+.joker-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 192px;
+  width: 182;
+  font-family: 'balatro';
+  color: aliceblue;
+}
+.joker-preview-effect-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 67px;
+  width: 162px;
+}
 /* SIDE PANEL */
 
 .side-panel-container {

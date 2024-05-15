@@ -6,6 +6,7 @@ import { ItemTypes } from "./Constants";
 import Rarity from "./JokerRarity";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
+import DroppedArt from "./DroppedArt";
 const JokerDetails = () => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
@@ -47,6 +48,10 @@ const JokerDetails = () => {
               <DroppedArt
                 artSrc={droppedItem.artSrc}
                 artName={droppedItem.artName}
+                dataFromName={dataFromName}
+                dataFromCost={dataFromCost}
+                dataFromDescription={dataFromDescription}
+                dataFromRarity={dataFromRarity}
               />
             </div>
           )}
@@ -70,10 +75,6 @@ const JokerDetails = () => {
       </div>
     </>
   );
-};
-
-const DroppedArt = ({ artSrc, artName }) => {
-  return <img src={artSrc} alt={artName} />;
 };
 
 export default JokerDetails;
