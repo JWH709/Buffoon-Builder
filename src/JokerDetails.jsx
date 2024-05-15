@@ -4,7 +4,6 @@ import "./main.css";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./Constants";
 import Rarity from "./JokerRarity";
-import JokerCostTab from "./JokerCost";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
 const JokerDetails = () => {
@@ -19,10 +18,29 @@ const JokerDetails = () => {
     collect: () => ({}),
   });
 
+  const [dataFromName, setDataFromName] = React.useState(null);
+  const [dataFromRarity, setDataFromRarity] = React.useState(1);
+  const [dataFromDescription, setDataFromDescription] = React.useState(null);
+  const [dataFromCost, setDataFromCost] = React.useState(null);
+  const handleDataFromName = (data) => {
+    setDataFromName(data);
+  };
+  const handleDataFromRarity = (data) => {
+    setDataFromRarity(data);
+  };
+  const handleDataFromDescription = (data) => {
+    setDataFromDescription(data);
+  };
+  const handleDataFromCost = (data) => {
+    setDataFromCost(data);
+  };
+  console.log(dataFromName);
+  console.log(dataFromCost);
+  console.log(dataFromDescription);
+  console.log(dataFromRarity);
   return (
     <>
       <div className="column container joker-details-container">
-        <JokerCostTab />
         <div className="art-asset-container" ref={drop}>
           {droppedItem && (
             <div className="dropped-art-container">
@@ -33,13 +51,22 @@ const JokerDetails = () => {
             </div>
           )}
         </div>
-        <JokerInput inputTitle={"Joker Name:"} inputType={"input-joker-name"} />
-        <Rarity />
+        <JokerInput
+          inputTitle={"Joker Name:"}
+          inputType={"input-joker-name"}
+          handler={handleDataFromName}
+        />
+        <Rarity handler={handleDataFromRarity} />
         <JokerDescription
           inputTitle={"Joker Effect:"}
           inputType={"input-joker-effect"}
+          handler={handleDataFromDescription}
         />
-        <JokerInput inputTitle={"Joker Cost:"} inputType={"input-joker-cost"} />
+        <JokerInput
+          inputTitle={"Joker Cost:"}
+          inputType={"input-joker-cost"}
+          handler={handleDataFromCost}
+        />
       </div>
     </>
   );

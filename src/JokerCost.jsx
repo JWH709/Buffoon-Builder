@@ -1,9 +1,10 @@
-const JokerCostTab = () => {
+/* eslint-disable react/prop-types */
+const JokerCostTab = ({ jokerCost }) => {
   return (
     <>
       <div className="joker-cost-container">
         <div className="joker-cost-oval">
-          <h2>{"$2"}</h2>
+          <h2>{jokerCost}</h2>
         </div>
       </div>
     </>

@@ -1,23 +1,28 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import common from "./assets/rarity/common.png";
 import uncommon from "./assets/rarity/uncommon.png";
 import rare from "./assets/rarity/rare.png";
 import legendary from "./assets/rarity/legendary.png";
 
-const Rarity = () => {
+const Rarity = ({ handler }) => {
   const [rarity, setRarity] = React.useState(1);
   const handleMinusClick = () => {
     if (rarity == 1) {
       setRarity(4);
+      handler(4);
     } else {
       setRarity(rarity - 1);
+      handler(rarity - 1);
     }
   };
   const handlePlusClick = () => {
     if (rarity == 4) {
       setRarity(1);
+      handler(1);
     } else {
       setRarity(rarity + 1);
+      handler(rarity + 1);
     }
   };
   const getRarityImg = () => {

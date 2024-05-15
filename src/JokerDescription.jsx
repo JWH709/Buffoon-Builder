@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import inputRight from "./assets/input_right.png";
 import inputLeft from "./assets/input_left.png";
-const JokerDescription = ({ inputTitle, inputType }) => {
+const JokerDescription = ({ inputTitle, inputType, handler }) => {
+  const sendDataToPreview = () => {
+    const data = event.target.value;
+    handler(data);
+  };
+
   return (
     <>
       <div className="joker-input-container">
@@ -16,7 +21,12 @@ const JokerDescription = ({ inputTitle, inputType }) => {
               width: "18px",
             }}
           ></div>
-          <textarea name="effect" id="" className={inputType}></textarea>
+          <textarea
+            name="effect"
+            id=""
+            className={inputType}
+            onChange={sendDataToPreview}
+          ></textarea>
           <div
             className="input-right"
             style={{

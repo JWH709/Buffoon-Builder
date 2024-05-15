@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import inputRight from "./assets/input_right.png";
 import inputLeft from "./assets/input_left.png";
-const JokerInput = ({ inputTitle, inputType }) => {
+const JokerInput = ({ inputTitle, inputType, handler }) => {
+  const sendDataToPreview = () => {
+    const data = event.target.value;
+    handler(data);
+  };
+
   return (
     <>
       <div className="joker-input-container">
@@ -16,7 +21,11 @@ const JokerInput = ({ inputTitle, inputType }) => {
               width: "18px",
             }}
           ></div>
-          <input type="text" className={inputType} />
+          <input
+            type="text"
+            className={inputType}
+            onChange={sendDataToPreview}
+          />
           <div
             className="input-right"
             style={{
