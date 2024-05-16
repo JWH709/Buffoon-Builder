@@ -26,6 +26,7 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
             id=""
             className={inputType}
             onChange={sendDataToPreview}
+            maxLength={66}
           ></textarea>
           <div
             className="input-right"

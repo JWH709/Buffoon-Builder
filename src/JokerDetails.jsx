@@ -35,10 +35,6 @@ const JokerDetails = () => {
   const handleDataFromCost = (data) => {
     setDataFromCost(data);
   };
-  console.log(dataFromName);
-  console.log(dataFromCost);
-  console.log(dataFromDescription);
-  console.log(dataFromRarity);
   return (
     <>
       <div className="column container joker-details-container">
@@ -60,6 +56,8 @@ const JokerDetails = () => {
           inputTitle={"Joker Name:"}
           inputType={"input-joker-name"}
           handler={handleDataFromName}
+          length={18}
+          pat={""}
         />
         <Rarity handler={handleDataFromRarity} />
         <JokerDescription
@@ -71,6 +69,8 @@ const JokerDetails = () => {
           inputTitle={"Joker Cost:"}
           inputType={"input-joker-cost"}
           handler={handleDataFromCost}
+          length={3}
+          pat={"[0-9]{4}"}
         />
       </div>
     </>
