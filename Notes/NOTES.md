@@ -4,7 +4,6 @@
 ## Current Issues
 
 
-- If the inputs are empty when a piece of art is dropped in the main tab, the site will crash
 - Filtering jokers causes issues with drag and drop. Dropped joker will be a different joker than the one dragged.
 
 
@@ -39,5 +38,7 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 ### May 17th:
 
 
-- In preparation for dedicating to weekend to LUA work, I think the best course of action today is to bug fix & clean current code. Rarity name & effect right side shouldn't be too difficult, I'm pretty sure the number's in the cost bug can just be fixed by passing props for type, and the empty inputs can be tape & popsicle sticks fixed by setting default inputs on load. As for the filtered jokers art glitch, I'll probably have to do some investigating to fix that one.
+- In preparation for dedicating the weekend to LUA work, I think the best course of action today is to bug fix & clean current code. Rarity name & effect right side shouldn't be too difficult, I'm pretty sure the number's in the cost bug can just be fixed by passing props for type, and the empty inputs can be tape & popsicle sticks fixed by setting default inputs on load. As for the filtered jokers art glitch, I'll probably have to do some investigating to fix that one.
+- setting placeholder text in the input elements does not fix the dnd crash issue. Why is this happening?
+- SOLVED: JokerCost was crashing the site because it was trying to read the length property of null. Change the if statement to (JokerCost == null)
 - Once bug fixes are done, do a little CSS work to make the main tab presentation look a little nicer, and add some basic stuff to the side panel.

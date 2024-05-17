@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 const JokerCostTab = ({ jokerCost }) => {
   const getCostWithSign = () => {
-    if (jokerCost.length > 0) {
-      return jokerCost + "$";
-    } else {
+    if (jokerCost == null) {
       return 0 + "$";
+    } else {
+      return jokerCost + "$";
     }
   };
 
