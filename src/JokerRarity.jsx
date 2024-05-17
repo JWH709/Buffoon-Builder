@@ -60,6 +60,8 @@ const Rarity = ({ handler }) => {
           style={{
             backgroundImage: `url(${getRarityImg()})`,
             backgroundSize: "cover",
+            imageRendering: "pixelated",
+            backgroundPosition: "center",
             width: "230px",
             height: "60px",
           }}

@@ -57,7 +57,7 @@ const JokerDetails = () => {
           inputType={"input-joker-name"}
           handler={handleDataFromName}
           length={18}
-          pat={""}
+          type={"text"}
         />
         <Rarity handler={handleDataFromRarity} />
         <JokerDescription
@@ -70,7 +70,7 @@ const JokerDetails = () => {
           inputType={"input-joker-cost"}
           handler={handleDataFromCost}
           length={3}
-          pat={"[0-9]{4}"}
+          type={"number"}
         />
       </div>
     </>

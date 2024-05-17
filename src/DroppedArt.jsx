@@ -31,7 +31,7 @@ const DroppedArt = ({
           jokerEffect={dataFromDescription}
           jokerRarity={dataFromRarity}
           jokerCost={dataFromCost}
-          position={mousePosition} // Pass mouse position to JokerPreview
+          position={mousePosition}
         />
       )}
     </div>

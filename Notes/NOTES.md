@@ -4,8 +4,8 @@
 ## Current Issues
 
 
-- Rarity name squish (May 16th)
-- Joker effect right side warp (May 16th)
+- If the inputs are empty when a piece of art is dropped in the main tab, the site will crash
+- Filtering jokers causes issues with drag and drop. Dropped joker will be a different joker than the one dragged.
 
 
 ## General Notes
@@ -33,3 +33,11 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 
 - I've started the day by fixing the JokerPreview. It was actually a lot easier than I thought it would be. I think the next step is to add some logic to how the inputs will function, like limiting the amount of characters in the name and effect inputs and limiting the cost to numbers only and ensuring the dollar sign is a permanent fixture. After that I'll move to fixing some simple style changes before moving on to settling on a layout design for the center tab. The biggest (and honestly, maybe only) style issue I have right now is how the JokerEffect component is rendering the rightmost div. For some reason, the left side div is fine, but the right side is all bunched up and squished. The second issue is how the text in the rarity component is being squished. This should be an easy fix. Another thing I should do is add a stock joker to sit in the builder as the site loads, giving the user a more intuitive sense of how the builder functions. On initial inspection, it should become very clear how the center tab functions. I think the final touch on the center tab, for now, will be the implementation of a (hidden) LUA section. The parameters being passed in the center tab are really easy to translate to Balatro's logic, so it should take minimal effort to convert them, and also give me the chance to figure out exactly how I'm going to start adding LUA to the project.
+- add image image_rendering: pixilated; to all art assets. Change cover to scale.
+
+
+### May 17th:
+
+
+- In preparation for dedicating to weekend to LUA work, I think the best course of action today is to bug fix & clean current code. Rarity name & effect right side shouldn't be too difficult, I'm pretty sure the number's in the cost bug can just be fixed by passing props for type, and the empty inputs can be tape & popsicle sticks fixed by setting default inputs on load. As for the filtered jokers art glitch, I'll probably have to do some investigating to fix that one.
+- Once bug fixes are done, do a little CSS work to make the main tab presentation look a little nicer, and add some basic stuff to the side panel.

@@ -17,8 +17,11 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
             style={{
               backgroundImage: `url(${inputLeft})`,
               backgroundSize: "cover",
-              height: "100px",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              imageRendering: "pixelated",
               width: "18px",
+              height: "100px",
             }}
           ></div>
           <textarea
@@ -33,8 +36,11 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
             style={{
               backgroundImage: `url(${inputRight})`,
               backgroundSize: "cover",
-              height: "100px",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              imageRendering: "pixelated",
               width: "18px",
+              height: "100px",
             }}
           ></div>
         </div>
