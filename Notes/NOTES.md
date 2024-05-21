@@ -42,3 +42,18 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 - setting placeholder text in the input elements does not fix the dnd crash issue. Why is this happening?
 - SOLVED: JokerCost was crashing the site because it was trying to read the length property of null. Change the if statement to (JokerCost == null)
 - Once bug fixes are done, do a little CSS work to make the main tab presentation look a little nicer, and add some basic stuff to the side panel.
+
+
+### May 20th:
+
+
+- Started working on implementing my own jokers. So far, it seems like the best practice is to actively borrow code from pre-existing jokers. In the customer jokers I've looked at so far, it seems like this is the most common way of getting custom card logic to behave properly. There's also now dev tools for Balamod, which helps in testing jokers.
+- As of right now, the joker I've made can be found in Balatro, however, I don't think it's working correctly. I've changed the bloodstone logic to trigger on aces instead of hearts, however, when I've played aces with it, it doesn't seem to trigger. I'll take another look at this tomorrow, however, right now, it seems that adding basic joker logic is possible through the center tab of the web app
+- Another thing I should look into is newer joker mods. Currently, there's no proper site to organize these (like a nexus), but I should be able to find some within the balamod community mod directory. The main joker I'm comparing my code against uses an older version of arachni's center_hook api, so finding one that uses a later release would probably yield better results in deciphering what everything means in the context of adding stuff to the game. The Balamod documentation also has (minimal) information on native functions added with balamod.
+
+
+## May 21st:
+
+
+- Today I'd like to focus 50/50 on the website and my own joker. I think the site mostly needs aesthetic work, but I think going forward I should look into changing the "joker" tab to have custom art assets instead of pre-existing ones, as that seems like it would be more useful than using default art assets. Ultimately, it's purpose would be best served as a space where you can upload your own art assets, however, I don't know how much work that would require on back-end stuff.
+- The block system may need to be reimagined. I'm not sure how this would work yet, but I'm going to look into making "even keegan" today, using parts from two jokers.
