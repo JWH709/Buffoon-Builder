@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ItemTypes } from "./Constants";
 import { useDrag } from "react-dnd";
+import { Tilt } from "@jdion/tilt-react";
 
 const JokerArt = ({ getImgSrc, jokerItem }) => {
   const artSrc = getImgSrc(jokerItem);
@@ -25,7 +26,9 @@ const JokerArt = ({ getImgSrc, jokerItem }) => {
         cursor: "move",
       }}
     >
-      <img src={getImgSrc(jokerItem)} />
+      <Tilt>
+        <img src={getImgSrc(jokerItem)} />
+      </Tilt>
       <h6>{jokerItem.Joker}</h6>
     </div>
   );

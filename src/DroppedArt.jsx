@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import JokerPreview from "./JokerPreview";
+import { Tilt } from "@jdion/tilt-react";
 
 const DroppedArt = ({
   artSrc,
@@ -24,7 +25,9 @@ const DroppedArt = ({
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
-      <img src={artSrc} alt={artName} />
+      <Tilt>
+        <img src={artSrc} alt={artName} />
+      </Tilt>
       {isHovered && (
         <JokerPreview
           jokerName={dataFromName}
