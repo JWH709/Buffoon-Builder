@@ -10,6 +10,8 @@ const DroppedArt = ({
   dataFromRarity,
   dataFromCost,
   dataFromDescription,
+  updateLuaLocals,
+  updateLuaTableInsert,
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
@@ -35,6 +37,8 @@ const DroppedArt = ({
           jokerRarity={dataFromRarity}
           jokerCost={dataFromCost}
           position={mousePosition}
+          updateLuaLocals={updateLuaLocals}
+          updateLuaTableInsert={updateLuaTableInsert}
         />
       )}
     </div>

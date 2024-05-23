@@ -7,7 +7,7 @@ import Rarity from "./JokerRarity";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
 import DroppedArt from "./DroppedArt";
-const JokerDetails = () => {
+const JokerDetails = ({ updateLuaLocals, updateLuaTableInsert }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
   const [, drop] = useDrop({
@@ -48,6 +48,8 @@ const JokerDetails = () => {
                 dataFromCost={dataFromCost}
                 dataFromDescription={dataFromDescription}
                 dataFromRarity={dataFromRarity}
+                updateLuaLocals={updateLuaLocals}
+                updateLuaTableInsert={updateLuaTableInsert}
               />
             </div>
           )}

@@ -13,6 +13,8 @@ const JokerPreview = ({
   jokerRarity,
   jokerCost,
   position,
+  updateLuaLocals,
+  updateLuaTableInsert,
 }) => {
   let rarityTitle = "Common";
   let rarityImg = common;

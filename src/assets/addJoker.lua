@@ -2,7 +2,6 @@ local mod_id = ""
 local mod_name = ""
 local mod_version = "1.0"
 local mod_author = "BuffoonBuilder"
-local mod_jName = 'j_' + mod_id + '_' + mod_author
 
 local function jokerEffect(card, context)
     if card.ability.name == "" then
@@ -15,7 +14,7 @@ table.insert(mods, {
     author = mod_author,
     enabled = true,
     on_enable = function()
-        centerHook.addJoker(self, mod_jName, -- id
+        centerHook.addJoker(self, "", -- id
         '', -- name
         jokerEffect, -- effect function
         nil, -- order
@@ -41,7 +40,7 @@ table.insert(mods, {
         nil, -- unlock condition
         true, -- collection alert
         "pack", -- sprite path
-        (mod_id + ".png"), -- sprite name
+        (""), -- sprite name
         {
             px = 71,
             py = 95
@@ -49,6 +48,6 @@ table.insert(mods, {
         )
     end,
     on_disable = function()
-        centerHook.removeJoker(self, mod_jName)
+        centerHook.removeJoker(self, "")
     end
 })
