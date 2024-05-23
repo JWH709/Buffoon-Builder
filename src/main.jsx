@@ -13,9 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Navbar />
     <DndProvider backend={HTML5Backend}>
       <div className="main-flex-row">
+        <SidePanel />
         <BuildingSpace />
         <JokerDetails />
-        <SidePanel />
       </div>
     </DndProvider>
   </React.StrictMode>
