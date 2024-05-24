@@ -64,3 +64,8 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 - I've figured out how to actually use the center_hook the way I want to. I don't know what the margin for error is, but the config value is not behaving properly for me. The solution was to avoid using it all together, and instead of setting mult = card.ability.extra.mult or whatever, just set it to mult = 2 or whatever number is needed.
 - I've started looking into what I need to make a downloadable lua file, and it seems like there's a simple to use library for that, however, interfacing with the lua in JSX is going to be tricky. I think the best path forward is to wrap the main building components in a div, and set three states for managing the info added in different sections, then pass these states to the best suited gather place for the info needed. 
+
+
+## May 24th:
+
+- using the joker preview, I'm able to set up all of the naming conventions for the local variables in the lua resource file. Now I just need to start theory crafting block types and how to assemble them without breaking the joker function
