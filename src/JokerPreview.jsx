@@ -48,6 +48,8 @@ const JokerPreview = ({
       const luaJokerNameLower = jokerName.toLowerCase();
       const luaJokerID = luaJokerNameLower.replaceAll(" ", "_");
       updateLuaLocals(`
+      --All mods made using the center_hook api (https://github.com/nicholassam6425/balatro-mods)
+
       local mod_id = "${luaJokerID}"
       local mod_name = "${jokerName}"
       local mod_version = "1.0"
@@ -63,7 +65,8 @@ const JokerPreview = ({
       const luaJokerNameLower = jokerName.toLowerCase();
       const luaJokerID = luaJokerNameLower.replaceAll(" ", "_");
       const luaJokerTableID = "j_" + luaJokerID;
-      updateLuaTableInsert(`table.insert(mods, {
+      updateLuaTableInsert(`
+      table.insert(mods, {
         mod_id = mod_id,
         name = mod_name,
         version = mod_version,

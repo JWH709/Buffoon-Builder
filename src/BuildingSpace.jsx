@@ -3,7 +3,7 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./Constants";
 
-const BuildingSpace = () => {
+const BuildingSpace = ({ updateLuaJokerEffect, jokername }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
   const [, drop] = useDrop({
@@ -14,7 +14,7 @@ const BuildingSpace = () => {
     },
     collect: () => ({}),
   });
-
+  //Need to edit this section to create a DroppedBlock when a block is dropped
   return (
     <div ref={drop} className={`building-space`}>
       {droppedItem && (

@@ -8,14 +8,23 @@ const BuilderWrapper = () => {
   const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
   const [luaLocals, setLuaLocals] = React.useState(null);
   const [luaTableInsert, setLuaTableInsert] = React.useState(null);
+  const [dataFromName, setDataFromName] = React.useState(null);
+  const handleDataFromName = (data) => {
+    setDataFromName(data);
+  };
   return (
     <>
       <div className="main-flex-row">
         <SidePanel />
-        <BuildingSpace updateLuaJokerEffect={setLuaJokerEffect} />
+        <BuildingSpace
+          updateLuaJokerEffect={setLuaJokerEffect}
+          jokerName={dataFromName}
+        />
         <JokerDetails
           updateLuaLocals={setLuaLocals}
           updateLuaTableInsert={setLuaTableInsert}
+          dataFromName={dataFromName}
+          handleDataFromName={handleDataFromName}
         />
       </div>
       <LuaDownloader

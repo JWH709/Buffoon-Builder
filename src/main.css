@@ -238,6 +238,7 @@ body {
 
 .red-block {
   background-color: rgb(255, 76, 76);
+  opacity: 1;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -252,6 +253,7 @@ body {
 
 .blue-block {
   background-color: rgb(0,147,255);
+  opacity: 1;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -266,6 +268,7 @@ body {
 
 .yellow-block {
   background-color: rgb(255,152,0);
+  opacity: 1;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -280,11 +283,26 @@ body {
 
 .green-block {
   background-color: rgb(53,108,85);
+  opacity: 1;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px rgb(45,95,74);
+  height: 50px;
+  width: 110px;
+  font-family: 'balatro';
+  color: aliceblue;
+  margin: 10px;
+}
+.purple-block {
+  background-color: rgb(187,123,195);
+  opacity: 1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px rgb(109,53,116);
   height: 50px;
   width: 110px;
   font-family: 'balatro';

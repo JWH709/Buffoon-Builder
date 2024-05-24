@@ -7,7 +7,12 @@ import Rarity from "./JokerRarity";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
 import DroppedArt from "./DroppedArt";
-const JokerDetails = ({ updateLuaLocals, updateLuaTableInsert }) => {
+const JokerDetails = ({
+  updateLuaLocals,
+  updateLuaTableInsert,
+  dataFromName,
+  handleDataFromName,
+}) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
   const [, drop] = useDrop({
@@ -19,13 +24,9 @@ const JokerDetails = ({ updateLuaLocals, updateLuaTableInsert }) => {
     collect: () => ({}),
   });
 
-  const [dataFromName, setDataFromName] = React.useState(null);
   const [dataFromRarity, setDataFromRarity] = React.useState(1);
   const [dataFromDescription, setDataFromDescription] = React.useState(null);
   const [dataFromCost, setDataFromCost] = React.useState(null);
-  const handleDataFromName = (data) => {
-    setDataFromName(data);
-  };
   const handleDataFromRarity = (data) => {
     setDataFromRarity(data);
   };
