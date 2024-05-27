@@ -7,6 +7,14 @@
 - Filtering jokers causes issues with drag and drop. Dropped joker will be a different joker than the one dragged.
 
 
+## Things to do
+
+
+- add JSZip for creating a .zip for the generated joker card
+- re-work building space area to only accept certain blocks in certain places (I think this won't be as bad as I'm thinking it will be)
+- local image support
+
+
 ## General Notes
 
 
@@ -68,4 +76,12 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 ## May 24th:
 
-- using the joker preview, I'm able to set up all of the naming conventions for the local variables in the lua resource file. Now I just need to start theory crafting block types and how to assemble them without breaking the joker function
+
+- using the joker preview, I'm able to set up all of the naming conventions for the local variables in the lua resource file. Now I just need to start theory crafting block types and how to assemble them without breaking the joker function. 
+- Added a few basic blocks, plan is to assemble the two jokers I've previously made using the blocks, then seeing if I can get a full, working lua file from them
+
+
+## May 25th: 
+
+
+- Going to start by adding the drag and drop local image thing today, then move on to resizing all of the tabs to 33% each

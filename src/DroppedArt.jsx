@@ -5,7 +5,6 @@ import { Tilt } from "@jdion/tilt-react";
 
 const DroppedArt = ({
   artSrc,
-  artName,
   dataFromName,
   dataFromRarity,
   dataFromCost,
@@ -28,7 +27,7 @@ const DroppedArt = ({
       onMouseMove={handleMouseMove}
     >
       <Tilt>
-        <img src={artSrc} alt={artName} />
+        <img src={artSrc} alt="Uploaded Art" />
       </Tilt>
       {isHovered && (
         <JokerPreview
