@@ -64,8 +64,6 @@ const JokerImageUploader = ({
           <label
             htmlFor="fileInput"
             style={{
-              border: "2px dashed #ccc",
-              borderRadius: "10px",
               padding: "20px",
               display: "block",
               textAlign: "center",
@@ -91,23 +89,7 @@ const JokerImageUploader = ({
             updateLuaLocals={updateLuaLocals}
             updateLuaTableInsert={updateLuaTableInsert}
           />
-          <button
-            onClick={handleDeleteImage}
-            style={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
-              backgroundColor: "red",
-              color: "white",
-              border: "none",
-              borderRadius: "50%",
-              width: "24px",
-              height: "24px",
-              cursor: "pointer",
-              textAlign: "center",
-              lineHeight: "24px",
-            }}
-          >
+          <button className="button-delete-image" onClick={handleDeleteImage}>
             &times;
           </button>
         </div>
