@@ -14,7 +14,7 @@ const BuilderWrapper = () => {
   };
   return (
     <>
-      <div className="main-flex-row">
+      <div className="builder-wrapper">
         <SidePanel />
         <BuildingSpace
           updateLuaJokerEffect={setLuaJokerEffect}

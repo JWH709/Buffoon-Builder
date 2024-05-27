@@ -20,7 +20,12 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-
+.builder-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
 /* NAVBAR */
 
 .title {
@@ -231,11 +236,25 @@ body {
 }
 /* SIDE PANEL */
 
-.side-panel-container {
+.tab-container {
   font-family: 'balatro';
   color: aliceblue;
+  height: 40%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.block-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.logic-block-title {
+  margin: 4px;
+}
 .red-block {
   background-color: rgb(255, 76, 76);
   opacity: 1;
@@ -304,7 +323,7 @@ body {
   align-items: center;
   text-shadow: 2px 2px rgb(109,53,116);
   height: 50px;
-  width: 110px;
+  width: fit-content;
   font-family: 'balatro';
   color: aliceblue;
   margin: 10px;

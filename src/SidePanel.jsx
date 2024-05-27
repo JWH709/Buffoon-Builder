@@ -8,7 +8,7 @@ import BlockTab from "./BlockTab.jsx";
 function SidePanel() {
   const [key, setKey] = useState("home");
   return (
-    <div className="container-column side-panel-container">
+    <div className="tab-container">
       <Tabs
         id="controlled-tab"
         activeKey={key}
@@ -18,9 +18,9 @@ function SidePanel() {
         <Tab eventKey="home" title="Context">
           <BlockTab />
         </Tab>
-        <Tab eventKey="profile" title="Value"></Tab>
-        <Tab eventKey="profile" title="Conditions"></Tab>
-        <Tab eventKey="profile" title="Results"></Tab>
+        <Tab eventKey="value" title="Value"></Tab>
+        <Tab eventKey="conditions" title="Conditions"></Tab>
+        <Tab eventKey="results" title="Results"></Tab>
       </Tabs>
     </div>
   );

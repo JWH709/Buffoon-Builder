@@ -21,7 +21,7 @@ const LogicBlock = ({ title, styles }) => {
         cursor: "move",
       }}
     >
-      <h2>{title}</h2>
+      <h2 className="logic-block-title">{title}</h2>
     </div>
   );
 };

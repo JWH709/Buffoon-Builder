@@ -3,7 +3,7 @@ import LogicBlock from "./LogicBlocks";
 const BlockTab = () => {
   return (
     <>
-      <div className="column container">
+      <div className="block-container">
         <LogicBlock
           title={valueBlocks[0].title}
           styles={valueBlocks[0].styles}
