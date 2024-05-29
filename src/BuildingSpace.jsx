@@ -3,7 +3,9 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./Constants";
 
-const BuildingSpace = ({ updateLuaJokerEffect, jokername }) => {
+const BuildingSpace = ({ updateLuaJokerEffect, jokerName }) => {
+  const JokerEffectDeclaration = `local function jokerEffect(card, context)
+  if card.ability.name == "${jokerName}" then`;
   const [droppedItem, setDroppedItem] = React.useState(null);
 
   const [, drop] = useDrop({
