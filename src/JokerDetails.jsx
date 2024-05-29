@@ -25,7 +25,7 @@ const JokerDetails = ({
   };
   return (
     <>
-      <div className="column container joker-details-container">
+      <div className="joker-details-container">
         <div className="art-asset-container">
           <div className="dropped-art-container">
             <JokerImageUploader

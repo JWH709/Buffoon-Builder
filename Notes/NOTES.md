@@ -85,3 +85,9 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 
 - Going to start by adding the drag and drop local image thing today, then move on to resizing all of the tabs to 33% each
+
+
+## May 29th: 
+
+
+- Rete.js seems extremely complicated, and to make matters worse it's written in TS, I'm gonna do some additional exploration into it later, but as of right now, I think I want to see how far I can get with just react.dnd. As for react DnD, I need to make three containers in my building area: one for context, one for conditions, and one for returns (or rewards, I need to think of a more intuitive name for that section). Each section should essentially be a drop space that creates a new LogicBlock item when a logic block is dropped into it. Once a block is in, another block can be added, and they are then stacked (either vertically or horizontally idk yet) and can be rearranged.
