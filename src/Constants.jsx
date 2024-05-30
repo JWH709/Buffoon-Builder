@@ -1,4 +1,6 @@
 export const ItemTypes = {
-  BLOCK: "block",
-  ART: "art",
+  CONTEXTBLOCK: "context-block",
+  CONDITIONBLOCK: "condition-block",
+  RESULTSBLOCK: "results-block",
+  VALUEBLOCK: "value-block",
 };

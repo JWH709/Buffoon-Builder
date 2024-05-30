@@ -1,17 +1,21 @@
-import valueBlocks from "./blocksValueBlocks";
+/* eslint-disable react/prop-types */
 import LogicBlock from "./LogicBlocks";
-const BlockTab = () => {
+const BlockTab = ({ blockArray, blockType }) => {
   return (
     <>
       <div className="block-container">
-        <LogicBlock
-          title={valueBlocks[0].title}
-          styles={valueBlocks[0].styles}
-        />
-        <LogicBlock
-          title={valueBlocks[1].title}
-          styles={valueBlocks[1].styles}
-        />
+        {blockArray.map((block) => {
+          return (
+            <LogicBlock
+              title={block.title}
+              key={block.id}
+              id={block.id}
+              lua={block.LUA}
+              styles={block.styles}
+              blockType={blockType}
+            />
+          );
+        })}
       </div>
     </>
   );

@@ -5,6 +5,11 @@ import { useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import BlockTab from "./BlockTab.jsx";
+import valueBlocks from "./blocksValueBlocks";
+import contextBlocks from "./blocksContextBlocks.js";
+import conditionBlocks from "./blocksConditionBlocks.js";
+import resultBlocks from "./blocksResultBlocks.js";
+import { ItemTypes } from "./Constants.jsx";
 function SidePanel() {
   const [key, setKey] = useState("home");
   return (
@@ -16,11 +21,26 @@ function SidePanel() {
         className="mb-3"
       >
         <Tab eventKey="home" title="Context">
-          <BlockTab />
+          <BlockTab
+            blockArray={contextBlocks}
+            blockType={ItemTypes.CONTEXTBLOCK}
+          />
         </Tab>
-        <Tab eventKey="value" title="Value"></Tab>
-        <Tab eventKey="conditions" title="Conditions"></Tab>
-        <Tab eventKey="results" title="Results"></Tab>
+        <Tab eventKey="value" title="Value">
+          <BlockTab blockArray={valueBlocks} blockType={ItemTypes.VALUEBLOCK} />
+        </Tab>
+        <Tab eventKey="conditions" title="Conditions">
+          <BlockTab
+            blockArray={conditionBlocks}
+            blockType={ItemTypes.CONDITIONBLOCK}
+          />
+        </Tab>
+        <Tab eventKey="results" title="Results">
+          <BlockTab
+            blockArray={resultBlocks}
+            blockType={ItemTypes.RESULTSBLOCK}
+          />
+        </Tab>
       </Tabs>
     </div>
   );

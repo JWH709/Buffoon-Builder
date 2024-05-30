@@ -52,6 +52,26 @@ body {
   font-family: 'balatro';
   color: aliceblue;
 }
+.building-space-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.building-list-context-block {
+  border: 2px solid #3700ff;
+  width: 300px;
+  height: 300px;
+}
+.building-list-condition-block {
+  border: 2px solid #ff0000;
+  width: 300px;
+  height: 300px;
+}
+.building-list-results-block {
+  border: 2px solid #00ff00;
+  width: 300px;
+  height: 300px;
+}
 
 .highlight {
   background-color: lightblue;
@@ -281,7 +301,7 @@ body {
   align-items: center;
   text-shadow: 2px 2px #ff0000;
   height: 50px;
-  width: 110px;
+  width: fit-content;
   font-family: 'balatro';
   color: aliceblue;
   margin: 10px;
@@ -296,7 +316,7 @@ body {
   align-items: center;
   text-shadow: 2px 2px rgb(0,90,166);
   height: 50px;
-  width: 110px;
+  width: fit-content;
   font-family: 'balatro';
   color: aliceblue;
   margin: 10px;
@@ -311,7 +331,7 @@ body {
   align-items: center;
   text-shadow: 2px 2px rgb(225,136,0);
   height: 50px;
-  width: 110px;
+  width: fit-content;
   font-family: 'balatro';
   color: aliceblue;
   margin: 10px;
@@ -326,7 +346,7 @@ body {
   align-items: center;
   text-shadow: 2px 2px rgb(45,95,74);
   height: 50px;
-  width: 110px;
+  width: fit-content;
   font-family: 'balatro';
   color: aliceblue;
   margin: 10px;

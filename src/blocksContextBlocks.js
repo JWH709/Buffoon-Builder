@@ -26,13 +26,6 @@ const contextBlocks = [
         LUA: "context.selling_card",
         styles: "yellow-block",
         compatibilities: ""
-    },
-    {
-        title: "",
-        id: "",
-        LUA: "",
-        styles: "",
-        compatibilities: ""
     }
   ];
   

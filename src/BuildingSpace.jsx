@@ -1,37 +1,52 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { useDrop } from "react-dnd";
+import BuildingList from "./BuildingList";
 import { ItemTypes } from "./Constants";
 
 const BuildingSpace = ({ updateLuaJokerEffect, jokerName }) => {
-  const JokerEffectDeclaration = `local function jokerEffect(card, context)
+  const jokerEffectDeclaration = `local function jokerEffect(card, context)
   if card.ability.name == "${jokerName}" then`;
-  const [droppedItem, setDroppedItem] = React.useState(null);
+  const jokerEffectEnd = "end end";
+  let [contextLua, setContextLua] = React.useState(null);
+  let [conditionsLua, setConditionsLua] = React.useState(null);
+  let [resultsLua, setResultsLua] = React.useState(null);
 
-  const [, drop] = useDrop({
-    accept: ItemTypes.BLOCK,
-    drop: (item) => {
-      console.log("Item dropped:", item);
-      setDroppedItem(item);
-    },
-    collect: () => ({}),
-  });
-  //Need to edit this section to create a DroppedBlock when a block is dropped
-  return (
-    <div ref={drop} className={`building-space`}>
-      {droppedItem && (
-        <div className="dropped-item">
-          <DroppedBlock styles={droppedItem.styles} title={droppedItem.title} />
-        </div>
-      )}
-    </div>
-  );
-};
+  const assembleLuaFunction = () => {
+    if (
+      (contextLua /= null) &&
+      (conditionsLua /= null) &&
+      (resultsLua /= null)
+    ) {
+      updateLuaJokerEffect(
+        jokerEffectDeclaration +
+          contextLua +
+          conditionsLua +
+          resultsLua +
+          jokerEffectEnd
+      );
+    }
+  };
+  console.log(ItemTypes.CONDITIONBLOCK);
+  assembleLuaFunction();
 
-const DroppedBlock = ({ styles, title }) => {
   return (
-    <div className={styles}>
-      <h2>{title}</h2>
+    <div className="building-space ">
+      <div className="building-space-row">
+        <BuildingList
+          updateLuaContext={setContextLua}
+          blockType={ItemTypes.CONTEXTBLOCK}
+        />
+        <BuildingList
+          updateLuaConditions={setConditionsLua}
+          blockType={ItemTypes.CONDITIONBLOCK}
+        />
+      </div>
+      <div className="building-space-row">
+        <BuildingList
+          updateLuaResults={setResultsLua}
+          blockType={ItemTypes.RESULTSBLOCK}
+        />
+      </div>
     </div>
   );
 };

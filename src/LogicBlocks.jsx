@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
-import { ItemTypes } from "./Constants";
 import { useDrag } from "react-dnd";
-const LogicBlock = ({ title, styles }) => {
+const LogicBlock = ({ title, styles, blockType, id, lua }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
-    type: ItemTypes.BLOCK,
-    item: { title, styles },
+    type: blockType,
+    item: { title, styles, id, lua },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
