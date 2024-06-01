@@ -96,4 +96,12 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 ## May 30th:
 
+
 - Reconfigured the BuildingList component so that it can function for every itemType. Overhauled the blocks to now contain their LUA. I'll now need to start working on a way to access the LUA that's stored inside each building space, as well as pass a method of gathering all of the lua from a single building space to conjoin it together. I'm trying to not put the chicken before the egg here, but the problem is that I cannot identify which is the chicken and which is the egg right now. I can proceed with getting the functionality for conjoining LUA right now, or I can reconfigure DnD to allow for me to add multiple blocks into the same BuildingList. TLDR, I can finish the DnD stuff or I can finish the LUA stuff. I'm THINKING it's probably better to do the LUA stuff first, so I can get an idea of whether or not he current approach works/how it will work. Conjoining logic will be tricky, mostly with thens, ands, & ends, however this will probably give me more insight going ahead into making the DnD functional
+
+
+## June 1st: 
+
+
+- Going to reconfigure the logic blocks to have additional types so that some can be generated with inputs that accept numbers. I'm thinking this may eliminate the need for value blocks all together and also make assigning a value to a block much more intuitive.
+- I need to move the state updaters for the lua downloader out of the preview. It messes with the way they're called when I use the LUA downloader component. As of right now, I can generate all of the lua needed for "Even Keegan" (test joker repo on my github) with the blocks, and I've reconfigured the blocks to accept values now. I should remove the ValueBlock tab (and value blocks all together), and begin styling and stress testing the assembly area before moving on to adding the mod downloader.
