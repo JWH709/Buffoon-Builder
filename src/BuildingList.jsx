@@ -3,7 +3,7 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import DroppedBlock from "./BuildingSpaceDroppedBlock";
 
-const BuldingList = ({ blockType }) => {
+const BuldingList = ({ blockType, updateLua }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
 
   const [, drop] = useDrop({
@@ -24,6 +24,9 @@ const BuldingList = ({ blockType }) => {
             title={droppedItem.title}
             lua={droppedItem.lua}
             id={droppedItem.id}
+            additionalInput={droppedItem.additionalInput}
+            blockType={blockType}
+            updateLua={updateLua}
           />
         </div>
       )}

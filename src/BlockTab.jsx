@@ -12,6 +12,7 @@ const BlockTab = ({ blockArray, blockType }) => {
               id={block.id}
               lua={block.LUA}
               styles={block.styles}
+              additionalInput={block.additionalInput}
               blockType={blockType}
             />
           );

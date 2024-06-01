@@ -4,6 +4,7 @@ const resultBlocks = [
         id: "vb-1",
         LUA: "mult = ",
         styles: "red-block",
+        additionalInput: 'number',
         compatibilities: ""
       },
       {
@@ -11,13 +12,15 @@ const resultBlocks = [
         id: "vb-2",
         LUA: "chips = ",
         styles: "blue-block",
+        additionalInput: 'number',
         compatibilities: ""
       },
       {
-        title: "Mult X",
+        title: "Mult x",
         id: "vb-3",
-        LUA: "x_mult =",
+        LUA: "x_mult = ",
         styles: "red-block",
+        additionalInput: 'number',
         compatibilities: ""
     },
   ];

@@ -6,7 +6,7 @@ const LuaDownloader = ({ jokerEffect, localVariables, tableInsert }) => {
   // return (
   //   <button
   //     onClick={() => {
-  //       console.log(localVariables + tableInsert);
+  //       console.log(localVariables + jokerEffect + tableInsert);
   //     }}
   //   >
   //     Sup
