@@ -25,8 +25,18 @@ const LuaDownloader = ({
   const modFile = localVariables + jokerEffect + tableInsert;
   zip.folder("mods").file(`${jokerID}.lua`, modFile);
   zip.folder("apis").file(`center_hook.lua`, center_hook);
-  pack.folder("1x").file(`${jokerID}.png`, image);
-  pack.folder("2x").file(`${jokerID}.png`, image);
+  if (image) {
+    const base64Data = image.split(",")[1];
+    const binaryString = atob(base64Data);
+    const len = binaryString.length;
+    const bytes = new Uint8Array(len);
+
+    for (let i = 0; i < len; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    pack.folder("1x").file(`${jokerID}.png`, bytes, { binary: true });
+    pack.folder("2x").file(`${jokerID}.png`, bytes, { binary: true });
+  }
 
   const downloadJoker = () => {
     zip.generateAsync({ type: "blob" }).then((content) => {

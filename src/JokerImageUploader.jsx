@@ -18,7 +18,7 @@ const JokerImageUploader = ({
       setImage(savedImage);
     }
   }, [image, setImage]);
-
+  console.log(image);
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
       const luaJokerNameLower = dataFromName.toLowerCase();
