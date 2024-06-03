@@ -1,7 +1,6 @@
 import SidePanel from "./SidePanel";
 import BuildingSpace from "./BuildingSpace";
 import JokerDetails from "./JokerDetails";
-import LuaDownloader from "./LuaDownloader";
 import React from "react";
 
 const BuilderWrapper = () => {
@@ -9,6 +8,7 @@ const BuilderWrapper = () => {
   const [luaLocals, setLuaLocals] = React.useState(null);
   const [luaTableInsert, setLuaTableInsert] = React.useState(null);
   const [dataFromName, setDataFromName] = React.useState(null);
+  const [image, setImage] = React.useState(null);
   const handleDataFromName = (data) => {
     setDataFromName(data);
   };
@@ -19,20 +19,20 @@ const BuilderWrapper = () => {
         <BuildingSpace
           updateLuaJokerEffect={setLuaJokerEffect}
           jokerName={dataFromName}
-          luaJokerEffect={luaJokerEffect}
+          jokerEffect={luaJokerEffect}
+          localVariables={luaLocals}
+          tableInsert={luaTableInsert}
+          image={image}
         />
         <JokerDetails
           updateLuaLocals={setLuaLocals}
           updateLuaTableInsert={setLuaTableInsert}
           dataFromName={dataFromName}
           handleDataFromName={handleDataFromName}
+          image={image}
+          setImage={setImage}
         />
       </div>
-      <LuaDownloader
-        jokerEffect={luaJokerEffect}
-        localVariables={luaLocals}
-        tableInsert={luaTableInsert}
-      />
     </>
   );
 };

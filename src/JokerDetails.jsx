@@ -10,6 +10,8 @@ const JokerDetails = ({
   updateLuaTableInsert,
   dataFromName,
   handleDataFromName,
+  image,
+  setImage,
 }) => {
   const [dataFromRarity, setDataFromRarity] = React.useState(1);
   const [dataFromDescription, setDataFromDescription] = React.useState(null);
@@ -35,6 +37,8 @@ const JokerDetails = ({
               dataFromRarity={dataFromRarity}
               updateLuaLocals={updateLuaLocals}
               updateLuaTableInsert={updateLuaTableInsert}
+              image={image}
+              setImage={setImage}
             />
           </div>
         </div>

@@ -9,15 +9,15 @@ const JokerImageUploader = ({
   dataFromRarity,
   updateLuaLocals,
   updateLuaTableInsert,
+  image,
+  setImage,
 }) => {
-  const [image, setImage] = React.useState(null);
-
   React.useEffect(() => {
     const savedImage = localStorage.getItem("uploadedImage");
     if (savedImage) {
       setImage(savedImage);
     }
-  }, []);
+  }, [image, setImage]);
 
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
@@ -42,7 +42,7 @@ const JokerImageUploader = ({
           on_enable = function()
               centerHook.addJoker(self, "${luaJokerTableID}", -- id
               '${dataFromName}', -- name
-              ${dataFromDescription}, -- effect function
+              jokerEffect, -- effect function
               nil, -- order
               true, -- unlocked
               true, -- discovered
@@ -57,7 +57,7 @@ const JokerImageUploader = ({
                       x_mult = 2
                   }
               }, -- config
-              {"${dataFromDescription}"}, -- description text
+              {'${dataFromDescription}'}, -- description text
               ${dataFromRarity}, -- rarity
               true, -- blueprint compatibility
               true, -- eternal compatibility
@@ -66,7 +66,7 @@ const JokerImageUploader = ({
               nil, -- unlock condition
               true, -- collection alert
               "pack", -- sprite path
-              ("${luaJokerID}"), -- sprite name
+              ("${luaJokerID}.png"), -- sprite name
               {
                   px = 71,
                   py = 95

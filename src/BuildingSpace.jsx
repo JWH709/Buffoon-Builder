@@ -2,8 +2,16 @@
 import React from "react";
 import BuildingList from "./BuildingList";
 import { ItemTypes } from "./Constants";
+import LuaDownloader from "./LuaDownloader";
 
-const BuildingSpace = ({ updateLuaJokerEffect, luaJokerEffect, jokerName }) => {
+const BuildingSpace = ({
+  updateLuaJokerEffect,
+  jokerName,
+  jokerEffect,
+  localVariables,
+  tableInsert,
+  image,
+}) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
   if card.ability.name == "${jokerName}" `;
   const jokerEffectEnd = `    
@@ -24,7 +32,6 @@ const BuildingSpace = ({ updateLuaJokerEffect, luaJokerEffect, jokerName }) => {
         jokerEffectEnd
     );
   }
-  console.log(luaJokerEffect);
 
   return (
     <div className="building-space ">
@@ -42,6 +49,13 @@ const BuildingSpace = ({ updateLuaJokerEffect, luaJokerEffect, jokerName }) => {
         <BuildingList
           updateLua={setResultsLua}
           blockType={ItemTypes.RESULTSBLOCK}
+        />
+        <LuaDownloader
+          jokerName={jokerName}
+          jokerEffect={jokerEffect}
+          localVariables={localVariables}
+          tableInsert={tableInsert}
+          image={image}
         />
       </div>
     </div>
