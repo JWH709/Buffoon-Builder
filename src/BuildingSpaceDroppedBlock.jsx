@@ -14,20 +14,24 @@ const DroppedBlock = ({
   const handleInputUpdate = (event) => {
     setInputValue(lua + event.target.value);
   };
-  switch (blockType) {
-    case "context-block":
-      updateLua("and " + lua);
-      break;
-    case "condition-block":
-      updateLua(" then if " + lua);
-      break;
-    case "results-block":
-      updateLua(` then return {
-        ${inputValue},
-        card = card
+
+  React.useEffect(() => {
+    switch (blockType) {
+      case "context-block":
+        updateLua("and " + lua);
+        break;
+      case "condition-block":
+        updateLua(" then if " + lua);
+        break;
+      case "results-block":
+        updateLua(` then return {
+          ${inputValue},
+          card = card
+      }
+  end`);
     }
-end`);
-  }
+  }, [blockType, lua, inputValue, updateLua]);
+
   return (
     <div className={styles} key={id}>
       <h2>{title}</h2>

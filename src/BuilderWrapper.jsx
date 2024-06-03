@@ -19,6 +19,7 @@ const BuilderWrapper = () => {
         <BuildingSpace
           updateLuaJokerEffect={setLuaJokerEffect}
           jokerName={dataFromName}
+          luaJokerEffect={luaJokerEffect}
         />
         <JokerDetails
           updateLuaLocals={setLuaLocals}

@@ -13,8 +13,6 @@ const JokerPreview = ({
   jokerRarity,
   jokerCost,
   position,
-  updateLuaLocals,
-  updateLuaTableInsert,
 }) => {
   let rarityTitle = "Common";
   let rarityImg = common;
@@ -40,79 +38,6 @@ const JokerPreview = ({
     }
   };
   getInitRarity();
-
-  const checkLuaLocals = () => {
-    if (jokerName == null || jokerEffect == null || jokerCost == null) {
-      //do nothing
-    } else {
-      const luaJokerNameLower = jokerName.toLowerCase();
-      const luaJokerID = luaJokerNameLower.replaceAll(" ", "_");
-      updateLuaLocals(`
-      --All mods made using the center_hook api (https://github.com/nicholassam6425/balatro-mods)
-
-      local mod_id = "${luaJokerID}"
-      local mod_name = "${jokerName}"
-      local mod_version = "1.0"
-      local mod_author = "BuffoonBuilder"`);
-    }
-  };
-  checkLuaLocals();
-
-  const checkLuaTableInsert = () => {
-    if (jokerName == null || jokerEffect == null || jokerCost == null) {
-      //do nothing
-    } else {
-      const luaJokerNameLower = jokerName.toLowerCase();
-      const luaJokerID = luaJokerNameLower.replaceAll(" ", "_");
-      const luaJokerTableID = "j_" + luaJokerID;
-      updateLuaTableInsert(`
-      table.insert(mods, {
-        mod_id = mod_id,
-        name = mod_name,
-        version = mod_version,
-        author = mod_author,
-        enabled = true,
-        on_enable = function()
-            centerHook.addJoker(self, "${luaJokerTableID}", -- id
-            '${jokerName}', -- name
-            jokerEffect, -- effect function
-            nil, -- order
-            true, -- unlocked
-            true, -- discovered
-            ${jokerCost}, -- cost
-            {
-                x = 0,
-                y = 0
-            }, -- sprite position
-            nil, -- internal effect description
-            {
-                extra = {
-                    x_mult = 2
-                }
-            }, -- config
-            {"${jokerEffect}"}, -- description text
-            ${jokerRarity}, -- rarity
-            true, -- blueprint compatibility
-            true, -- eternal compatibility
-            nil, -- exclusion pool flag
-            nil, -- inclusion pool flag
-            nil, -- unlock condition
-            true, -- collection alert
-            "pack", -- sprite path
-            ("${luaJokerID}"), -- sprite name
-            {
-                px = 71,
-                py = 95
-            } -- sprite size
-            )
-        end,
-        on_disable = function()
-            centerHook.removeJoker(self, "${luaJokerTableID}")
-        end
-    })`);
-    }
-  };
-  checkLuaTableInsert();
 
   return (
     <div

@@ -3,7 +3,7 @@ import React from "react";
 import BuildingList from "./BuildingList";
 import { ItemTypes } from "./Constants";
 
-const BuildingSpace = ({ updateLuaJokerEffect, jokerName }) => {
+const BuildingSpace = ({ updateLuaJokerEffect, luaJokerEffect, jokerName }) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
   if card.ability.name == "${jokerName}" `;
   const jokerEffectEnd = `    
@@ -13,7 +13,9 @@ const BuildingSpace = ({ updateLuaJokerEffect, jokerName }) => {
   let [conditionsLua, setConditionsLua] = React.useState(null);
   let [resultsLua, setResultsLua] = React.useState(null);
 
-  if ((contextLua /= null) && (conditionsLua /= null) && (resultsLua /= null)) {
+  if (contextLua == null && conditionsLua == null && resultsLua == null) {
+    //do nothing
+  } else {
     updateLuaJokerEffect(
       jokerEffectDeclaration +
         contextLua +
@@ -22,13 +24,7 @@ const BuildingSpace = ({ updateLuaJokerEffect, jokerName }) => {
         jokerEffectEnd
     );
   }
-  console.log(
-    jokerEffectDeclaration +
-      contextLua +
-      conditionsLua +
-      resultsLua +
-      jokerEffectEnd
-  );
+  console.log(luaJokerEffect);
 
   return (
     <div className="building-space ">
