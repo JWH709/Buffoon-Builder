@@ -105,3 +105,10 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 - Going to reconfigure the logic blocks to have additional types so that some can be generated with inputs that accept numbers. I'm thinking this may eliminate the need for value blocks all together and also make assigning a value to a block much more intuitive.
 - I need to move the state updaters for the lua downloader out of the preview. It messes with the way they're called when I use the LUA downloader component. As of right now, I can generate all of the lua needed for "Even Keegan" (test joker repo on my github) with the blocks, and I've reconfigured the blocks to accept values now. I should remove the ValueBlock tab (and value blocks all together), and begin styling and stress testing the assembly area before moving on to adding the mod downloader.
+
+
+## June 3rd:
+
+
+- The bug from Saturday was fixed by wrapping the state updates in useEffect. If a component relies on an update effect change to render, it breaks react, so in the future, when sending state updaters super deep, wrap them in useEffect. Always remember that useEffect is for "side effects".
+- Now that I can get a complete LUA file made, I need to figure out the whole wrapping/downloading thing.
