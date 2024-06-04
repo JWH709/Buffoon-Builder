@@ -113,3 +113,9 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 - The bug from Saturday was fixed by wrapping the state updates in useEffect. If a component relies on an update effect change to render, it breaks react, so in the future, when sending state updaters super deep, wrap them in useEffect. Always remember that useEffect is for "side effects".
 - Now that I can get a complete LUA file made, I need to figure out the whole wrapping/downloading thing.
 - I have the downloader set up properly now, but the image is bugged out when downloaded. I think this may have to do with the way I'm accessing it.
+
+
+## June 4th:
+
+
+- Going to spend the day organizing/refactoring my repo. Currently, I've divided everything into several folders, however, I now need to make the distinction between what is and is not a component for a specific section. I've also left main and App on the top level, I feel like that kinda makes sense. Going to do some reading and adjust accordingly.
