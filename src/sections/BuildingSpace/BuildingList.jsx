@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useDrop } from "react-dnd";
-import DroppedBlock from "./BuildingSpaceDroppedBlock";
+import DroppedBlock from "./DroppedBlock";
 
 const BuldingList = ({ blockType, updateLua }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
@@ -14,7 +14,6 @@ const BuldingList = ({ blockType, updateLua }) => {
     },
     collect: () => ({}),
   });
-  //Need to edit this section to create a DroppedBlock when a block is dropped
   return (
     <div ref={drop} className={`building-list-${blockType}`}>
       {droppedItem && (

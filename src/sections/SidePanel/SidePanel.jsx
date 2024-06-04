@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 import "bootstrap/dist/css/bootstrap.min.css"; //This breaks the rows
-import "./main.css";
+import "../../styles/main.css";
 import { useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import BlockTab from "./BlockTab.jsx";
-import valueBlocks from "./blocksValueBlocks";
-import contextBlocks from "./blocksContextBlocks.js";
-import conditionBlocks from "./blocksConditionBlocks.js";
-import resultBlocks from "./blocksResultBlocks.js";
-import { ItemTypes } from "./Constants.jsx";
+import contextBlocks from "../../config/contextBlocks.js";
+import conditionBlocks from "../../config/conditionBlocks.js";
+import resultBlocks from "../../config/resultBlocks.js";
+import ItemTypes from "../../config/ItemTypes.jsx";
 function SidePanel() {
   const [key, setKey] = useState("home");
   return (
@@ -25,9 +24,6 @@ function SidePanel() {
             blockArray={contextBlocks}
             blockType={ItemTypes.CONTEXTBLOCK}
           />
-        </Tab>
-        <Tab eventKey="value" title="Value">
-          <BlockTab blockArray={valueBlocks} blockType={ItemTypes.VALUEBLOCK} />
         </Tab>
         <Tab eventKey="conditions" title="Conditions">
           <BlockTab

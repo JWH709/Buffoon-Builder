@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import "./main.css";
+import "../../styles/main.css";
 import Rarity from "./JokerRarity";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
 import JokerImageUploader from "./JokerImageUploader";
-const JokerDetails = ({
+const JokerInfo = ({
   updateLuaLocals,
   updateLuaTableInsert,
   dataFromName,
@@ -67,4 +67,4 @@ const JokerDetails = ({
   );
 };
 
-export default JokerDetails;
+export default JokerInfo;

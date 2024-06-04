@@ -1,9 +1,9 @@
-import SidePanel from "./SidePanel";
-import BuildingSpace from "./BuildingSpace";
-import JokerDetails from "./JokerDetails";
+import SidePanel from "./sections/SidePanel/SidePanel";
+import BuildingSpace from "./sections/BuildingSpace/BuildingSpace";
+import JokerInfo from "./sections/JokerInfo/JokerInfo";
 import React from "react";
 
-const BuilderWrapper = () => {
+const App = () => {
   const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
   const [luaLocals, setLuaLocals] = React.useState(null);
   const [luaTableInsert, setLuaTableInsert] = React.useState(null);
@@ -24,7 +24,7 @@ const BuilderWrapper = () => {
           tableInsert={luaTableInsert}
           image={image}
         />
-        <JokerDetails
+        <JokerInfo
           updateLuaLocals={setLuaLocals}
           updateLuaTableInsert={setLuaTableInsert}
           dataFromName={dataFromName}
@@ -37,4 +37,4 @@ const BuilderWrapper = () => {
   );
 };
 
-export default BuilderWrapper;
+export default App;

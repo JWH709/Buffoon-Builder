@@ -1,9 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import common from "./assets/rarity/common.png";
-import uncommon from "./assets/rarity/uncommon.png";
-import rare from "./assets/rarity/rare.png";
-import legendary from "./assets/rarity/legendary.png";
+import { IMAGES } from "../../config/assetImports.js";
 
 const Rarity = ({ handler }) => {
   const [rarity, setRarity] = React.useState(1);
@@ -28,13 +25,13 @@ const Rarity = ({ handler }) => {
   const getRarityImg = () => {
     switch (rarity) {
       case 1:
-        return common;
+        return IMAGES.common;
       case 2:
-        return uncommon;
+        return IMAGES.uncommon;
       case 3:
-        return rare;
+        return IMAGES.rare;
       case 4:
-        return legendary;
+        return IMAGES.legendary;
     }
   };
   const getRarityText = () => {

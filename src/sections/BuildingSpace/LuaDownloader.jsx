@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import JSZip from "jszip";
-import center_hook from "./assets/center_hook.jsx";
+import center_hook from "../../assets/center_hook.jsx";
 import { saveAs } from "file-saver";
 
 const LuaDownloader = ({

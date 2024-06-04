@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import BuildingList from "./BuildingList";
-import { ItemTypes } from "./Constants";
+import ItemTypes from "../../config/ItemTypes";
 import LuaDownloader from "./LuaDownloader";
 
 const BuildingSpace = ({

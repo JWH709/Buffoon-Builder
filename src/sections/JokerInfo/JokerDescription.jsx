@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-import inputRight from "./assets/input_right.png";
-import inputLeft from "./assets/input_left.png";
+import { IMAGES } from "../../config/assetImports.js";
 const JokerDescription = ({ inputTitle, inputType, handler }) => {
   const sendDataToPreview = () => {
     const data = event.target.value;
@@ -15,7 +14,7 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
           <div
             className="input-left"
             style={{
-              backgroundImage: `url(${inputLeft})`,
+              backgroundImage: `url(${IMAGES.inputLeft})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -34,7 +33,7 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
           <div
             className="input-right"
             style={{
-              backgroundImage: `url(${inputRight})`,
+              backgroundImage: `url(${IMAGES.inputRight})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

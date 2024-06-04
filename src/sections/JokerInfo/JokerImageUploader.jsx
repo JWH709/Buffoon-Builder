@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import DroppedArt from "./DroppedArt";
+import DroppedArt from "./UploadedArt";
 
 const JokerImageUploader = ({
   dataFromName,
@@ -18,7 +18,6 @@ const JokerImageUploader = ({
       setImage(savedImage);
     }
   }, [image, setImage]);
-  console.log(image);
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
       const luaJokerNameLower = dataFromName.toLowerCase();

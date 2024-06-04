@@ -1,10 +1,10 @@
-import "./main.css";
-import logo from "./assets/logo.png";
+import "../../styles/main.css";
+import { IMAGES } from "../../config/assetImports.js";
 
 const Navbar = () => {
   return (
     <div className="navbar-div">
-      <img src={logo} alt="" />
+      <img src={IMAGES.logo} alt="" />
       <h1 className="title">Buffoon Builder</h1>
     </div>
   );
