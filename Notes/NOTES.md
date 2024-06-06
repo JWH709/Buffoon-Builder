@@ -10,9 +10,11 @@
 ## Things to do
 
 
-- add JSZip for creating a .zip for the generated joker card
-- re-work building space area to only accept certain blocks in certain places (I think this won't be as bad as I'm thinking it will be)
-- local image support
+- I like the idea of putting the image hover effect over different elements so that - when hovered - they give explanations on what their functions are.
+- Get more art assets from balatro
+- refine the input elements for each section to accept only certain amounts or types of characters.
+- Add a handler for the downloader that will reject an attempt to download a joker with incomplete data.
+- media queries
 
 
 ## General Notes
@@ -119,3 +121,9 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 
 - Going to spend the day organizing/refactoring my repo. Currently, I've divided everything into several folders, however, I now need to make the distinction between what is and is not a component for a specific section. I've also left main and App on the top level, I feel like that kinda makes sense. Going to do some reading and adjust accordingly.
+
+
+## June 6th:
+
+- Going to start focusing on styling. I should make assets for each section's background. I've gotten half decent at editing the containers from balatro itself, so this shouldn't be a huge feat or anything. So far, I've managed to convert a lot of the original px values to %, which I personally prefer, and will also cause less of a headache when it comes time for media queries. I need to move onto doing this for both side panels.
+- I need to style the blocks to be flexible when their titles are larger than they are small. I also need to finish editing the inputs on the result blocks
