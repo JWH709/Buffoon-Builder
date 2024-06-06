@@ -5,6 +5,17 @@
   src: local('m6x11plus'), url('./assets/m6x11plus.ttf') format('truetype');
 }
 /* MAIN */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  height: 100%;
+  width: 100%;
+}
 
 body {
   background-image: url('../assets/background.jpeg');
@@ -12,19 +23,26 @@ body {
   background-size: cover;
   background-position: center;
   font-family: 'balatro';
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.main-flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
 .builder-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 70%;
+  box-sizing: border-box;
 }
 /* NAVBAR */
 
@@ -43,50 +61,67 @@ body {
 /* BUILDING SPACE */
 
 .building-space {
-  height: 800px;
-  width: 1200px;
-  background-color: rgb(70, 70, 70);
-  border-radius: 25px;
-  margin: 30px;
+  position: relative;
+  margin-left: 2%;
+  margin-right: 2%;
   font-family: 'balatro';
   color: aliceblue;
+  height: 100%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/builder_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 .building-space-row {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  z-index: 1;
 }
 
 .building-list-context-block {
   border: 2px solid #3700ff;
-  width: 300px;
-  height: 300px;
+  width: 45%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1%
 }
 .building-list-condition-block {
   border: 2px solid #ff0000;
-  width: 300px;
-  height: 300px;
+  width: 45%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1%
 }
 .building-list-results-block {
   border: 2px solid #00ff00;
-  width: 300px;
-  height: 300px;
+  width: 45%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1%
 }
 .downloader-button-wrapper {
   border: 2px solid yellow;
-  width: 300px;
-  height: 300px;
+  width: 45%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1%
 }
 .downloader-button {
   width: 150px;
@@ -102,15 +137,15 @@ body {
   background-color: lightblue;
 }
 
-/* CENTER TAB */
+/* JOKER INFO */
 
 .joker-details-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 800px;
-  width: 800px;
+  height: 100%;
+  width: 33%;
   border-radius: 25px;
   border: solid 5px rgb(46,58,60);
   background-color: rgb(27,38,41);
@@ -301,11 +336,10 @@ body {
 .tab-container {
   font-family: 'balatro';
   color: aliceblue;
-  height: 40%;
-  width: 50%;
+  height: 100%;
+  width: 33%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .block-container {
@@ -313,6 +347,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  height: 100%;
 }
 .logic-block-title {
   margin: 4px;
@@ -404,14 +439,9 @@ body {
 }
 
 .tab-content {
-  max-height: 700px;
-  overflow: scroll;
+  /* overflow: scroll; */
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
-  /* background-color: rgb(70, 70, 70);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  opacity: 0.5; */ 
-  /* I need to find a way to make sure this doesn't apply to the content inside the div */
+  height: 100%;
 }

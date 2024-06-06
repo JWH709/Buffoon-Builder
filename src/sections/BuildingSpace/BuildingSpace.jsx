@@ -34,7 +34,7 @@ const BuildingSpace = ({
   }
 
   return (
-    <div className="building-space ">
+    <div className="building-space">
       <div className="building-space-row">
         <BuildingList
           updateLua={setContextLua}
