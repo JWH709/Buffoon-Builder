@@ -9,6 +9,9 @@ import legendary from '../assets/rarity/legendary.png';
 import rare from '../assets/rarity/rare.png';
 import uncommon from '../assets/rarity/uncommon.png';
 import builderBackground from '../assets/builder_background.png'
+import contextListBackground from '../assets/context_list_background.png'
+import conditionListBackground from '../assets/condition_list_background.png'
+import resultsListBackground from '../assets/results_list_background.png'
 
 export const IMAGES = {
     inputLeft,
@@ -21,5 +24,8 @@ export const IMAGES = {
     legendary,
     rare,
     uncommon,
-    builderBackground
+    builderBackground,
+    contextListBackground,
+    conditionListBackground,
+    resultsListBackground
 };

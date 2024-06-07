@@ -87,32 +87,17 @@ html, body {
   z-index: 1;
 }
 
-.building-list-context-block {
-  border: 2px solid #3700ff;
+.building-list {
   width: 45%;
   height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1%
-}
-.building-list-condition-block {
-  border: 2px solid #ff0000;
-  width: 45%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1%
-}
-.building-list-results-block {
-  border: 2px solid #00ff00;
-  width: 45%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1%
+  margin: 1%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 .downloader-button-wrapper {
   border: 2px solid yellow;

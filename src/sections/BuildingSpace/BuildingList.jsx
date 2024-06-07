@@ -2,6 +2,7 @@
 import React from "react";
 import { useDrop } from "react-dnd";
 import DroppedBlock from "./DroppedBlock";
+import { IMAGES } from "../../config/assetImports";
 
 const BuldingList = ({ blockType, updateLua }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
@@ -14,8 +15,28 @@ const BuldingList = ({ blockType, updateLua }) => {
     },
     collect: () => ({}),
   });
+
+  let backgroundImage = null;
+
+  switch (blockType) {
+    case "context-block":
+      backgroundImage = IMAGES.contextListBackground;
+      break;
+    case "condition-block":
+      backgroundImage = IMAGES.conditionListBackground;
+      break;
+    case "results-block":
+      backgroundImage = IMAGES.resultsListBackground;
+      break;
+  }
   return (
-    <div ref={drop} className={`building-list-${blockType}`}>
+    <div
+      ref={drop}
+      className={`building-list`}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
       {droppedItem && (
         <div className="dropped-item">
           <DroppedBlock

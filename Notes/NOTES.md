@@ -133,5 +133,8 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 ## June 7th:
 
 
-- The checklist for today is as follows: Add remaining backgrounds for sections, refactor remaining px measurements in CSS to %, start looking for inspiration for some cool CSS stuff. Would be cool to get the visuals from the menu into the background instead of just the static image. Idk how viable that is, it may be stressful on render times & just super difficult in general.
+- The checklist for today is as follows: Add remaining backgrounds for sections, refactor remaining px measurements in CSS to %, start looking for inspiration for some cool CSS stuff. Would be cool to get the visuals from the menu into the background instead of just the static image. Idk how viable that is, it may be stressful on render times & just super difficult in general. Should also continue to refactor and reorganize. Another Idea is to make things kind of float. Would be cool to have a floaty effect on the building lists, some of the JokerInfo stuff, etc
 - Play a game of Balatro (it's been a while) and take notes on what assets you can use for backgrounds/effects.
+- BuildingList:  Use the right hand panel that shows blind info.
+- SidePanelContainer(? might be the name for it):
+- Navbar stuff:
