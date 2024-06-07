@@ -125,5 +125,13 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 ## June 6th:
 
+
 - Going to start focusing on styling. I should make assets for each section's background. I've gotten half decent at editing the containers from balatro itself, so this shouldn't be a huge feat or anything. So far, I've managed to convert a lot of the original px values to %, which I personally prefer, and will also cause less of a headache when it comes time for media queries. I need to move onto doing this for both side panels.
 - I need to style the blocks to be flexible when their titles are larger than they are small. I also need to finish editing the inputs on the result blocks
+
+
+## June 7th:
+
+
+- The checklist for today is as follows: Add remaining backgrounds for sections, refactor remaining px measurements in CSS to %, start looking for inspiration for some cool CSS stuff. Would be cool to get the visuals from the menu into the background instead of just the static image. Idk how viable that is, it may be stressful on render times & just super difficult in general.
+- Play a game of Balatro (it's been a while) and take notes on what assets you can use for backgrounds/effects.
