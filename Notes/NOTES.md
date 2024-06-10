@@ -138,3 +138,11 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 - BuildingList:  Use the right hand panel that shows blind info.
 - SidePanelContainer(? might be the name for it):
 - Navbar stuff:
+
+
+## June 10th
+
+
+- Need to fix the backgrounds for building list today as well as add backgrounds for SidePanel & proper background for JokerInfo.
+- Look into spring
+- added backgrounds, now I need to make edits to the CSS to the css to make sure everything fits into place

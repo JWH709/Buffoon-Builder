@@ -42,26 +42,30 @@ const JokerInfo = ({
             />
           </div>
         </div>
-        <JokerInput
-          inputTitle={"Joker Name:"}
-          inputType={"input-joker-name"}
-          handler={handleDataFromName}
-          length={18}
-          type={"text"}
-        />
-        <Rarity handler={handleDataFromRarity} />
-        <JokerDescription
-          inputTitle={"Joker Effect:"}
-          inputType={"input-joker-effect"}
-          handler={handleDataFromDescription}
-        />
-        <JokerInput
-          inputTitle={"Joker Cost:"}
-          inputType={"input-joker-cost"}
-          handler={handleDataFromCost}
-          length={3}
-          type={"number"}
-        />
+        <div className="container-name-rarity">
+          <JokerInput
+            inputTitle={"Joker Name:"}
+            inputType={"input-joker-name"}
+            handler={handleDataFromName}
+            length={18}
+            type={"text"}
+          />
+          <Rarity handler={handleDataFromRarity} />
+        </div>
+        <div className="container-effect-cost">
+          <JokerDescription
+            inputTitle={"Joker Effect:"}
+            inputType={"input-joker-effect"}
+            handler={handleDataFromDescription}
+          />
+          <JokerInput
+            inputTitle={"Joker Cost:"}
+            inputType={"input-joker-cost"}
+            handler={handleDataFromCost}
+            length={3}
+            type={"number"}
+          />
+        </div>
       </div>
     </>
   );

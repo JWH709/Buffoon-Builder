@@ -71,6 +71,7 @@ html, body {
   display: flex;
   flex-direction: column;
   background-image: url('../assets/builder_background.png');
+  image-rendering: pixelated;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -97,6 +98,7 @@ html, body {
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
+  image-rendering: pixelated;
   overflow: hidden;
 }
 .downloader-button-wrapper {
@@ -131,9 +133,28 @@ html, body {
   align-items: center;
   height: 100%;
   width: 33%;
-  border-radius: 25px;
-  border: solid 5px rgb(46,58,60);
-  background-color: rgb(27,38,41);
+  background-image: url('../assets/joker_info_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
+}
+.container-name-rarity {
+  background-image: url('../assets/name_rarity_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
+}
+.container-effect-cost {
+  background-image: url('../assets/effect_cost_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
 }
 
 .joker-details-input {
@@ -325,6 +346,12 @@ html, body {
   width: 33%;
   display: flex;
   flex-direction: column;
+  background-image: url('../assets/side_panel_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
 }
 
 .block-container {
