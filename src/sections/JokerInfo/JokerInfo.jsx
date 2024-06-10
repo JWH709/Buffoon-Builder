@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import "../../styles/main.css";
-import Rarity from "./JokerRarity";
+import JokerRarity from "./JokerRarity";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
 import JokerImageUploader from "./JokerImageUploader";
@@ -28,43 +28,94 @@ const JokerInfo = ({
   return (
     <>
       <div className="joker-details-container">
-        <div className="art-asset-container">
-          <div className="dropped-art-container">
-            <JokerImageUploader
-              dataFromName={dataFromName}
-              dataFromCost={dataFromCost}
-              dataFromDescription={dataFromDescription}
-              dataFromRarity={dataFromRarity}
-              updateLuaLocals={updateLuaLocals}
-              updateLuaTableInsert={updateLuaTableInsert}
-              image={image}
-              setImage={setImage}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "95%",
+            justifyContent: "space-evenly",
+            margin: "2%",
+          }}
+        >
+          <div
+            style={{
+              width: "50%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div className="art-asset-container">
+              <div className="dropped-art-container">
+                <JokerImageUploader
+                  dataFromName={dataFromName}
+                  dataFromCost={dataFromCost}
+                  dataFromDescription={dataFromDescription}
+                  dataFromRarity={dataFromRarity}
+                  updateLuaLocals={updateLuaLocals}
+                  updateLuaTableInsert={updateLuaTableInsert}
+                  image={image}
+                  setImage={setImage}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="container-effect">
+            <h2
+              style={{
+                fontFamily: "balatro",
+                color: "aliceblue",
+              }}
+            >
+              Joker Effect:
+            </h2>
+            <JokerDescription
+              inputType={"input-joker-effect"}
+              handler={handleDataFromDescription}
             />
           </div>
         </div>
-        <div className="container-name-rarity">
-          <JokerInput
-            inputTitle={"Joker Name:"}
-            inputType={"input-joker-name"}
-            handler={handleDataFromName}
-            length={18}
-            type={"text"}
-          />
-          <Rarity handler={handleDataFromRarity} />
-        </div>
-        <div className="container-effect-cost">
-          <JokerDescription
-            inputTitle={"Joker Effect:"}
-            inputType={"input-joker-effect"}
-            handler={handleDataFromDescription}
-          />
-          <JokerInput
-            inputTitle={"Joker Cost:"}
-            inputType={"input-joker-cost"}
-            handler={handleDataFromCost}
-            length={3}
-            type={"number"}
-          />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "95%",
+            justifyContent: "center",
+            margin: "2%",
+          }}
+        >
+          <div className="container-name-rarity">
+            <h2
+              style={{
+                fontFamily: "balatro",
+                color: "aliceblue",
+              }}
+            >
+              Joker Name:
+            </h2>
+            <JokerInput
+              inputType={"input-joker-name"}
+              handler={handleDataFromName}
+              length={18}
+              type={"text"}
+            />
+            <JokerRarity handler={handleDataFromRarity} />
+          </div>
+          <div className="container-cost">
+            <h2
+              style={{
+                fontFamily: "balatro",
+                color: "aliceblue",
+              }}
+            >
+              Joker Cost:
+            </h2>
+            <JokerInput
+              inputType={"input-joker-cost"}
+              handler={handleDataFromCost}
+              length={3}
+              type={"number"}
+            />
+          </div>
         </div>
       </div>
     </>

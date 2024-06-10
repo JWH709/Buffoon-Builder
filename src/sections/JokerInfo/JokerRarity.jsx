@@ -2,7 +2,7 @@
 import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
 
-const Rarity = ({ handler }) => {
+const JokerRarity = ({ handler }) => {
   const [rarity, setRarity] = React.useState(1);
   const handleMinusClick = () => {
     if (rarity == 1) {
@@ -56,7 +56,7 @@ const Rarity = ({ handler }) => {
           className="rarity-icon"
           style={{
             backgroundImage: `url(${getRarityImg()})`,
-            backgroundSize: "cover",
+            backgroundSize: "100% 100%",
             imageRendering: "pixelated",
             backgroundPosition: "center",
             width: "230px",
@@ -73,4 +73,4 @@ const Rarity = ({ handler }) => {
   );
 };
 
-export default Rarity;
+export default JokerRarity;

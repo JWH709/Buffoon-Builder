@@ -147,14 +147,35 @@ html, body {
   background-repeat: no-repeat;
   image-rendering: pixelated;
   overflow: hidden;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-.container-effect-cost {
+.container-cost {
+  background-image: url('../assets/context_list_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-effect {
   background-image: url('../assets/effect_cost_background.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   image-rendering: pixelated;
   overflow: hidden;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .joker-details-input {
@@ -189,6 +210,7 @@ html, body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 80%;
 }
 .rarity-buttons {
   display: flex;
