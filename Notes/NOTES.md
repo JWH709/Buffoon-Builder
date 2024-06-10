@@ -134,15 +134,8 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 
 - The checklist for today is as follows: Add remaining backgrounds for sections, refactor remaining px measurements in CSS to %, start looking for inspiration for some cool CSS stuff. Would be cool to get the visuals from the menu into the background instead of just the static image. Idk how viable that is, it may be stressful on render times & just super difficult in general. Should also continue to refactor and reorganize. Another Idea is to make things kind of float. Would be cool to have a floaty effect on the building lists, some of the JokerInfo stuff, etc
-- Play a game of Balatro (it's been a while) and take notes on what assets you can use for backgrounds/effects.
-- BuildingList:  Use the right hand panel that shows blind info.
-- SidePanelContainer(? might be the name for it):
-- Navbar stuff:
-
 
 ## June 10th
 
 
-- Need to fix the backgrounds for building list today as well as add backgrounds for SidePanel & proper background for JokerInfo.
-- Look into spring
-- added backgrounds, now I need to make edits to the CSS to the css to make sure everything fits into place
+- Main focus of today was to add the last of the background assets and correct some CSS stuff. Right now I'm feeling pretty good about all of that, however, I'm questioning the layout choices now. I'd think it would be best to take a look at some similarly themed websites (the hand calculator and other more pixel art focused pages) to draw some inspiration from. It's also worth looking into spring to add some of the hover effects from the game.
