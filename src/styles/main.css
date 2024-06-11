@@ -360,7 +360,35 @@ html, body {
   line-height: 24px;
 }
 /* SIDE PANEL */
+#controlled-tab-tab-home {
+  background-color: rgb(255,152,0);
+  color: aliceblue;
+  border: solid 1px rgb(27, 38, 41)
+}
+#controlled-tab-tab-conditions {
+  background-color: rgb(53,108,85);
+  color: aliceblue;
+  border: solid 1px rgb(27, 38, 41)
+}
+#controlled-tab-tab-results {
+  background-color: rgb(255, 76, 76);
+  color: aliceblue;
+  border: solid 1px rgb(27, 38, 41)
+}
+.nav-link.active#controlled-tab-tab-home {
+  background-color: rgb(156, 94, 0); 
+  color: white; 
+}
 
+.nav-link.active#controlled-tab-tab-conditions {
+  background-color: rgb(30, 63, 49); 
+  color: white; 
+}
+
+.nav-link.active#controlled-tab-tab-results {
+  background-color: #ff0000; 
+  color: white; 
+}
 .tab-container {
   font-family: 'balatro';
   color: aliceblue;
@@ -375,13 +403,19 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
 }
-
+#controlled-tab {
+  margin-bottom: 0rem !important;
+  border: solid 1px rgb(27, 38, 41)
+}
 .block-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: solid 1px rgb(27, 38, 41);
 }
 .logic-block-title {
   margin: 4px;
