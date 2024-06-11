@@ -139,3 +139,9 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 
 - Main focus of today was to add the last of the background assets and correct some CSS stuff. Right now I'm feeling pretty good about all of that, however, I'm questioning the layout choices now. I'd think it would be best to take a look at some similarly themed websites (the hand calculator and other more pixel art focused pages) to draw some inspiration from. It's also worth looking into spring to add some of the hover effects from the game.
+
+
+## June 11th
+
+
+- Fixed up some of the last remaining CSS conflicts and pixel errors in the assets. 
