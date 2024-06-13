@@ -145,3 +145,13 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 
 - Fixed up some of the last remaining CSS conflicts and pixel errors in the assets. 
+- Add child classes to logic blocks to clean up css
+
+
+
+## June 13th
+
+
+- Fixed minor CSS bug involving font.
+- Added a screen shake effect, however, I now need to look into adding interpolation to this effect using react spring. The margins of the main three tabs should also be looked into.
+- Should look into adding depth to the page. General depth can be added to individual items, but it would be cool to replace the page bg with an animation, and provide shadows to all of the main elements to create a depth effect
