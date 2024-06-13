@@ -2,7 +2,7 @@
   font-family: 'balatro';
   font-style: normal;
   font-weight: normal;
-  src: local('m6x11plus'), url('./assets/m6x11plus.ttf') format('truetype');
+  src: local('m6x11plus'), url('../assets/m6x11plus.ttf') format('truetype');
 }
 /* MAIN */
 *,
@@ -15,6 +15,7 @@
 #root {
   height: 100%;
   width: 100%;
+  position: fixed;
 }
 
 body {
