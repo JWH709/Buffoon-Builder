@@ -146,7 +146,15 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 
 - Fixed up some of the last remaining CSS conflicts and pixel errors in the assets. 
 - Add child classes to logic blocks to clean up css
+TASKS FOR THE WEEK:
 
+- Add drop shadows to boxes
+- Add hover effect to reduce color shade on hover
+- Add Move to the root element on mouse move
+- Add titles to the center blocks
+- Add remove on the blocks
+- CSS Crt Filter on top
+- Write down 3-4 you notice (balatro stuff)
 
 
 ## June 13th
@@ -155,3 +163,10 @@ npm run dev won't run, and it wants me to re-install all dependencies. Gonna do 
 - Fixed minor CSS bug involving font.
 - Added a screen shake effect, however, I now need to look into adding interpolation to this effect using react spring. The margins of the main three tabs should also be looked into.
 - Should look into adding depth to the page. General depth can be added to individual items, but it would be cool to replace the page bg with an animation, and provide shadows to all of the main elements to create a depth effect
+
+
+## June 14th
+
+
+- Started by working on the screen shake effect by implimenting spring, however, I can't seem to find my way around it quite yet. I have two theories, one is that I'm not using the animated.div component, which is what's preventing the animation error. I think the only way to fix this is to basically convert app to inculde all of the stuff from the ScreenShake component and return it in an animated.div. The issue with this is mostly CSS based, and I think after changing a few things I could manage to get everything working as intended. The second theory is that something in the useEffects to set up the inital screen shake is interfering in how useSpring is working. I think I can troubleshoot this mostly with console.logs, but what I'm intersted in most is how the page doesn't break at all with the two (potentially) conflicting issues. Anyways, I have an extra theory, which is that I'm dumb, and that the answer is obvious and will come to me after I move on for a bit, so I'm going to commit what I have and come back later.
+- Added basic CRT effect to entire page, however, as it stands now, it's too subtle. Going to look into spacing out the lines a little bit, and add an animation of a slightly bigger line passing through every so often.

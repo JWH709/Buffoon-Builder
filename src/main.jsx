@@ -9,10 +9,18 @@ import ScreenShake from "./ScreenShake.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Navbar />
-    <DndProvider backend={HTML5Backend}>
-      <App />
-    </DndProvider>
-    <ScreenShake />
+    <div
+      className="crt-filter"
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <Navbar />
+      <DndProvider backend={HTML5Backend}>
+        <App />
+      </DndProvider>
+      <ScreenShake />
+    </div>
   </React.StrictMode>
 );
