@@ -12,6 +12,7 @@
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
     "@jdion/tilt-react": "^1.0.0",
+    "@react-spring/web": "^9.7.3",
     "bootstrap": "^5.3.3",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
