@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { IMAGES } from "../../config/assetImports";
 
 const CrtToggle = () => {
   const [toggleButton, setToggleButton] = React.useState(true);
@@ -64,26 +63,10 @@ const CrtToggle = () => {
   }, [toggleButton]);
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${IMAGES.rare})`,
-        width: "200px",
-        height: "50px",
-        imageRendering: "pixelated",
-        backgroundSize: "100% 100%",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "aliceblue",
-        fontFamily: "balatro",
-      }}
-      onClick={() => setToggleButton(!toggleButton)}
-      className="crt-toggle"
-    >
-      <h2>Toggle CRT</h2>
-    </div>
+    <label className="switch">
+      <input type="checkbox" onClick={() => setToggleButton(!toggleButton)} />
+      <span className="slider"></span>
+    </label>
   );
 };
 

@@ -170,3 +170,15 @@ TASKS FOR THE WEEK:
 
 - Started by working on the screen shake effect by implementing spring, however, I can't seem to find my way around it quite yet. I have two theories, one is that I'm not using the animated.div component, which is what's preventing the animation error. I think the only way to fix this is to basically convert the app to include all of the stuff from the ScreenShake component and return it in an animated.div. The issue with this is mostly CSS based, and I think after changing a few things I could manage to get everything working as intended. The second theory is that something in the useEffects to set up the initial screen shake is interfering in how useSpring is working. I think I can troubleshoot this mostly with console.logs, but what I'm interested in most is how the page doesn't break at all with the two (potentially) conflicting issues. Anyways, I have an extra theory, which is that I'm dumb, and that the answer is obvious and will come to me after I move on for a bit, so I'm going to commit what I have and come back later.
 - Added basic CRT effect to the entire page, however, as it stands now, it's too subtle. Going to look into spacing out the lines a little bit, and add an animation of a slightly bigger line passing through every so often.
+
+
+## June 17th
+
+
+- Need to add styles to the toggle button, would be cool to add "channel off air" color scheme to it, but I at least need to add an indent to it when while it's active.
+- Figure out the spring interpolation for the screen shake. This should be the last task fro the day, it's super annoying and I don't want to waste three hours on it.
+- BOXES: fix the styling on the boxes, add drop shadows, add a hover effect to them, fix the inputs on blocks with inputs.
+- LISTS: Add titles to the lists.
+- EXTRA STUFF: passive shaking to any element that isn't strictly background flare, try to look into making the background animated, remove some of the awkward looking aspects of the joker input stuff, add restrictions to each input.
+  
+- SLIDER BUTTON: Added styles to the slider button to make it more asthetically inline with the rest of the page, however, before I'm 100% finished I should change in white dot to take up 100% height, and start on the far left, exactly alined on the x.
