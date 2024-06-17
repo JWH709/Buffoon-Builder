@@ -17,38 +17,61 @@ const BuldingList = ({ blockType, updateLua }) => {
   });
 
   let backgroundImage = null;
-
+  let title = null;
   switch (blockType) {
     case "context-block":
       backgroundImage = IMAGES.contextListBackground;
+      title = "Context Blocks";
       break;
     case "condition-block":
       backgroundImage = IMAGES.conditionListBackground;
+      title = "Condition Blocks";
       break;
     case "results-block":
+      title = "Result Blocks";
       backgroundImage = IMAGES.resultsListBackground;
       break;
   }
   return (
     <div
-      ref={drop}
       className={`building-list`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {droppedItem && (
-        <DroppedBlock
-          styles={droppedItem.styles}
-          title={droppedItem.title}
-          lua={droppedItem.lua}
-          id={droppedItem.id}
-          additionalInput={droppedItem.additionalInput}
-          inputType={droppedItem.inputType}
-          blockType={blockType}
-          updateLua={updateLua}
-        />
-      )}
+      <h2
+        style={{
+          marginBottom: "12%",
+        }}
+      >
+        {title}
+      </h2>
+      <div
+        ref={drop}
+        style={{
+          height: "66%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {droppedItem && (
+          <DroppedBlock
+            styles={droppedItem.styles}
+            title={droppedItem.title}
+            lua={droppedItem.lua}
+            id={droppedItem.id}
+            additionalInput={droppedItem.additionalInput}
+            inputType={droppedItem.inputType}
+            blockType={blockType}
+            updateLua={updateLua}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -30,7 +30,10 @@ const DroppedBlock = ({
   end`);
     }
   }, [blockType, lua, inputUpdate, updateLua]);
-
+  let blockHeight = "50px";
+  if (title.length > 15) {
+    blockHeight = "100px";
+  }
   return (
     <div
       className="logic-block"
@@ -38,6 +41,8 @@ const DroppedBlock = ({
       style={{
         backgroundColor: styles[0],
         textShadow: styles[1],
+        height: blockHeight,
+        padding: "5px",
       }}
     >
       <h2>{title}</h2>
