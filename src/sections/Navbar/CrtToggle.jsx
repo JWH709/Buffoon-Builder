@@ -60,6 +60,7 @@ const CrtToggle = () => {
         document.body.removeChild(afterElement);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleButton]);
 
   return (

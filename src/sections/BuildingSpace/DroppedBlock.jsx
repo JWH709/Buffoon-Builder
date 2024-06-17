@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import LogicBlockInput from "./LogicBlockInput";
 
 const DroppedBlock = ({
   styles,
@@ -7,13 +8,11 @@ const DroppedBlock = ({
   lua,
   id,
   additionalInput,
+  inputType,
   blockType,
   updateLua,
 }) => {
-  const [inputValue, setInputValue] = React.useState(null);
-  const handleInputUpdate = (event) => {
-    setInputValue(lua + event.target.value);
-  };
+  const [inputUpdate, setInputUpdate] = React.useState(null);
 
   React.useEffect(() => {
     switch (blockType) {
@@ -25,23 +24,27 @@ const DroppedBlock = ({
         break;
       case "results-block":
         updateLua(` then return {
-          ${inputValue},
+          ${lua + inputUpdate},
           card = card
       }
   end`);
     }
-  }, [blockType, lua, inputValue, updateLua]);
+  }, [blockType, lua, inputUpdate, updateLua]);
 
   return (
-    <div className={styles} key={id}>
+    <div
+      className="logic-block"
+      key={id}
+      style={{
+        backgroundColor: styles[0],
+        textShadow: styles[1],
+      }}
+    >
       <h2>{title}</h2>
       {additionalInput === "number" && (
-        <input
-          className="logic-block-input"
-          type="number"
-          maxLength="2"
-          placeholder="0"
-          onChange={handleInputUpdate}
+        <LogicBlockInput
+          setInputUpdate={setInputUpdate}
+          inputType={inputType}
         />
       )}
     </div>

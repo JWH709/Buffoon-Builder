@@ -3,25 +3,28 @@ const conditionBlocks = [
         title: "Scoring Card is Less Than/Equal To",
         id: "cd-1",
         LUA: "context.other_card:get_id() <= ",
-        styles: "green-block",
+        styles: ['rgb(53,108,85)','2px 2px rgb(45,95,74)'],
         additionalInput: 'none',
-        compatibilities: []
+        compatibilities: [],
+        inputType: 'none'
     },
     {
         title: "Scoring Card is Greater Than/Equal To",
         id: "cd-2",
         LUA: "context.other_card:get_id() >= ",
-        styles: "green-block",
+        styles: ['rgb(53,108,85)','2px 2px rgb(45,95,74)'],
         additionalInput: 'none',
-        compatibilities: []
+        compatibilities: [],
+        inputType: 'none'
     },
     {
         title: "Scoring Card is Divisible by 2",
         id: "cd-3",
         LUA: "context.other_card:get_id() <= 10 and context.other_card:get_id() >= 0 and context.other_card:get_id() % 2 == 0",
-        styles: "green-block",
+        styles: ['rgb(53,108,85)','2px 2px rgb(45,95,74)'],
         additionalInput: 'none',
-        compatibilities: ""
+        compatibilities: "",
+        inputType: 'none'
     },
   ];
   

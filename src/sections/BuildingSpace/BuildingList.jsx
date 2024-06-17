@@ -38,17 +38,16 @@ const BuldingList = ({ blockType, updateLua }) => {
       }}
     >
       {droppedItem && (
-        <div className="dropped-item">
-          <DroppedBlock
-            styles={droppedItem.styles}
-            title={droppedItem.title}
-            lua={droppedItem.lua}
-            id={droppedItem.id}
-            additionalInput={droppedItem.additionalInput}
-            blockType={blockType}
-            updateLua={updateLua}
-          />
-        </div>
+        <DroppedBlock
+          styles={droppedItem.styles}
+          title={droppedItem.title}
+          lua={droppedItem.lua}
+          id={droppedItem.id}
+          additionalInput={droppedItem.additionalInput}
+          inputType={droppedItem.inputType}
+          blockType={blockType}
+          updateLua={updateLua}
+        />
       )}
     </div>
   );

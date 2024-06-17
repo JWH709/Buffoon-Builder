@@ -4,7 +4,9 @@
   font-weight: normal;
   src: local('m6x11plus'), url('../assets/m6x11plus.ttf') format('truetype');
 }
+
 /* MAIN */
+
 *,
 *::before,
 *::after {
@@ -12,12 +14,15 @@
   margin: 0;
   padding: 0;
 }
+
 #root {
   height: 100%;
   width: 100%;
   position: fixed;
 }
+
 /* crt effect */
+
 @keyframes flicker {
   0% {
   opacity: 0.27861;
@@ -95,6 +100,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -111,6 +117,7 @@ html, body {
   height: 70%;
   box-sizing: border-box;
 }
+
 /* NAVBAR */
 
 .title {
@@ -124,6 +131,7 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
 .switch {
   font-size: 17px;
   position: relative;
@@ -185,6 +193,7 @@ html, body {
 .switch input:checked + .slider:before {
   transform: translateX(1.5em);
 }
+
 /* BUILDING SPACE */
 
 .building-space {
@@ -204,6 +213,7 @@ html, body {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
 .building-space-row {
   display: flex;
   flex-direction: row;
@@ -228,6 +238,7 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
 }
+
 .downloader-button-wrapper {
   border: 2px solid yellow;
   width: 45%;
@@ -237,6 +248,7 @@ html, body {
   justify-content: center;
   margin: 1%
 }
+
 .downloader-button {
   width: 150px;
   height: 50px;
@@ -247,8 +259,24 @@ html, body {
   text-shadow: 2px 2px #ff0000;
   border: #ff0000;
 }
+
 .highlight {
   background-color: lightblue;
+}
+
+.logic-block-input-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 3%;
+  font-family: 'balatro';
+  color: aliceblue;
+  background-color: rgb(18,27,29);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(2px 2px rgb(63, 63, 63));
 }
 
 /* JOKER INFO */
@@ -267,6 +295,7 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
 }
+
 .container-name-rarity {
   background-image: url('../assets/name_rarity_background.png');
   background-size: 100% 100%;
@@ -280,6 +309,7 @@ html, body {
   justify-content: space-around;
   align-items: center;
 }
+
 .container-cost {
   background-image: url('../assets/context_list_background.png');
   background-size: 100% 100%;
@@ -292,6 +322,7 @@ html, body {
   flex-direction: column;
   align-items: center;
 }
+
 .container-effect {
   background-image: url('../assets/effect_cost_background.png');
   background-size: 100% 100%;
@@ -318,11 +349,13 @@ html, body {
   height: 200px;
   border-radius: 5px;
 }
+
 .dropped-art-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .rarity-icon {
   display: flex;
   flex-direction: row;
@@ -332,6 +365,7 @@ html, body {
   color: aliceblue;
   margin: 10px;
 }
+
 .rarity-button-container {
   display: flex;
   flex-direction: row;
@@ -339,6 +373,7 @@ html, body {
   align-items: center;
   width: 80%;
 }
+
 .rarity-buttons {
   display: flex;
   align-items: center;
@@ -352,6 +387,7 @@ html, body {
   text-shadow: 2px 2px #ff0000;
   border: #ff0000;
 }
+
 .joker-cost-container {
   display: flex;
   flex-direction: column;
@@ -364,6 +400,7 @@ html, body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
 .joker-cost-oval {
   display: flex;
   justify-content: center;
@@ -376,6 +413,7 @@ html, body {
   width: 60px;
   border-radius: 20px;
 }
+
 .joker-input-container {
   display: flex;
   justify-content: center;
@@ -384,12 +422,14 @@ html, body {
   font-family: 'balatro';
   color: aliceblue;
 }
+
 .input-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
 .input-joker-name {
   height: 63px;
   width: 192px;
@@ -400,6 +440,7 @@ html, body {
   text-align: center;
   border: none;
 }
+
 .input-joker-cost {
   height: 63px;
   width: 192px;
@@ -410,6 +451,7 @@ html, body {
   text-align: center;
   border: none;
 }
+
 .input-joker-effect {
   height: 100px;
   width: 192px;
@@ -421,6 +463,7 @@ html, body {
   border: none;
   overflow-y:auto;
 }
+
 .joker-preview {
   height: 272px;
   width: 202px;
@@ -429,6 +472,7 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
 .joker-preview-background {
   display: flex;
   flex-direction: column;
@@ -441,6 +485,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .joker-preview-effect-container {
   display: flex;
   justify-content: center;
@@ -454,6 +499,7 @@ html, body {
   color: black;
   text-shadow: 2px 2px rgb(197, 197, 197);
 }
+
 .joker-preview-effect {
   width: 158px;
   height: 63px;
@@ -461,6 +507,7 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
 .joker-preview-rarity-container {
   display: flex;
   justify-content: center;
@@ -469,6 +516,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .button-delete-image {
   display: flex;
   justify-content: center;
@@ -486,22 +534,27 @@ html, body {
   text-align: center;
   line-height: 24px;
 }
+
 /* SIDE PANEL */
+
 #controlled-tab-tab-home {
   background-color: rgb(255,152,0);
   color: aliceblue;
   border: solid 1px rgb(27, 38, 41)
 }
+
 #controlled-tab-tab-conditions {
   background-color: rgb(53,108,85);
   color: aliceblue;
   border: solid 1px rgb(27, 38, 41)
 }
+
 #controlled-tab-tab-results {
   background-color: rgb(255, 76, 76);
   color: aliceblue;
   border: solid 1px rgb(27, 38, 41)
 }
+
 .nav-link.active#controlled-tab-tab-home {
   background-color: rgb(156, 94, 0); 
   color: white; 
@@ -513,9 +566,10 @@ html, body {
 }
 
 .nav-link.active#controlled-tab-tab-results {
-  background-color: #ff0000; 
+  background-color: rgb(134, 34, 28); 
   color: white; 
 }
+
 .tab-container {
   font-family: 'balatro';
   color: aliceblue;
@@ -530,10 +584,12 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
 }
+
 #controlled-tab {
   margin-bottom: 0rem !important;
   border: solid 1px rgb(27, 38, 41)
 }
+
 .block-container {
   display: flex;
   flex-direction: column;
@@ -544,81 +600,36 @@ html, body {
   border-bottom-left-radius: 15px;
   border: solid 1px rgb(27, 38, 41);
 }
+
 .logic-block-title {
   margin: 4px;
 }
-.red-block {
-  background-color: rgb(255, 76, 76);
+
+.logic-block {
   opacity: 1;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 2px 2px #ff0000;
   height: 50px;
   width: fit-content;
   font-family: 'balatro';
   color: aliceblue;
   margin: 10px;
+  filter: drop-shadow(2px 5px rgb(27, 38, 41));
 }
 
-.blue-block {
-  background-color: rgb(0,147,255);
-  opacity: 1;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 2px 2px rgb(0,90,166);
-  height: 50px;
-  width: fit-content;
-  font-family: 'balatro';
-  color: aliceblue;
-  margin: 10px;
+.logic-block-input {
+  height: 60%;
+  width: 12%;
+  border-radius: 50%;
+  border: transparent;
 }
 
-.yellow-block {
-  background-color: rgb(255,152,0);
-  opacity: 1;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 2px 2px rgb(225,136,0);
-  height: 50px;
-  width: fit-content;
-  font-family: 'balatro';
-  color: aliceblue;
-  margin: 10px;
-}
-
-.green-block {
-  background-color: rgb(53,108,85);
-  opacity: 1;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 2px 2px rgb(45,95,74);
-  height: 50px;
-  width: fit-content;
-  font-family: 'balatro';
-  color: aliceblue;
-  margin: 10px;
-}
 .purple-block {
+  /* This block isn't being used, however, I'm keeping the colors here in case I decide to use it */
   background-color: rgb(187,123,195);
-  opacity: 1;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-shadow: 2px 2px rgb(109,53,116);
-  height: 50px;
-  width: fit-content;
-  font-family: 'balatro';
-  color: aliceblue;
-  margin: 10px;
 }
 
 .item-image-title {

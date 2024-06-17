@@ -175,10 +175,10 @@ TASKS FOR THE WEEK:
 ## June 17th
 
 
-- Need to add styles to the toggle button, would be cool to add "channel off air" color scheme to it, but I at least need to add an indent to it when while it's active.
 - Figure out the spring interpolation for the screen shake. This should be the last task fro the day, it's super annoying and I don't want to waste three hours on it.
-- BOXES: fix the styling on the boxes, add drop shadows, add a hover effect to them, fix the inputs on blocks with inputs.
+- BOXES: fix the styling on the boxes, add a hover effect to them.
 - LISTS: Add titles to the lists.
 - EXTRA STUFF: passive shaking to any element that isn't strictly background flare, try to look into making the background animated, remove some of the awkward looking aspects of the joker input stuff, add restrictions to each input.
   
 - SLIDER BUTTON: Added styles to the slider button to make it more asthetically inline with the rest of the page, however, before I'm 100% finished I should change in white dot to take up 100% height, and start on the far left, exactly alined on the x.
+- BLOCKS: Started cleaning up the boxes. Removed extra redundant CSS by adding the bg color and text shadow CSS to the styles property in the block configs, added intuitive value setters for blocks with inputs (getting that useEffect warning, just not sure where to put it this time, will come back to this), added drop shadows to blocks, added styles to logic blocks with inputs

@@ -10,7 +10,7 @@ const BlockTab = ({ blockArray, blockType }) => {
       background = "rgb(30, 63, 49)";
       break;
     case "results-block":
-      background = "rgb(255, 0, 0)";
+      background = "rgb(134, 34, 28)";
       break;
   }
   return (
@@ -30,6 +30,7 @@ const BlockTab = ({ blockArray, blockType }) => {
               lua={block.LUA}
               styles={block.styles}
               additionalInput={block.additionalInput}
+              inputType={block.inputType}
               blockType={blockType}
             />
           );
