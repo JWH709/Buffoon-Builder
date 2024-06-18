@@ -175,10 +175,14 @@ TASKS FOR THE WEEK:
 ## June 17th
 
 
-- Figure out the spring interpolation for the screen shake. This should be the last task fro the day, it's super annoying and I don't want to waste three hours on it.
-- BOXES: fix the styling on the boxes, add a hover effect to them.
-- LISTS: Add titles to the lists.
-- EXTRA STUFF: passive shaking to any element that isn't strictly background flare, try to look into making the background animated, remove some of the awkward looking aspects of the joker input stuff, add restrictions to each input.
-  
-- SLIDER BUTTON: Added styles to the slider button to make it more asthetically inline with the rest of the page, however, before I'm 100% finished I should change in white dot to take up 100% height, and start on the far left, exactly alined on the x.
-- BLOCKS: Started cleaning up the boxes. Removed extra redundant CSS by adding the bg color and text shadow CSS to the styles property in the block configs, added intuitive value setters for blocks with inputs (getting that useEffect warning, just not sure where to put it this time, will come back to this), added drop shadows to blocks, added styles to logic blocks with inputs
+- TODO: passive shaking to any element that isn't strictly background flare, try to look into making the background animated, remove some of the awkward looking aspects of the joker input stuff, add restrictions to each input, figure out the spring interpolation for the screen shake, and inverse the selection coloring on tabs.
+ 
+- SLIDER BUTTON: Added styles to the slider button to make it more aesthetically inline with the rest of the page, however, before I'm 100% finished I should change in white dot to take up 100% height, and start on the far left, exactly alined on the x.
+- BLOCKS: Started cleaning up the boxes. Removed extra redundant CSS by adding the bg color and text shadow CSS to the styles property in the block configs, added intuitive value setters for blocks with inputs (getting that useEffect warning, just not sure where to put it this time, will come back to this), added drop shadows to blocks, added styles to logic blocks with inputs, and added the ability to expand if their titles overflow
+- LISTS: added titles to lists
+
+
+## June 18th
+
+
+- I'm going to have an aneurysm if I keep working on the screenshake component. I need to take a day to make a seperate project dedicated to learning react spring. My main suspiscion at this point, is that there are conflicts between the screenhake effect and the transition effect. I need a break from it right now, moving on to something else while I think about it.

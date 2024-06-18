@@ -1,65 +1,96 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { useSpring } from "@react-spring/web";
+import Navbar from "./sections/Navbar/Navbar.jsx";
+import App from "./App.jsx";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { useSpring, animated, to } from "@react-spring/web";
 
 const ScreenShake = () => {
   const shakeFactor = 5;
-
-  const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
+  const shakeRef = React.useRef(null);
 
   const handleMouseMove = (event) => {
     const x = event.clientX / window.innerWidth;
     const y = event.clientY / window.innerHeight;
-    document.getElementById("root").style.left = `${x * shakeFactor}px`;
-    document.getElementById("root").style.top = `${y * shakeFactor}px`;
-  };
-
-  const handleMousein = (event) => {
-    const x = (event.clientX / window.innerWidth) * shakeFactor;
-    const y = (event.clientY / window.innerHeight) * shakeFactor;
-    api.start({ x: x, y: y });
+    shakeRef.current.style.left = `${x * shakeFactor}px`;
+    shakeRef.current.style.top = `${y * shakeFactor}px`;
   };
 
   React.useEffect(() => {
-    const root = document.getElementById("root");
-    root.addEventListener("mouseenter", handleMousein);
-
-    return () => {
-      root.removeEventListener("mouseenter", handleMousein);
-    };
-  });
-
-  React.useEffect(() => {
-    const root = document.getElementById("root");
-    root.style.transform = `translate(${x.get()}px, ${y.get()}px)`;
-  }, [x, y]);
-
-  React.useEffect(() => {
-    const root = document.getElementById("root");
-    root.addEventListener("mousemove", handleMouseMove);
+    const shakeElement = shakeRef.current;
     const initializeMousePosition = (event) => {
       const x = (event.clientX / window.innerWidth - 0.5) * shakeFactor;
       const y = (event.clientY / window.innerHeight - 0.5) * shakeFactor;
-      if (root) {
-        root.style.transform = `translate(${x}px, ${y}px)`;
-      }
+      shakeElement.style.transform = `translate(${x}px, ${y}px)`;
     };
-
-    root.addEventListener("mousemove", initializeMousePosition);
+    shakeElement.addEventListener("mousemove", handleMouseMove);
+    shakeElement.addEventListener("mousemove", initializeMousePosition);
 
     return () => {
-      root.removeEventListener("mousemove", handleMouseMove);
-      root.removeEventListener("mousemove", initializeMousePosition);
+      shakeElement.removeEventListener("mousemove", handleMouseMove);
+      shakeElement.removeEventListener("mousemove", initializeMousePosition);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return null;
+  //UseSpring hell:
+
+  const [storedIn, setStoredIn] = React.useState([0, 0]);
+  const [storedOut, setStoredOut] = React.useState([0, 0]);
+
+  React.useEffect(() => {
+    const shakeElement = shakeRef.current;
+
+    const handleMouseOut = (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      setStoredOut([x, y]);
+    };
+
+    shakeElement.addEventListener("mouseout", handleMouseOut);
+
+    const handleMouseIn = (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      setStoredIn([x, y]);
+    };
+
+    shakeElement.addEventListener("mouseenter", handleMouseIn);
+
+    return () => {
+      shakeElement.removeEventListener("mouseout", handleMouseOut);
+      shakeElement.removeEventListener("mouseenter", handleMouseIn);
+    };
+  }, []);
+
+  const springProps = useSpring({
+    from: { x: storedOut[0], y: storedOut[1] },
+    to: async (next) => {
+      await next({ x: storedIn[0], y: storedIn[1] });
+    },
+    reset: true,
+    config: { duration: 300 },
+  });
+
+  return (
+    <animated.div
+      ref={shakeRef}
+      style={{
+        height: "100%",
+        width: "100%",
+        position: "relative",
+        transform: `translate(${to(
+          springProps.x,
+          (value) => `${value}px`
+        )}, ${to(springProps.y, (value) => `${value}px`)})`,
+      }}
+    >
+      <Navbar />
+      <DndProvider backend={HTML5Backend}>
+        <App />
+      </DndProvider>
+    </animated.div>
+  );
 };
 
 export default ScreenShake;
-
-//UseMemo for MouseMover
-//UseEffect to add/remove the event listener
-//ratio = x/y / window.x/y
-// return null to return nothing
-//use spring to add interpolation on pageOut
