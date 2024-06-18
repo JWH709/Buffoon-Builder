@@ -174,14 +174,6 @@ TASKS FOR THE WEEK:
 
 ## June 17th
 
-
-### TODO: 
-- Add hover effect to buttons
-- Decrease Margins between main areas and increase around the outer edges
-- Add restrictions to the picture uploaded
-- add restrictions to joker inputs
-- add remove on the blocks
-- inverse table highlighting
  
 - SLIDER BUTTON: Added styles to the slider button to make it more aesthetically inline with the rest of the page, however, before I'm 100% finished I should change in white dot to take up 100% height, and start on the far left, exactly alined on the x.
 - BLOCKS: Started cleaning up the boxes. Removed extra redundant CSS by adding the bg color and text shadow CSS to the styles property in the block configs, added intuitive value setters for blocks with inputs (getting that useEffect warning, just not sure where to put it this time, will come back to this), added drop shadows to blocks, added styles to logic blocks with inputs, and added the ability to expand if their titles overflow
@@ -191,4 +183,11 @@ TASKS FOR THE WEEK:
 ## June 18th
 
 
-- I'm going to have an aneurysm if I keep working on the screenshake component. I need to take a day to make a seperate project dedicated to learning react spring. My main suspiscion at this point, is that there are conflicts between the screenhake effect and the transition effect. I need a break from it right now, moving on to something else while I think about it.
+### TODO: 
+- Add hover effect to buttons
+- Decrease Margins between main areas and increase around the outer edges
+- Add restrictions to the picture uploaded
+- add restrictions to joker inputs
+
+
+- I'm going to have an aneurysm if I keep working on the screenshake component. I need to take a day to make a separate project dedicated to learning react spring. My main suspicion at this point is that there are conflicts between the screen shake effect and the transition effect. I need a break from it right now, moving on to something else while I think about it. Inverted the colors on the tabs, added delete buttons for the joker lists.
