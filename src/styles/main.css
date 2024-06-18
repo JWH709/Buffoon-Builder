@@ -258,6 +258,7 @@ html, body {
   color: aliceblue;
   text-shadow: 2px 2px #ff0000;
   border: #ff0000;
+  filter: drop-shadow(2px 2px rgb(63, 63, 63))
 }
 
 .highlight {

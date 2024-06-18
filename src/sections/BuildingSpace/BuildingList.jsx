@@ -3,6 +3,7 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import DroppedBlock from "./DroppedBlock";
 import { IMAGES } from "../../config/assetImports";
+import ClearListButton from "./ClearListButton";
 
 const BuldingList = ({ blockType, updateLua }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
@@ -41,13 +42,7 @@ const BuldingList = ({ blockType, updateLua }) => {
         flexDirection: "column",
       }}
     >
-      <h2
-        style={{
-          marginBottom: "12%",
-        }}
-      >
-        {title}
-      </h2>
+      <h2>{title}</h2>
       <div
         ref={drop}
         style={{
@@ -72,6 +67,7 @@ const BuldingList = ({ blockType, updateLua }) => {
           />
         )}
       </div>
+      <ClearListButton setDroppedItem={setDroppedItem} />
     </div>
   );
 };

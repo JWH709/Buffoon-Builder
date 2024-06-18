@@ -175,7 +175,13 @@ TASKS FOR THE WEEK:
 ## June 17th
 
 
-- TODO: passive shaking to any element that isn't strictly background flare, try to look into making the background animated, remove some of the awkward looking aspects of the joker input stuff, add restrictions to each input, figure out the spring interpolation for the screen shake, and inverse the selection coloring on tabs.
+### TODO: 
+- Add hover effect to buttons
+- Decrease Margins between main areas and increase around the outer edges
+- Add restrictions to the picture uploaded
+- add restrictions to joker inputs
+- add remove on the blocks
+- inverse table highlighting
  
 - SLIDER BUTTON: Added styles to the slider button to make it more aesthetically inline with the rest of the page, however, before I'm 100% finished I should change in white dot to take up 100% height, and start on the far left, exactly alined on the x.
 - BLOCKS: Started cleaning up the boxes. Removed extra redundant CSS by adding the bg color and text shadow CSS to the styles property in the block configs, added intuitive value setters for blocks with inputs (getting that useEffect warning, just not sure where to put it this time, will come back to this), added drop shadows to blocks, added styles to logic blocks with inputs, and added the ability to expand if their titles overflow
