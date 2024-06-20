@@ -1,6 +1,17 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "../../config/assetImports.js";
+
 const JokerInput = ({ inputTitle, inputType, handler, length, type }) => {
+  const handleInputChange = (event) => {
+    if (inputType == "input-joker-cost") {
+      if (event.target.value <= 0) {
+        event.target.value = 0;
+      }
+    }
+    console.log(event.target.value);
+    sendDataToPreview();
+  };
+
   const sendDataToPreview = () => {
     const data = event.target.value;
     handler(data);
@@ -25,7 +36,7 @@ const JokerInput = ({ inputTitle, inputType, handler, length, type }) => {
           <input
             type={type}
             className={inputType}
-            onChange={sendDataToPreview}
+            onChange={handleInputChange}
             maxLength={length}
           />
           <div

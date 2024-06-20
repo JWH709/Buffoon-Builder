@@ -195,4 +195,4 @@ TASKS FOR THE WEEK:
 ## June 20th
 
 
-- Resized center div to allow for extra margin space, making the presentation less awkward when combined with the scrren hake effect. Fix the image uploader to reject files that aren't the correct size.
+- Resized center div to allow for extra margin space, making the presentation less awkward when combined with the scrren hake effect. Fix the image uploader to reject files that aren't the correct size. Added restrictions to the JokerCost component, keeping users from setting a Joker's value to a negative number.
