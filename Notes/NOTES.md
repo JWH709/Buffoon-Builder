@@ -185,8 +185,6 @@ TASKS FOR THE WEEK:
 
 ### TODO: 
 - Add hover/onClick CSS effects to buttons
-- Decrease Margins between main areas and increase around the outer edges
-- Add restrictions to the picture uploaded
 - add restrictions to joker inputs
 
 
@@ -197,4 +195,4 @@ TASKS FOR THE WEEK:
 ## June 20th
 
 
-- Start by fixing margins
+- Resized center div to allow for extra margin space, making the presentation less awkward when combined with the scrren hake effect. Fix the image uploader to reject files that aren't the correct size.

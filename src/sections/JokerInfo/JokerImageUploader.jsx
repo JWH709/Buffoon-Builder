@@ -88,6 +88,7 @@ const JokerImageUploader = ({
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
+
     readImageFile(file);
   };
 
@@ -101,8 +102,14 @@ const JokerImageUploader = ({
     const reader = new FileReader();
 
     reader.onload = () => {
-      setImage(reader.result);
-      localStorage.setItem("uploadedImage", reader.result);
+      let image = reader.result;
+      if (image.width === 142 && image.height === 192) {
+        setImage(image);
+        localStorage.setItem("uploadedImage", reader.result);
+      } else {
+        imageUploadError();
+        console.log("Failed");
+      }
     };
 
     if (file) {
@@ -117,6 +124,17 @@ const JokerImageUploader = ({
   const handleDeleteImage = () => {
     setImage(null);
     localStorage.removeItem("uploadedImage");
+  };
+
+  let [uploaderMessage, setUploaderMessage] = React.useState(
+    "Drag and drop an image here or click to upload"
+  );
+
+  const imageUploadError = () => {
+    setUploaderMessage("Upload failed! Image must be ");
+    setTimeout(() => {
+      setUploaderMessage("Drag and drop an image here or click to upload");
+    }, 5000);
   };
 
   return (
@@ -142,7 +160,7 @@ const JokerImageUploader = ({
             onDrop={handleDrop}
             onDragOver={handleDragOver}
           >
-            Drag and drop an image here or click to upload
+            {uploaderMessage} <br /> (142 x 190px)
           </label>
         </>
       )}
