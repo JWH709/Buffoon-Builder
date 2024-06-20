@@ -17,7 +17,8 @@ const JokerImageUploader = ({
     if (savedImage) {
       setImage(savedImage);
     }
-  }, [image, setImage]);
+  }, [setImage]);
+
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
       const luaJokerNameLower = dataFromName.toLowerCase();
@@ -88,7 +89,6 @@ const JokerImageUploader = ({
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-
     readImageFile(file);
   };
 
@@ -102,14 +102,21 @@ const JokerImageUploader = ({
     const reader = new FileReader();
 
     reader.onload = () => {
-      let image = reader.result;
-      if (image.width === 142 && image.height === 192) {
-        setImage(image);
-        localStorage.setItem("uploadedImage", reader.result);
-      } else {
-        imageUploadError();
-        console.log("Failed");
-      }
+      const image = new Image();
+
+      image.onload = () => {
+        const width = image.width;
+        const height = image.height;
+
+        if (width === 142 && height === 190) {
+          setImage(reader.result);
+          localStorage.setItem("uploadedImage", reader.result);
+        } else {
+          imageUploadError();
+        }
+      };
+
+      image.src = reader.result;
     };
 
     if (file) {
@@ -126,7 +133,7 @@ const JokerImageUploader = ({
     localStorage.removeItem("uploadedImage");
   };
 
-  let [uploaderMessage, setUploaderMessage] = React.useState(
+  const [uploaderMessage, setUploaderMessage] = React.useState(
     "Drag and drop an image here or click to upload"
   );
 
