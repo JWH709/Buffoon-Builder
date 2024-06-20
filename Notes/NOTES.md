@@ -184,10 +184,17 @@ TASKS FOR THE WEEK:
 
 
 ### TODO: 
-- Add hover effect to buttons
+- Add hover/onClick CSS effects to buttons
 - Decrease Margins between main areas and increase around the outer edges
 - Add restrictions to the picture uploaded
 - add restrictions to joker inputs
 
 
 - I'm going to have an aneurysm if I keep working on the screenshake component. I need to take a day to make a separate project dedicated to learning react spring. My main suspicion at this point is that there are conflicts between the screen shake effect and the transition effect. I need a break from it right now, moving on to something else while I think about it. Inverted the colors on the tabs, added delete buttons for the joker lists.
+
+
+
+## June 20th
+
+
+- Start by fixing margins
