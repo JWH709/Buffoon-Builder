@@ -203,6 +203,7 @@ TASKS FOR THE WEEK:
 
 ## June 28th
 
-- Need to focus on finishing the last two tasks from last week over this weekend. In addition to onClick styles & hover highlights for buttons, I should pad out the downloader section to make it actually look nice. Then I can move on to adding small little functionality tweaks while I focus on learning three.js/drei. 
+- Need to focus on finishing the last two tasks from last week over this weekend. In addition to onClick styles & hover highlights for buttons, I should pad out the downloader section to make it actually look nice. Then I can move on to adding small little functionality tweaks while I focus on learning three.js/drei. I need to add restrictions to the downloader as well. If information isn't correctly filled out, it should prevent downloads.
 
 - Added style changes on click & hover for all current buttons. I should, however, look into what makes a good on click style change, not 100% sure with the ones I have currently.
+- Made it so that on hover, buttons are darkened, but on click they light up.

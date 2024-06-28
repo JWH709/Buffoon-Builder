@@ -263,7 +263,18 @@ html, body {
   filter: drop-shadow(2px 2px rgb(63, 63, 63));
   transition: background-color 0.2s;
 }
-.downloader-button-clicked, .downloader-button:hover {
+.downloader-button-clicked {
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: rgb(255, 162, 162);
+  border: 2px solid aliceblue;
+  font-family: 'balatro';
+  text-shadow: rgb(255, 76, 76);
+  color: aliceblue;
+  filter: drop-shadow(2px 2px rgb(63, 63, 63))
+} 
+.downloader-button:hover {
   width: 150px;
   height: 50px;
   border-radius: 15px;
@@ -300,12 +311,23 @@ html, body {
   background-color: rgb(255, 76, 76);
   text-shadow: 2px 2px #ff0000;
   color: aliceblue;
-  border: none;
+  border: 2px solid rgb(255, 76, 76);
   border-radius: 15px;
   filter: drop-shadow(5px 5px rgb(63, 63, 63));
   transition: background-color 0.2s;
 }
-.clear-list-button-clicked, .clear-list-button:hover {
+.clear-list-button-clicked{
+  width: 50%;
+  height: 98%;
+  text-align: center;
+  background-color: rgb(255, 162, 162);
+  text-shadow: rgb(255, 76, 76);
+  border: 2px solid aliceblue;
+  color: aliceblue;
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px rgb(63, 63, 63));
+} 
+.clear-list-button:hover {
   width: 50%;
   height: 98%;
   text-align: center;
@@ -422,19 +444,34 @@ html, body {
   font-family: 'balatro';
   color: aliceblue;
   text-shadow: 2px 2px #ff0000;
-  border: #ff0000;
+  border: 2px solid rgb(255, 76, 76);
   transition: background-color 0.2s;
   filter: drop-shadow(rgb(63, 63, 63) 2px 2px)
 }
 
-.rarity-buttons-clicked, .rarity-buttons:hover {
+.rarity-buttons-clicked {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 30px;
   height: 30px;
   border-radius: 15px;
-  background-color: rgb(134, 34, 28);
+  background-color: rgb(255, 162, 162);
+  border: 2px solid aliceblue;
+  font-family: 'balatro';
+  color: aliceblue;
+  text-shadow: none;
+  filter: drop-shadow(rgb(63, 63, 63) 2px 2px)
+} 
+
+.rarity-buttons:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 76, 76);
   border: 2px solid rgb(18,27,29);
   font-family: 'balatro';
   color: black;
