@@ -1,6 +1,18 @@
 /* eslint-disable react/prop-types */
+import React from "react";
 
 const ClearListButton = ({ setDroppedItem }) => {
+  //Set up state for button styles & create handler for click:
+  const [isClicked, setIsClicked] = React.useState(false);
+
+  const handleClick = () => {
+    setDroppedItem(null);
+    setIsClicked(true);
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 200); // Change back after 200ms
+  };
+
   return (
     <div
       style={{
@@ -13,19 +25,11 @@ const ClearListButton = ({ setDroppedItem }) => {
       }}
     >
       <button
+        className={
+          isClicked ? "clear-list-button-clicked" : "clear-list-button"
+        }
         onClick={() => {
-          setDroppedItem(null);
-        }}
-        style={{
-          width: "50%",
-          height: "98%",
-          textAlign: "center",
-          backgroundColor: "rgb(255, 76, 76)",
-          textShadow: "2px 2px #ff0000",
-          color: "aliceblue",
-          border: "none",
-          borderRadius: "15px",
-          filter: "drop-shadow(5px 5px rgb(63, 63, 63))",
+          handleClick();
         }}
       >
         Clear

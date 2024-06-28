@@ -260,6 +260,18 @@ html, body {
   color: aliceblue;
   text-shadow: 2px 2px #ff0000;
   border: #ff0000;
+  filter: drop-shadow(2px 2px rgb(63, 63, 63));
+  transition: background-color 0.2s;
+}
+.downloader-button-clicked, .downloader-button:hover {
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: rgb(134, 34, 28);
+  border: 2px solid rgb(18,27,29);
+  font-family: 'balatro';
+  text-shadow: none;
+  color: black;
   filter: drop-shadow(2px 2px rgb(63, 63, 63))
 }
 
@@ -281,7 +293,29 @@ html, body {
   justify-content: center;
   filter: drop-shadow(2px 2px rgb(63, 63, 63));
 }
-
+.clear-list-button {
+  width: 50%;
+  height: 98%;
+  text-align: center;
+  background-color: rgb(255, 76, 76);
+  text-shadow: 2px 2px #ff0000;
+  color: aliceblue;
+  border: none;
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px rgb(63, 63, 63));
+  transition: background-color 0.2s;
+}
+.clear-list-button-clicked, .clear-list-button:hover {
+  width: 50%;
+  height: 98%;
+  text-align: center;
+  background-color: rgb(134, 34, 28);
+  text-shadow: none;
+  border: 2px solid rgb(18,27,29);
+  color: rgb(18,27,29);
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px rgb(63, 63, 63));
+}
 /* JOKER INFO */
 
 .joker-details-container {
@@ -389,6 +423,23 @@ html, body {
   color: aliceblue;
   text-shadow: 2px 2px #ff0000;
   border: #ff0000;
+  transition: background-color 0.2s;
+  filter: drop-shadow(rgb(63, 63, 63) 2px 2px)
+}
+
+.rarity-buttons-clicked, .rarity-buttons:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(134, 34, 28);
+  border: 2px solid rgb(18,27,29);
+  font-family: 'balatro';
+  color: black;
+  text-shadow: none;
+  filter: drop-shadow(rgb(63, 63, 63) 2px 2px)
 }
 
 .joker-cost-container {
