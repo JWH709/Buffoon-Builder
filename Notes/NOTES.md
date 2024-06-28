@@ -196,3 +196,13 @@ TASKS FOR THE WEEK:
 
 
 - Resized center div to allow for extra margin space, making the presentation less awkward when combined with the scrren hake effect. Fix the image uploader to reject files that aren't the correct size. Added restrictions to the JokerCost component, keeping users from setting a Joker's value to a negative number.
+
+
+## OUT OF TOWN
+
+
+## June 28th
+
+- Need to focus on finishing the last two tasks from last week over this weekend. In addition to onClick styles & hover highlights for buttons, I should pad out the downloader section to make it actually look nice. Then I can move on to adding small little functionality tweaks while I focus on learning three.js/drei. 
+
+- Added style changes on click & hover for all current buttons. I should, however, look into what makes a good on click style change, not 100% sure with the ones I have currently.
