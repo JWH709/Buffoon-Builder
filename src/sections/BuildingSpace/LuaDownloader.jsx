@@ -11,6 +11,20 @@ const LuaDownloader = ({
   jokerName,
   image,
 }) => {
+  const [downloadState, setDownloadState] = React.useState(false);
+  React.useEffect(() => {
+    if (
+      jokerEffect == null ||
+      localVariables == null ||
+      jokerName == null ||
+      image == null
+    ) {
+      setDownloadState(false);
+    } else {
+      setDownloadState(true);
+    }
+  }, [jokerEffect, localVariables, jokerName, image]);
+
   //Set up state for button styles & create handler for click:
   const [isClicked, setIsClicked] = React.useState(false);
 
@@ -66,6 +80,10 @@ const LuaDownloader = ({
     });
   };
 
+  //Set up an alert to let the user know they're missing required info:
+  const missingInfoAlert = () => {
+    console.log("Missing info!");
+  };
   return (
     <div className="downloader-button-wrapper">
       <button
@@ -73,7 +91,7 @@ const LuaDownloader = ({
           isClicked ? "downloader-button-clicked" : "downloader-button"
         }
         onClick={() => {
-          downloadJoker();
+          downloadState ? downloadJoker() : missingInfoAlert();
         }}
       >
         Download Joker!

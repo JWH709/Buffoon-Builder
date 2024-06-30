@@ -8,7 +8,6 @@ const JokerInput = ({ inputTitle, inputType, handler, length, type }) => {
         event.target.value = 0;
       }
     }
-    console.log(event.target.value);
     sendDataToPreview();
   };
 

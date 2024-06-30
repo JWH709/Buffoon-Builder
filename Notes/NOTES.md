@@ -207,3 +207,16 @@ TASKS FOR THE WEEK:
 
 - Added style changes on click & hover for all current buttons. I should, however, look into what makes a good on click style change, not 100% sure with the ones I have currently.
 - Made it so that on hover, buttons are darkened, but on click they light up.
+
+
+## June 29th: 
+
+- Spent the day working with three.js. I think I have a solid understanding of the basics, so I've decided to move on to react three fiber, however, it's wonky, or at least my understanding of it is. It's supposed to be more "reactful" however, I'm getting the impression that it's a bit more complicated than how I seem to be thinking about it. Going to take another look at it tomorrow once I add some basic restrictions to the downloader tomorrow.
+
+
+## June 30th: 
+
+
+- Going to take a stab at finishing off the dowloader today.
+- So I've created a basic stopgap when downloading a joker that prevents a user from downloading a joker if it's missing information, however, upon testing this, I noticed that while they clear buttons clear out all of the logic block LUA, they don't remove the logic block LUA from the LUA itself.
+- 
