@@ -67,7 +67,7 @@ const BuldingList = ({ blockType, updateLua }) => {
           />
         )}
       </div>
-      <ClearListButton setDroppedItem={setDroppedItem} />
+      <ClearListButton setDroppedItem={setDroppedItem} updateLua={updateLua} />
     </div>
   );
 };

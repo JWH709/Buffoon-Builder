@@ -15,14 +15,14 @@ const BuildingSpace = ({
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
   if card.ability.name == "${jokerName}" `;
   const jokerEffectEnd = `    
-      end
+      ends
   end`;
   let [contextLua, setContextLua] = React.useState(null);
   let [conditionsLua, setConditionsLua] = React.useState(null);
   let [resultsLua, setResultsLua] = React.useState(null);
 
-  if (contextLua == null && conditionsLua == null && resultsLua == null) {
-    //do nothing
+  if (contextLua == null || conditionsLua == null || resultsLua == null) {
+    updateLuaJokerEffect(null);
   } else {
     updateLuaJokerEffect(
       jokerEffectDeclaration +

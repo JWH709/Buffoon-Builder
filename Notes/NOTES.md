@@ -219,4 +219,4 @@ TASKS FOR THE WEEK:
 
 - Going to take a stab at finishing off the dowloader today.
 - So I've created a basic stopgap when downloading a joker that prevents a user from downloading a joker if it's missing information, however, upon testing this, I noticed that while they clear buttons clear out all of the logic block LUA, they don't remove the logic block LUA from the LUA itself.
-- 
+- Fixed issue by filling out blank if statement I left for when I added this feature. Good job me, I guess. BuildingSpace will make sure JokerEffect is null so long as one or more blocks is missing from the overall LUA code.
