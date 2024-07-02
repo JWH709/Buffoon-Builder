@@ -3,6 +3,8 @@ import JSZip from "jszip";
 import center_hook from "../../assets/center_hook.jsx";
 import { saveAs } from "file-saver";
 import React from "react";
+import { IMAGES } from "../../config/assetImports.js";
+import { Tilt } from "@jdion/tilt-react";
 
 const LuaDownloader = ({
   jokerEffect,
@@ -82,20 +84,55 @@ const LuaDownloader = ({
 
   //Set up an alert to let the user know they're missing required info:
   const missingInfoAlert = () => {
-    console.log("Missing info!");
+    console.log("Missing info!"); //replace with alert
   };
   return (
-    <div className="downloader-button-wrapper">
-      <button
-        className={
-          isClicked ? "downloader-button-clicked" : "downloader-button"
-        }
-        onClick={() => {
-          downloadState ? downloadJoker() : missingInfoAlert();
+    <div
+      className="downloader-button-wrapper"
+      style={{
+        backgroundImage: `url(${IMAGES.downloaderBg})`,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "50%",
+          height: "95%",
+          margin: "1%",
         }}
       >
-        Download Joker!
-      </button>
+        <Tilt
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "65%",
+            margin: "8%",
+          }}
+        >
+          <img
+            src={IMAGES.jokerVoucher}
+            alt="A custom joker voucher"
+            style={{
+              height: "100%",
+            }}
+          />
+        </Tilt>
+        <button
+          className={
+            isClicked ? "downloader-button-clicked" : "downloader-button"
+          }
+          onClick={() => {
+            downloadState ? downloadJoker() : missingInfoAlert();
+          }}
+        >
+          Download Joker!
+        </button>
+      </div>
     </div>
   );
 };

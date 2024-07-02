@@ -12,6 +12,8 @@ import builderBackground from '../assets/builder_background.png'
 import contextListBackground from '../assets/context_list_background.png'
 import conditionListBackground from '../assets/condition_list_background.png'
 import resultsListBackground from '../assets/results_list_background.png'
+import jokerVoucher from '../assets/download_joker.png'
+import downloaderBg from '../assets/downloader_bg.png'
 
 export const IMAGES = {
     inputLeft,
@@ -27,5 +29,7 @@ export const IMAGES = {
     builderBackground,
     contextListBackground,
     conditionListBackground,
-    resultsListBackground
+    resultsListBackground,
+    jokerVoucher,
+    downloaderBg
 };

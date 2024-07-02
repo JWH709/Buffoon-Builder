@@ -125,6 +125,7 @@ html, body {
 .title {
   color: aliceblue;
   font-family: 'balatro';
+  margin: 2%;
 }
 
 .navbar-div {
@@ -242,13 +243,17 @@ html, body {
 }
 
 .downloader-button-wrapper {
-  border: 2px solid yellow;
   width: 45%;
   height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1%
+  margin: 1%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
 }
 
 .downloader-button {
