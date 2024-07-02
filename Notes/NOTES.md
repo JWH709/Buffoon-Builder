@@ -223,3 +223,11 @@ TASKS FOR THE WEEK:
 - Going to play a round of Balatro to see what I could do to make the download area more interesting.
 - Look into adding a pack to the download section. You can get the pack explosion asset from the game via Balamod.
 - ToDo: Style downloader, add more blocks, get three.js bg working, screenshake interpolation.
+
+
+
+## July 2nd:
+
+
+- Messed around some more with react three fiber today in a seperate repo. Still having issues figuring out the skybox. Switch to working on this repo afterwards. Mostly just did asset work and CSS stuff today. Added some flare to the downloader. The next thing I'd like to add is the JokerPreview component to the download area, so you can check your joker before you download it. Another cool thing would be to animate the download button, so when you click it, the voucher tears and "Joker Downloaded!" plays across the screen like it does in Balatro. Idk if that's too much voodoo, but would be a fun thing to look into.
+- Next up on my bucket list is making that X button on top of the joker image look nice/rotate with the card itself. Going to have to check the tilt docs to see if I can match the buttons rotation to the parent's. May also be a lot of voodoo.
