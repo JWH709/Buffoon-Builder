@@ -238,7 +238,7 @@ TASKS FOR THE WEEK:
 - Resources: https://voronianski.github.io/react-swipe/demo/?continuous=true https://www.framer.com/motion/gestures/ https://www.framer.com/motion/examples/
 - Add shake to rarity icon ✔️
 - Debug some more issues with block text size/Overflow
-- Add a basic animation, probably shake, to the voucher claim
+- Add a basic animation, probably shake, to the voucher claim ✔️
 - Clean up text boxes for the joker inputs
 - Add icons to simplify text/blocks
 - 
@@ -253,6 +253,6 @@ TASKS FOR THE WEEK:
 
 ## July 4th:
 
-
-- Add shake, create/add icons, block text/overflow
 - Added shake to the rarity icon using spring. The way I have it set up, I can probably add it to the download button as well without much hassle, however, right now it does this irritating thing where it shakes on reset, making it seem like the shake animation is playing twice. Going to look into fixing this later.
+- Added the animation to the voucher, however it's still cursed. I think I need to go back to the drawing board on how I'm using spring completely. For a glue and popsicle stick creating, right now it's fine. I can refine it throughout the week, as spring is a blackhole I don't want to have consume me completely today.
+- 
