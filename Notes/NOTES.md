@@ -231,3 +231,20 @@ TASKS FOR THE WEEK:
 
 - Messed around some more with react three fiber today in a seperate repo. Still having issues figuring out the skybox. Switch to working on this repo afterwards. Mostly just did asset work and CSS stuff today. Added some flare to the downloader. The next thing I'd like to add is the JokerPreview component to the download area, so you can check your joker before you download it. Another cool thing would be to animate the download button, so when you click it, the voucher tears and "Joker Downloaded!" plays across the screen like it does in Balatro. Idk if that's too much voodoo, but would be a fun thing to look into.
 - Next up on my bucket list is making that X button on top of the joker image look nice/rotate with the card itself. Going to have to check the tilt docs to see if I can match the buttons rotation to the parent's. May also be a lot of voodoo.
+
+
+# Goals for the 2nd-8th:
+
+- Resources: https://voronianski.github.io/react-swipe/demo/?continuous=true https://www.framer.com/motion/gestures/ https://www.framer.com/motion/examples/
+- Add shake to rarity icon
+- Debug some more issues with block text size/Overflow
+- Put some thought into mobile design/layout
+- Add a basic animation, probably shake, to the voucher claim
+- Clean up text boxes for the joker inputs
+- Add icons to simplify text/blocks
+- Keep messing with three fiber/try out drei
+
+## July 3rd:
+
+
+- Busy day, didn't get much work done. Created an outline of all the goals I should work on this week. Going to start by looking into shake effects with spring tomorrow. Also remembered that I need to fix the interpolation on the screen shake effect, maybe once I try using spring some more with the rarity icon/voucher, I can take another stab at that.
