@@ -236,15 +236,23 @@ TASKS FOR THE WEEK:
 # Goals for the 2nd-8th:
 
 - Resources: https://voronianski.github.io/react-swipe/demo/?continuous=true https://www.framer.com/motion/gestures/ https://www.framer.com/motion/examples/
-- Add shake to rarity icon
+- Add shake to rarity icon ✔️
 - Debug some more issues with block text size/Overflow
-- Put some thought into mobile design/layout
 - Add a basic animation, probably shake, to the voucher claim
 - Clean up text boxes for the joker inputs
 - Add icons to simplify text/blocks
-- Keep messing with three fiber/try out drei
+- 
+- Keep messing with three fiber/try out drei*
+- Put some thought into mobile design/layout*
 
 ## July 3rd:
 
 
 - Busy day, didn't get much work done. Created an outline of all the goals I should work on this week. Going to start by looking into shake effects with spring tomorrow. Also remembered that I need to fix the interpolation on the screen shake effect, maybe once I try using spring some more with the rarity icon/voucher, I can take another stab at that.
+
+
+## July 4th:
+
+
+- Add shake, create/add icons, block text/overflow
+- Added shake to the rarity icon using spring. The way I have it set up, I can probably add it to the download button as well without much hassle, however, right now it does this irritating thing where it shakes on reset, making it seem like the shake animation is playing twice. Going to look into fixing this later.
