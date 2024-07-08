@@ -41,6 +41,7 @@ const JokerPreview = ({
         position: "fixed",
         top: position.y + 10,
         left: position.x + 10,
+        zIndex: "1",
       }}
     >
       <JokerCostTab jokerCost={jokerCost} />

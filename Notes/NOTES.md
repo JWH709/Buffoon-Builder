@@ -253,6 +253,22 @@ TASKS FOR THE WEEK:
 
 ## July 4th:
 
+
 - Added shake to the rarity icon using spring. The way I have it set up, I can probably add it to the download button as well without much hassle, however, right now it does this irritating thing where it shakes on reset, making it seem like the shake animation is playing twice. Going to look into fixing this later.
 - Added the animation to the voucher, however it's still cursed. I think I need to go back to the drawing board on how I'm using spring completely. For a glue and popsicle stick creating, right now it's fine. I can refine it throughout the week, as spring is a blackhole I don't want to have consume me completely today.
-- 
+
+
+## July 5th:
+
+
+- Created all the assets I'll need to condense block texts. Going to start applying them as I add more blocks. 
+- Got the skybox working in three.js, added several planets, set the rotation & tilt of each planet, however, I noticed that doing this was a lot more simple than it was for the Earth, so it's possible that I'm using too much voodoo in that scenario. Also manged to get camera controls using drei, very simple for what I'm trying to do. Changed the point of light to the sun.
+
+
+## July 8th:
+
+
+- Icons to blocks, clean up CSS, debug spring shake, think about mobile.
+- I should add inputs to the condition blocks to allow for selecting cards.
+- The main CSS fixes should be to the building lists, joker inputs, and then the blocks themselves. 
+- So I have a component now for title that changes h2 to h4 on overflow, however it's pretty jank. I'm still not 100% sure how to handle the title overflow issue, because things tend to get pretty squished regardless of h element size.

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "../../config/assetImports.js";
 
-const JokerInput = ({ inputTitle, inputType, handler, length, type }) => {
+const JokerInput = ({ inputType, handler, length, type }) => {
   const handleInputChange = (event) => {
     if (inputType == "input-joker-cost") {
       if (event.target.value <= 0) {
@@ -19,7 +19,6 @@ const JokerInput = ({ inputTitle, inputType, handler, length, type }) => {
   return (
     <>
       <div className="joker-input-container">
-        <h4>{inputTitle}</h4>
         <div className="input-wrapper">
           <div
             className="input-left"

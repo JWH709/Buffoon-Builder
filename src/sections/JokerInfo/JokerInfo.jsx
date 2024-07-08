@@ -5,6 +5,7 @@ import JokerRarity from "./JokerRarity";
 import JokerInput from "./JokerInputs";
 import JokerDescription from "./JokerDescription";
 import JokerImageUploader from "./JokerImageUploader";
+import SectionTitle from "../../config/SectionTitle";
 const JokerInfo = ({
   updateLuaLocals,
   updateLuaTableInsert,
@@ -33,41 +34,31 @@ const JokerInfo = ({
             display: "flex",
             flexDirection: "row",
             width: "95%",
+            height: "40%",
             justifyContent: "space-evenly",
+            alignItems: "center",
             margin: "2%",
           }}
         >
-          <div
-            style={{
-              width: "50%",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <div className="art-asset-container">
-              <div className="dropped-art-container">
-                <JokerImageUploader
-                  dataFromName={dataFromName}
-                  dataFromCost={dataFromCost}
-                  dataFromDescription={dataFromDescription}
-                  dataFromRarity={dataFromRarity}
-                  updateLuaLocals={updateLuaLocals}
-                  updateLuaTableInsert={updateLuaTableInsert}
-                  image={image}
-                  setImage={setImage}
-                />
-              </div>
+          <div className="art-asset-container">
+            <div className="dropped-art-container">
+              <JokerImageUploader
+                dataFromName={dataFromName}
+                dataFromCost={dataFromCost}
+                dataFromDescription={dataFromDescription}
+                dataFromRarity={dataFromRarity}
+                updateLuaLocals={updateLuaLocals}
+                updateLuaTableInsert={updateLuaTableInsert}
+                image={image}
+                setImage={setImage}
+              />
             </div>
           </div>
+
           <div className="container-effect">
-            <h2
-              style={{
-                fontFamily: "balatro",
-                color: "aliceblue",
-              }}
-            >
-              Joker Effect:
-            </h2>
+            <div className="joker-info-title-wrapper">
+              <SectionTitle text={"Joker Effect"} />
+            </div>
             <JokerDescription
               inputType={"input-joker-effect"}
               handler={handleDataFromDescription}
@@ -79,36 +70,27 @@ const JokerInfo = ({
             display: "flex",
             flexDirection: "row",
             width: "95%",
-            justifyContent: "center",
+            height: "40%",
+            justifyContent: "space-evenly",
+            alignItems: "center",
             margin: "2%",
           }}
         >
           <div className="container-name-rarity">
-            <h2
-              style={{
-                fontFamily: "balatro",
-                color: "aliceblue",
-              }}
-            >
-              Joker Name:
-            </h2>
+            <div className="joker-info-title-wrapper">
+              <SectionTitle text={"Joker Name"} />
+            </div>
             <JokerInput
               inputType={"input-joker-name"}
               handler={handleDataFromName}
               length={18}
               type={"text"}
             />
-            <JokerRarity handler={handleDataFromRarity} />
           </div>
           <div className="container-cost">
-            <h2
-              style={{
-                fontFamily: "balatro",
-                color: "aliceblue",
-              }}
-            >
-              Joker Cost:
-            </h2>
+            <div className="joker-info-title-wrapper">
+              <SectionTitle text={"Joker Cost"} />
+            </div>
             <JokerInput
               inputType={"input-joker-cost"}
               handler={handleDataFromCost}
@@ -117,6 +99,7 @@ const JokerInfo = ({
             />
           </div>
         </div>
+        <JokerRarity handler={handleDataFromRarity} />
       </div>
     </>
   );

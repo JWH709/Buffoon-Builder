@@ -88,6 +88,7 @@
   opacity: 0.24387;
   }
 }
+/* Text overflow effect*/
 
 body {
   background-image: url('../assets/background.jpeg');
@@ -359,7 +360,15 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
 }
-
+.joker-info-title-wrapper {
+  width: 100%;
+  height: 30%;
+  margin: 0%;
+  margin-top: 3%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 .container-name-rarity {
   background-image: url('../assets/name_rarity_background.png');
   background-size: 100% 100%;
@@ -368,6 +377,7 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -382,8 +392,10 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -395,8 +407,10 @@ html, body {
   image-rendering: pixelated;
   overflow: hidden;
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -406,18 +420,30 @@ html, body {
 }
 
 .art-asset-container {
-  border: 2px dashed #ccc;
-  border-radius: 50px;
-  background-color: rgb(58,80,85);
-  width: 152px;
-  height: 200px;
-  border-radius: 5px;
+  background-image: url('../assets/image_uploader_background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .dropped-art-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 50px;
+  background-color: rgb(58,80,85);
+  width: 152px;
+  height: 200px;
+  border-radius: 5px;
 }
 
 .rarity-icon {
@@ -435,7 +461,7 @@ html, body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 40%;
 }
 
 .rarity-buttons {
@@ -512,6 +538,7 @@ html, body {
 
 .joker-input-container {
   display: flex;
+  height: 75%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
