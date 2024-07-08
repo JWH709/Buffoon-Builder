@@ -5,7 +5,7 @@ const SectionTitle = ({ text }) => {
   const textRef = useRef();
   const [fontSize, setFontSize] = useState(30);
 
-  //This is pretty Jank and gets screwed up easily. Need to think of a way for it to react more instantaneously
+  //This is pretty Jank and gets screwed up easily. Need to think of a way for it to react more instantaneously. Add Something that detects when I'm maximizing the window.
   useEffect(() => {
     const resizeText = () => {
       const containerWidth = textRef.current.parentElement.clientWidth;

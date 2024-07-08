@@ -240,7 +240,7 @@ TASKS FOR THE WEEK:
 - Debug some more issues with block text size/Overflow ✔️
 - Add a basic animation, probably shake, to the voucher claim ✔️
 - Clean up text boxes for the joker inputs
-- Add icons to simplify text/blocks
+- Add icons to simplify text/blocks ✔️
 - 
 - Keep messing with three fiber/try out drei*
 - Put some thought into mobile design/layout*
@@ -272,3 +272,4 @@ TASKS FOR THE WEEK:
 - I should add inputs to the condition blocks to allow for selecting cards.
 - The main CSS fixes should be to the building lists, joker inputs, and then the blocks themselves. 
 - So I have a component now for title that changes h2 to h4 on overflow, however it's pretty jank. I'm still not 100% sure how to handle the title overflow issue, because things tend to get pretty squished regardless of h element size.
+- Changed the shifting h elements to just have the text shrink on screen size change. This also feels jank, but I'll look into finding ways to make it feel less jank with spring or something.

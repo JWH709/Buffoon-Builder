@@ -15,13 +15,13 @@ const JokerInput = ({ inputType, handler, length, type }) => {
     const data = event.target.value;
     handler(data);
   };
-
+  console.log(inputType);
   return (
     <>
       <div className="joker-input-container">
         <div className="input-wrapper">
           <div
-            className="input-left"
+            className="input-left" //remove corner
             style={{
               backgroundImage: `url(${IMAGES.inputLeft})`,
               backgroundSize: "cover",

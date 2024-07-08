@@ -23,7 +23,7 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
               height: "100px",
             }}
           ></div>
-          <textarea
+          <textarea //remove corner part
             name="effect"
             id=""
             className={inputType}
