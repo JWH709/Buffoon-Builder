@@ -1,49 +1,45 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SectionTitle = ({ text }) => {
-  const textRef = React.useRef(null);
-  const [isOverflowing, setIsOverflowing] = React.useState(false);
+  const textRef = useRef();
+  const [fontSize, setFontSize] = useState(30);
 
-  const checkOverflow = () => {
-    const element = textRef.current;
-    if (element) {
-      const isOverflow =
-        element.scrollWidth > element.clientWidth ||
-        element.scrollHeight > element.clientHeight;
-      setIsOverflowing(isOverflow);
-    }
-  };
+  //This is pretty Jank and gets screwed up easily. Need to think of a way for it to react more instantaneously
+  useEffect(() => {
+    const resizeText = () => {
+      const containerWidth = textRef.current.parentElement.clientWidth;
+      const textWidth = textRef.current.scrollWidth;
 
-  React.useEffect(() => {
-    checkOverflow();
-    window.addEventListener("resize", checkOverflow);
+      if (textWidth > containerWidth) {
+        setFontSize((prevFontSize) => prevFontSize - 1);
+      } else {
+        setFontSize((prevFontSize) => Math.min(prevFontSize + 1, 30));
+      }
+    };
+
+    resizeText();
+    window.addEventListener("resize", resizeText);
 
     return () => {
-      window.removeEventListener("resize", checkOverflow);
+      window.removeEventListener("resize", resizeText);
     };
   }, [text]);
 
-  React.useEffect(() => {
-    checkOverflow();
-  }, [text]);
-
-  const commonStyles = {
-    color: "aliceblue",
-    fontFamily: "balatro",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-  };
-
-  return isOverflowing ? (
-    <h4 ref={textRef} style={commonStyles}>
-      {text}
-    </h4>
-  ) : (
-    <h2 ref={textRef} style={commonStyles}>
-      {text}
-    </h2>
+  return (
+    <div className="auto-resize-container">
+      <h2
+        ref={textRef}
+        className="auto-resize-text"
+        style={{
+          fontSize: `${fontSize}px`,
+          color: "aliceblue",
+          fontFamily: "balatro",
+        }}
+      >
+        {text}
+      </h2>
+    </div>
   );
 };
 

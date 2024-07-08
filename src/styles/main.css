@@ -89,6 +89,18 @@
   }
 }
 /* Text overflow effect*/
+.auto-resize-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.auto-resize-text {
+  white-space: nowrap;
+  transition: font-size 0.2s ease;
+}
 
 body {
   background-image: url('../assets/background.jpeg');

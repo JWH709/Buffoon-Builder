@@ -4,6 +4,7 @@ import { useDrop } from "react-dnd";
 import DroppedBlock from "./DroppedBlock";
 import { IMAGES } from "../../config/assetImports";
 import ClearListButton from "./ClearListButton";
+import SectionTitle from "../../config/SectionTitle";
 
 const BuldingList = ({ blockType, updateLua }) => {
   const [droppedItem, setDroppedItem] = React.useState(null);
@@ -42,7 +43,7 @@ const BuldingList = ({ blockType, updateLua }) => {
         flexDirection: "column",
       }}
     >
-      <h2>{title}</h2>
+      <SectionTitle text={title} />
       <div
         ref={drop}
         style={{
