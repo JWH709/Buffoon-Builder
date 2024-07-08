@@ -237,7 +237,7 @@ TASKS FOR THE WEEK:
 
 - Resources: https://voronianski.github.io/react-swipe/demo/?continuous=true https://www.framer.com/motion/gestures/ https://www.framer.com/motion/examples/
 - Add shake to rarity icon ✔️
-- Debug some more issues with block text size/Overflow
+- Debug some more issues with block text size/Overflow ✔️
 - Add a basic animation, probably shake, to the voucher claim ✔️
 - Clean up text boxes for the joker inputs
 - Add icons to simplify text/blocks
