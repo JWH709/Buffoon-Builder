@@ -5,22 +5,13 @@ import { useSpring, animated } from "@react-spring/web";
 
 const JokerRarity = ({ handler }) => {
   // Set up shake effect for icons:
-  const [shakeState, setShakeState] = React.useState({
-    id: null,
-    shake: false,
-  });
+  const [shakeState, setShakeState] = React.useState(false);
 
   const { x } = useSpring({
-    from: { x: 0 },
-    to: shakeState.shake ? { x: 1 } : { x: 0 },
-    reset: shakeState.shake,
+    x: shakeState ? 1 : 0,
+    config: { duration: 500 },
     onRest: () => {
-      if (shakeState.shake) {
-        setShakeState((shakeState) => ({
-          ...shakeState,
-          shake: false,
-        }));
-      }
+      setShakeState(false);
     },
   });
 
@@ -41,6 +32,7 @@ const JokerRarity = ({ handler }) => {
       setMinusIsClicked(false);
     }, 200);
   };
+
   const handlePlusClickStyle = () => {
     setPlusIsClicked(true);
     setTimeout(() => {
@@ -48,27 +40,39 @@ const JokerRarity = ({ handler }) => {
     }, 200);
   };
 
+  // Create function to handle shake
+  const triggerShake = () => {
+    setShakeState(true);
+  };
+
   // Create functions to handle each button click, plus or minus:
   const handleMinusClick = () => {
     handleMinusClickStyle();
-    setShakeState({ id: Date.now(), shake: true }); // Trigger shake
+    triggerShake(); // Trigger shake
     if (rarity === 1) {
       setRarity(4);
       handler(4);
     } else {
-      setRarity(rarity - 1);
-      handler(rarity - 1);
+      setRarity((prevRarity) => {
+        const newRarity = prevRarity - 1;
+        handler(newRarity);
+        return newRarity;
+      });
     }
   };
+
   const handlePlusClick = () => {
     handlePlusClickStyle();
-    setShakeState({ id: Date.now(), shake: true }); // Trigger shake
+    triggerShake(); // Trigger shake
     if (rarity === 4) {
       setRarity(1);
       handler(1);
     } else {
-      setRarity(rarity + 1);
-      handler(rarity + 1);
+      setRarity((prevRarity) => {
+        const newRarity = prevRarity + 1;
+        handler(newRarity);
+        return newRarity;
+      });
     }
   };
 
@@ -83,8 +87,11 @@ const JokerRarity = ({ handler }) => {
         return IMAGES.rare;
       case 4:
         return IMAGES.legendary;
+      default:
+        return IMAGES.common;
     }
   };
+
   const getRarityText = () => {
     switch (rarity) {
       case 1:
@@ -95,51 +102,47 @@ const JokerRarity = ({ handler }) => {
         return "Rare";
       case 4:
         return "Legendary";
+      default:
+        return "Common";
     }
   };
 
   // Return component:
   return (
-    <>
-      <div className="rarity-button-container">
-        <button
-          className={
-            minusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"
-          }
-          onClick={handleMinusClick}
-        >
-          {"<"}
-        </button>
-        <animated.div
-          className="rarity-icon"
-          style={{
-            transform: xInterpolate.to((x) => `translate3d(${x}px, 0, 0)`),
-            backgroundImage: `url(${getRarityImg()})`,
-            backgroundSize: "80% 80%",
-            backgroundRepeat: "no-repeat",
-            imageRendering: "pixelated",
-            overflow: "hidden",
-            backgroundPosition: "center",
-            width: "230px",
-            height: "60px",
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <h3>{getRarityText()}</h3>
-        </animated.div>
-        <button
-          className={
-            plusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"
-          }
-          onClick={handlePlusClick}
-        >
-          {">"}
-        </button>
-      </div>
-    </>
+    <div className="rarity-button-container">
+      <button
+        className={minusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}
+        onClick={handleMinusClick}
+      >
+        {"<"}
+      </button>
+      <animated.div
+        className="rarity-icon"
+        style={{
+          transform: xInterpolate.to((x) => `translate3d(${x}px, 0, 0)`),
+          backgroundImage: `url(${getRarityImg()})`,
+          backgroundSize: "80% 80%",
+          backgroundRepeat: "no-repeat",
+          imageRendering: "pixelated",
+          overflow: "hidden",
+          backgroundPosition: "center",
+          width: "230px",
+          height: "60px",
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h3>{getRarityText()}</h3>
+      </animated.div>
+      <button
+        className={plusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}
+        onClick={handlePlusClick}
+      >
+        {">"}
+      </button>
+    </div>
   );
 };
 
