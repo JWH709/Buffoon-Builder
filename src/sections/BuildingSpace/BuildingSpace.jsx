@@ -21,17 +21,26 @@ const BuildingSpace = ({
   let [conditionsLua, setConditionsLua] = React.useState(null);
   let [resultsLua, setResultsLua] = React.useState(null);
 
-  if (contextLua == null || conditionsLua == null || resultsLua == null) {
-    updateLuaJokerEffect(null);
-  } else {
-    updateLuaJokerEffect(
-      jokerEffectDeclaration +
-        contextLua +
-        conditionsLua +
-        resultsLua +
-        jokerEffectEnd
-    );
-  }
+  React.useEffect(() => {
+    if (contextLua == null || conditionsLua == null || resultsLua == null) {
+      updateLuaJokerEffect(null);
+    } else {
+      updateLuaJokerEffect(
+        jokerEffectDeclaration +
+          contextLua +
+          conditionsLua +
+          resultsLua +
+          jokerEffectEnd
+      );
+    }
+  }, [
+    contextLua,
+    conditionsLua,
+    resultsLua,
+    updateLuaJokerEffect,
+    jokerEffectDeclaration,
+    jokerEffectEnd,
+  ]);
 
   return (
     <div className="building-space">

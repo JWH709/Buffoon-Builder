@@ -33,7 +33,7 @@ const ScreenShake = () => {
     };
   }, []);
 
-  //UseSpring hell:
+  //ToDo: UseSpring hell:
 
   const [storedIn, setStoredIn] = React.useState([0, 0]);
   const [storedOut, setStoredOut] = React.useState([0, 0]);

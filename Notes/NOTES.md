@@ -273,3 +273,18 @@ TASKS FOR THE WEEK:
 - The main CSS fixes should be to the building lists, joker inputs, and then the blocks themselves. 
 - So I have a component now for title that changes h2 to h4 on overflow, however it's pretty jank. I'm still not 100% sure how to handle the title overflow issue, because things tend to get pretty squished regardless of h element size.
 - Changed the shifting h elements to just have the text shrink on screen size change. This also feels jank, but I'll look into finding ways to make it feel less jank with spring or something.
+
+
+## Goals for the 8th-15th:
+
+
+- Fix double Shake
+- Fix setState in render problems ✔️
+- Extend last weeks goals
+
+
+## July 9th:
+
+
+- Input CSS: Removed the images used for the inputs, using CSS to mimic the styles from the game instead. Removed the ability to resize the textarea element for the joker's description.
+- Bad State: Fixed the bad state in building space. Just remember that when you're encountering this issue, check to see if you messing with state from another component outside of a useEffect.

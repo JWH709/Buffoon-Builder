@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { IMAGES } from "../../config/assetImports.js";
 
 const JokerInput = ({ inputType, handler, length, type }) => {
   const handleInputChange = (event) => {
@@ -15,39 +14,16 @@ const JokerInput = ({ inputType, handler, length, type }) => {
     const data = event.target.value;
     handler(data);
   };
-  console.log(inputType);
   return (
     <>
       <div className="joker-input-container">
         <div className="input-wrapper">
-          <div
-            className="input-left" //remove corner
-            style={{
-              backgroundImage: `url(${IMAGES.inputLeft})`,
-              backgroundSize: "cover",
-              imageRendering: "pixelated",
-              backgroundPosition: "center",
-              height: "63px",
-              width: "18px",
-            }}
-          ></div>
           <input
             type={type}
             className={inputType}
             onChange={handleInputChange}
             maxLength={length}
           />
-          <div
-            className="input-right"
-            style={{
-              backgroundImage: `url(${IMAGES.inputRight})`,
-              backgroundSize: "cover",
-              imageRendering: "pixelated",
-              backgroundPosition: "center",
-              height: "63px",
-              width: "18px",
-            }}
-          ></div>
         </div>
       </div>
     </>

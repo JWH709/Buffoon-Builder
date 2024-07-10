@@ -1,5 +1,3 @@
-import inputLeft from '../assets/input_left.png';
-import inputRight from '../assets/input_right.png';
 import background from '../assets/background.jpeg';
 import logo from '../assets/logo.png';
 import previewBackground from '../assets/preview_bg.png';
@@ -16,8 +14,6 @@ import jokerVoucher from '../assets/download_joker.png'
 import downloaderBg from '../assets/downloader_bg.png'
 
 export const IMAGES = {
-    inputLeft,
-    inputRight,
     background,
     logo,
     previewBackground,
