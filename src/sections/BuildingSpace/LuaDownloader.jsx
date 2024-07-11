@@ -15,34 +15,21 @@ const LuaDownloader = ({
   image,
 }) => {
   // Create shake effect to apply to voucher when download button is clicked:
-  const [shakeState, setShakeState] = React.useState({
-    id: null,
-    shake: false,
-  });
+  const [rotate, setRotate] = React.useState(false);
 
-  const { x, y } = useSpring({
-    from: { x: 0, y: 0 },
-    to: shakeState.shake ? { x: 1, y: 1 } : { x: 0, y: 0 },
-    reset: shakeState.shake,
-    onRest: () => {
-      if (shakeState.shake) {
-        setShakeState((shakeState) => ({
-          ...shakeState,
-          shake: false,
-        }));
+  const props = useSpring({
+    to: async (next) => {
+      if (rotate) {
+        await next({ transform: "rotate(5deg)" });
+        await next({ transform: "rotate(-5deg)" });
+        await next({ transform: "rotate(5deg)" });
+        await next({ transform: "rotate(-5deg)" });
+        await next({ transform: "rotate(0deg)" });
+        setRotate(false);
       }
     },
+    config: { duration: 25 },
   });
-
-  const xInterpolate = x.to(
-    [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-    [-10, 10, -10, 10, -10, 10, -10, 10]
-  );
-
-  const yInterpolate = y.to(
-    [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-    [-5, 5, -5, 5, -5, 5, -5, 5]
-  );
 
   // Create state to determine if everything required for download is present:
   const [downloadState, setDownloadState] = React.useState(false);
@@ -63,7 +50,8 @@ const LuaDownloader = ({
   const [isClicked, setIsClicked] = React.useState(false);
 
   const handleClick = () => {
-    setShakeState({ id: Date.now(), shake: true });
+    setRotate(true);
+    console.log(rotate);
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
@@ -143,13 +131,7 @@ const LuaDownloader = ({
       >
         <animated.div
           style={{
-            transform: xInterpolate.to(
-              (x) => `translate3d(${x}px, ${yInterpolate.get()}px, 0)`
-            ),
-            position: "relative", // the styling on this is voodoo, however, animated.divs really don't like being centered.
-            top: "0%",
-            left: "7%",
-            margin: "8%",
+            ...props,
           }}
         >
           <Tilt
@@ -176,6 +158,9 @@ const LuaDownloader = ({
           className={
             isClicked ? "downloader-button-clicked" : "downloader-button"
           }
+          style={{
+            marginTop: "8%",
+          }}
           onClick={() => {
             downloadState ? downloadJoker() : missingInfoAlert();
           }}

@@ -239,7 +239,7 @@ TASKS FOR THE WEEK:
 - Add shake to rarity icon ✔️
 - Debug some more issues with block text size/Overflow ✔️
 - Add a basic animation, probably shake, to the voucher claim ✔️
-- Clean up text boxes for the joker inputs
+- Clean up text boxes for the joker inputs ✔️
 - Add icons to simplify text/blocks ✔️
 - 
 - Keep messing with three fiber/try out drei*
@@ -280,12 +280,19 @@ TASKS FOR THE WEEK:
 
 - Fix double Shake ✔️
 - Fix setState in render problems ✔️
-- Extend last weeks goals
+- Basic animation, probably shake, to the voucher claim
+- Screen resize issues
 
-
-## July 9th:
+## July 10th:
 
 
 - Input CSS: Removed the images used for the inputs, using CSS to mimic the styles from the game instead. Removed the ability to resize the textarea element for the joker's description.
 - Bad State: Fixed the bad state in building space. Just remember that when you're encountering this issue, check to see if you messing with state from another component outside of a useEffect.
 - Double shake: Fixed double shake by using async functions instead of what I had. Still nowhere near 100% with useSpring, but I'm seeing more and more how good it is, it just has a lot of properties I need a better understanding of. I'm pretty sure I can use it to mimic the card opening from balatro on the voucher. Going to try that tomorrow.
+
+
+## July 11th:
+
+
+- Going to keep working with useSpring today. Now that I understand it a little more, I should look into getting a more desirable effect for the lua downloader
+- LuaDownloader: Added a rotation effect with useSpring. It seems that async functions are the best method for getting use spring to work. I'm curious to see what more I can add. Stacking effects in useSpring would be cool, however, right now I'm happy with how the voucher is looking. I should think of some ideas on what other elements I could add effects to.
