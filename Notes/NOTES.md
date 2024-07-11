@@ -296,3 +296,4 @@ TASKS FOR THE WEEK:
 
 - Going to keep working with useSpring today. Now that I understand it a little more, I should look into getting a more desirable effect for the lua downloader
 - LuaDownloader: Added a rotation effect with useSpring. It seems that async functions are the best method for getting use spring to work. I'm curious to see what more I can add. Stacking effects in useSpring would be cool, however, right now I'm happy with how the voucher is looking. I should think of some ideas on what other elements I could add effects to.
+- Made a bunch of minor CSS tweaks, mostly involving the ability to highlight text. 
