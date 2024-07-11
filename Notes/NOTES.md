@@ -275,10 +275,10 @@ TASKS FOR THE WEEK:
 - Changed the shifting h elements to just have the text shrink on screen size change. This also feels jank, but I'll look into finding ways to make it feel less jank with spring or something.
 
 
-## Goals for the 8th-15th:
+# Goals for the 8th-15th:
 
 
-- Fix double Shake
+- Fix double Shake ✔️
 - Fix setState in render problems ✔️
 - Extend last weeks goals
 
@@ -288,3 +288,4 @@ TASKS FOR THE WEEK:
 
 - Input CSS: Removed the images used for the inputs, using CSS to mimic the styles from the game instead. Removed the ability to resize the textarea element for the joker's description.
 - Bad State: Fixed the bad state in building space. Just remember that when you're encountering this issue, check to see if you messing with state from another component outside of a useEffect.
+- Double shake: Fixed double shake by using async functions instead of what I had. Still nowhere near 100% with useSpring, but I'm seeing more and more how good it is, it just has a lot of properties I need a better understanding of. I'm pretty sure I can use it to mimic the card opening from balatro on the voucher. Going to try that tomorrow.

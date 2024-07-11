@@ -7,18 +7,20 @@ const JokerRarity = ({ handler }) => {
   // Set up shake effect for icons:
   const [shakeState, setShakeState] = React.useState(false);
 
-  const { x } = useSpring({
-    x: shakeState ? 1 : 0,
-    config: { duration: 500 },
-    onRest: () => {
-      setShakeState(false);
+  const shakeStyles = useSpring({
+    from: { x: 0 },
+    to: async (next) => {
+      if (shakeState) {
+        await next({ x: 2.5 });
+        await next({ x: -2.5 });
+        await next({ x: 2.5 });
+        await next({ x: -2.5 });
+        await next({ x: 0 });
+        setShakeState(false);
+      }
     },
+    config: { duration: 25 },
   });
-
-  const xInterpolate = x.to(
-    [0.0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-    [0, -10, 10, -10, 10, -10, 10, 0]
-  );
 
   // Set States for rarity and button styles:
   const [rarity, setRarity] = React.useState(1);
@@ -41,14 +43,11 @@ const JokerRarity = ({ handler }) => {
   };
 
   // Create function to handle shake
-  const triggerShake = () => {
-    setShakeState(true);
-  };
 
   // Create functions to handle each button click, plus or minus:
   const handleMinusClick = () => {
     handleMinusClickStyle();
-    triggerShake(); // Trigger shake
+    setShakeState(true);
     if (rarity === 1) {
       setRarity(4);
       handler(4);
@@ -62,8 +61,8 @@ const JokerRarity = ({ handler }) => {
   };
 
   const handlePlusClick = () => {
+    setShakeState(true);
     handlePlusClickStyle();
-    triggerShake(); // Trigger shake
     if (rarity === 4) {
       setRarity(1);
       handler(1);
@@ -119,7 +118,7 @@ const JokerRarity = ({ handler }) => {
       <animated.div
         className="rarity-icon"
         style={{
-          transform: xInterpolate.to((x) => `translate3d(${x}px, 0, 0)`),
+          transform: shakeStyles.x.to((x) => `translate3d(${x}px, 0, 0)`),
           backgroundImage: `url(${getRarityImg()})`,
           backgroundSize: "80% 80%",
           backgroundRepeat: "no-repeat",
