@@ -112,6 +112,9 @@ const JokerRarity = ({ handler }) => {
       <button
         className={minusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}
         onClick={handleMinusClick}
+        style={{
+          userSelect: "none",
+        }}
       >
         {"<"}
       </button>
@@ -133,11 +136,20 @@ const JokerRarity = ({ handler }) => {
           alignItems: "center",
         }}
       >
-        <h3>{getRarityText()}</h3>
+        <h3
+          style={{
+            userSelect: "none",
+          }}
+        >
+          {getRarityText()}
+        </h3>
       </animated.div>
       <button
         className={plusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}
         onClick={handlePlusClick}
+        style={{
+          userSelect: "none",
+        }}
       >
         {">"}
       </button>

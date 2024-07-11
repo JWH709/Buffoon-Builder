@@ -35,6 +35,7 @@ const SectionTitle = ({ text }) => {
           fontSize: `${fontSize}px`,
           color: "aliceblue",
           fontFamily: "balatro",
+          userSelect: "none",
         }}
       >
         {text}

@@ -45,7 +45,13 @@ const DroppedBlock = ({
         padding: "5px",
       }}
     >
-      <h2>{title}</h2>
+      <h2
+        style={{
+          userSelect: "none",
+        }}
+      >
+        {title}
+      </h2>
       {additionalInput === "number" && (
         <LogicBlockInput
           setInputUpdate={setInputUpdate}

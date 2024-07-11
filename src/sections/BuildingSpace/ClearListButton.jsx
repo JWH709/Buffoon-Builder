@@ -32,6 +32,9 @@ const ClearListButton = ({ setDroppedItem, updateLua }) => {
         onClick={() => {
           handleClick();
         }}
+        style={{
+          userSelect: "none",
+        }}
       >
         Clear
       </button>

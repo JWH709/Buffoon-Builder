@@ -280,7 +280,7 @@ TASKS FOR THE WEEK:
 
 - Fix double Shake ✔️
 - Fix setState in render problems ✔️
-- Basic animation, probably shake, to the voucher claim
+- Basic animation, probably shake, to the voucher claim ✔️
 - Screen resize issues
 
 ## July 10th:

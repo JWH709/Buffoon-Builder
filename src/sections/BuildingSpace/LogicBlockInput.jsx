@@ -44,6 +44,7 @@ const LogicBlockInput = ({ setInputUpdate, inputType }) => {
         style={{
           marginLeft: "8x",
           marginRight: "8px",
+          userSelect: "none",
         }}
       >
         {inputValue}
@@ -59,12 +60,18 @@ const LogicBlockInput = ({ setInputUpdate, inputType }) => {
         <button
           className="logic-block-input-button"
           onClick={() => handleOnClick("+")}
+          style={{
+            userSelect: "none",
+          }}
         >
           +
         </button>
         <button
           className="logic-block-input-button"
           onClick={() => handleOnClick("-")}
+          style={{
+            userSelect: "none",
+          }}
         >
           -
         </button>
