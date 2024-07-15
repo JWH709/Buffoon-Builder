@@ -17,9 +17,12 @@ const JokerInfo = ({
   const [dataFromRarity, setDataFromRarity] = React.useState(1);
   const [dataFromDescription, setDataFromDescription] = React.useState(null);
   const [dataFromCost, setDataFromCost] = React.useState(null);
-  const handleDataFromRarity = (data) => {
-    setDataFromRarity(data);
-  };
+  const handleDataFromRarity = React.useCallback(
+    (data) => {
+      setDataFromRarity(data);
+    },
+    [setDataFromRarity]
+  );
   const handleDataFromDescription = (data) => {
     setDataFromDescription(data);
   };
@@ -99,7 +102,7 @@ const JokerInfo = ({
             />
           </div>
         </div>
-        <JokerRarity handler={handleDataFromRarity} />
+        <JokerRarity handleDataFromRarity={handleDataFromRarity} />
       </div>
     </>
   );

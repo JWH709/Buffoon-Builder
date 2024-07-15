@@ -3,7 +3,7 @@ import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
 import { useSpring, animated } from "@react-spring/web";
 
-const JokerRarity = ({ handler }) => {
+const JokerRarity = ({ handleDataFromRarity }) => {
   // Set up shake effect for icons:
   const [shakeState, setShakeState] = React.useState(false);
 
@@ -28,55 +28,40 @@ const JokerRarity = ({ handler }) => {
   const [plusIsClicked, setPlusIsClicked] = React.useState(false);
 
   // Create handler for changing button styles on click:
-  const handleMinusClickStyle = () => {
-    setMinusIsClicked(true);
-    setTimeout(() => {
-      setMinusIsClicked(false);
-    }, 200);
-  };
-
-  const handlePlusClickStyle = () => {
-    setPlusIsClicked(true);
-    setTimeout(() => {
-      setPlusIsClicked(false);
-    }, 200);
-  };
-
-  // Create function to handle shake
-
-  // Create functions to handle each button click, plus or minus:
-  const handleMinusClick = () => {
-    handleMinusClickStyle();
-    setShakeState(true);
-    if (rarity === 1) {
-      setRarity(4);
-      handler(4);
-    } else {
-      setRarity((prevRarity) => {
-        const newRarity = prevRarity - 1;
-        handler(newRarity);
-        return newRarity;
-      });
+  const handleClickStyle = (type) => {
+    if (type === "minus") {
+      setMinusIsClicked(true);
+      setTimeout(() => {
+        setMinusIsClicked(false);
+      }, 200);
+    } else if (type === "plus") {
+      setPlusIsClicked(true);
+      setTimeout(() => {
+        setPlusIsClicked(false);
+      }, 200);
     }
   };
 
-  const handlePlusClick = () => {
+  // Create generic handler for both plus and minus clicks:
+  const handleRarityClick = (type) => {
+    handleClickStyle(type);
     setShakeState(true);
-    handlePlusClickStyle();
-    if (rarity === 4) {
-      setRarity(1);
-      handler(1);
-    } else {
-      setRarity((prevRarity) => {
-        const newRarity = prevRarity + 1;
-        handler(newRarity);
-        return newRarity;
-      });
-    }
+    setRarity((prevRarity) => {
+      const newRarity =
+        type === "minus"
+          ? prevRarity === 1
+            ? 4
+            : prevRarity - 1
+          : prevRarity === 4
+          ? 1
+          : prevRarity + 1;
+      handleDataFromRarity(newRarity);
+      return newRarity;
+    });
   };
 
-  // Create function for getting a rarity based on a corresponding number
-  const getRarityImg = () => {
+  // Create function for getting a rarity based on a corresponding number:
+  const getRarityImg = React.useMemo(() => {
     switch (rarity) {
       case 1:
         return IMAGES.common;
@@ -89,9 +74,9 @@ const JokerRarity = ({ handler }) => {
       default:
         return IMAGES.common;
     }
-  };
+  }, [rarity]);
 
-  const getRarityText = () => {
+  const getRarityText = React.useMemo(() => {
     switch (rarity) {
       case 1:
         return "Common";
@@ -104,17 +89,15 @@ const JokerRarity = ({ handler }) => {
       default:
         return "Common";
     }
-  };
+  }, [rarity]);
 
   // Return component:
   return (
     <div className="rarity-button-container">
       <button
         className={minusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}
-        onClick={handleMinusClick}
-        style={{
-          userSelect: "none",
-        }}
+        onClick={() => handleRarityClick("minus")}
+        style={{ userSelect: "none" }}
       >
         {"<"}
       </button>
@@ -122,7 +105,7 @@ const JokerRarity = ({ handler }) => {
         className="rarity-icon"
         style={{
           transform: shakeStyles.x.to((x) => `translate3d(${x}px, 0, 0)`),
-          backgroundImage: `url(${getRarityImg()})`,
+          backgroundImage: `url(${getRarityImg})`,
           backgroundSize: "80% 80%",
           backgroundRepeat: "no-repeat",
           imageRendering: "pixelated",
@@ -136,20 +119,12 @@ const JokerRarity = ({ handler }) => {
           alignItems: "center",
         }}
       >
-        <h3
-          style={{
-            userSelect: "none",
-          }}
-        >
-          {getRarityText()}
-        </h3>
+        <h3 style={{ userSelect: "none" }}>{getRarityText}</h3>
       </animated.div>
       <button
         className={plusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}
-        onClick={handlePlusClick}
-        style={{
-          userSelect: "none",
-        }}
+        onClick={() => handleRarityClick("plus")}
+        style={{ userSelect: "none" }}
       >
         {">"}
       </button>

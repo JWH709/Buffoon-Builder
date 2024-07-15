@@ -297,3 +297,15 @@ TASKS FOR THE WEEK:
 - Going to keep working with useSpring today. Now that I understand it a little more, I should look into getting a more desirable effect for the lua downloader
 - LuaDownloader: Added a rotation effect with useSpring. It seems that async functions are the best method for getting use spring to work. I'm curious to see what more I can add. Stacking effects in useSpring would be cool, however, right now I'm happy with how the voucher is looking. I should think of some ideas on what other elements I could add effects to.
 - Made a bunch of minor CSS tweaks, mostly involving the ability to highlight text. 
+
+## July 12th: 
+
+
+- Mostly focused on learning more shader code today. Going to prepare to take a crack at converting that shadertoy balatro background to three.js on Monday.
+  
+
+## July 15th:
+
+
+- Started the day by trying to fix a bad state call in JokerRarity, however, this seems more difficult than I anticipated. I've take several steps to try and eliminate the bad state call, however, nothing seems to be working as of right now. Going to take a look at some shader code while I think about how I'm going to go about fixing this.
+- After several hours of bashing my head off of three.js/fiber documentation, and chatGPT, I've finalyl managed to create the animated background effect. Now I need to impliment it
