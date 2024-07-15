@@ -5,7 +5,8 @@ import App from "./App.jsx";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { useSpring, animated, to } from "@react-spring/web";
-
+import { Canvas } from "@react-three/fiber";
+import BalatroShaderComponent from "./assets/Background Shader/BalatroShaderComponent.jsx";
 const ScreenShake = () => {
   const shakeFactor = 5;
   const shakeRef = React.useRef(null);
@@ -73,23 +74,28 @@ const ScreenShake = () => {
   });
 
   return (
-    <animated.div
-      ref={shakeRef}
-      style={{
-        height: "100%",
-        width: "100%",
-        position: "relative",
-        transform: `translate(${to(
-          springProps.x,
-          (value) => `${value}px`
-        )}, ${to(springProps.y, (value) => `${value}px`)})`,
-      }}
-    >
-      <Navbar />
-      <DndProvider backend={HTML5Backend}>
-        <App />
-      </DndProvider>
-    </animated.div>
+    <>
+      <Canvas style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}>
+        <BalatroShaderComponent />
+      </Canvas>
+      <animated.div
+        ref={shakeRef}
+        style={{
+          height: "100%",
+          width: "100%",
+          position: "relative",
+          transform: `translate(${to(
+            springProps.x,
+            (value) => `${value}px`
+          )}, ${to(springProps.y, (value) => `${value}px`)})`,
+        }}
+      >
+        <Navbar />
+        <DndProvider backend={HTML5Backend}>
+          <App />
+        </DndProvider>
+      </animated.div>
+    </>
   );
 };
 
