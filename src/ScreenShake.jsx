@@ -75,7 +75,10 @@ const ScreenShake = () => {
 
   return (
     <>
-      <Canvas style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}>
+      <Canvas
+        style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}
+        gl={{ antialias: true }}
+      >
         <BalatroShaderComponent />
       </Canvas>
       <animated.div
