@@ -3,7 +3,7 @@ import React from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { extend } from "@react-three/fiber";
-
+//ToDo: check to see if there's a way I can fix the screen resizing issue
 extend({ PlaneGeometry: THREE.PlaneGeometry });
 
 const BalatroShaderComponent = () => {
@@ -73,7 +73,6 @@ void main() {
       });
     } catch (error) {
       console.error("Shader compilation error:", error);
-      // Handle shader compilation error here
     }
   }, []);
 
