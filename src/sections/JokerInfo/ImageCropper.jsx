@@ -59,8 +59,8 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
       style={{
         zIndex: "1",
         position: "fixed",
-        height: "300px",
-        width: "300px",
+        height: "40%",
+        width: "20%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
