@@ -69,7 +69,7 @@ void main() {
   
   gl_FragColor = ret_col;
 }
-        `,
+  `,
       });
     } catch (error) {
       console.error("Shader compilation error:", error);

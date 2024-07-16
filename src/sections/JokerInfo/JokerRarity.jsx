@@ -3,7 +3,7 @@ import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
 import { useSpring, animated } from "@react-spring/web";
 
-const JokerRarity = ({ handleDataFromRarity }) => {
+const JokerRarity = ({ setDataFromRarity }) => {
   // Set up shake effect for icons:
   const [shakeState, setShakeState] = React.useState(false);
 
@@ -55,7 +55,7 @@ const JokerRarity = ({ handleDataFromRarity }) => {
           : prevRarity === 4
           ? 1
           : prevRarity + 1;
-      handleDataFromRarity(newRarity);
+      setDataFromRarity(newRarity);
       return newRarity;
     });
   };

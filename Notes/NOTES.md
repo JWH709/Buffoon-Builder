@@ -308,4 +308,30 @@ TASKS FOR THE WEEK:
 
 
 - Started the day by trying to fix a bad state call in JokerRarity, however, this seems more difficult than I anticipated. I've take several steps to try and eliminate the bad state call, however, nothing seems to be working as of right now. Going to take a look at some shader code while I think about how I'm going to go about fixing this.
-- After several hours of bashing my head off of three.js/fiber documentation, and chatGPT, I've finalyl managed to create the animated background effect. Now I need to impliment it
+- After several hours of bashing my head off of three.js/fiber documentation, and chatGPT, I've finalyl managed to create the animated background effect. There are some current issues. The main one is the iResolution issue. When resizing the page, the background doesn't mutate with it. It needs to be refreshed before it adjusts to the same size as the current screen size. The second issue is mostly based on my screen size. I think the red outnumbers the blue a little too much.
+- Added favicon and proper page title to the page.
+
+
+# Goals for 15th-22nd:
+
+
+- Add suspense to canvas, full screen loader
+- Add image cropper/resizer
+- Fix Background load
+	- Causing by balatroMaterial.current being null and conditionally rendering the primitive
+- Fix Shader resize reso
+	- Bugs probably caused from ShaderMaterial getting created in render loop
+	- Look into examples with material creation moved outside the loop
+- Joker Rarity State Fix
+	- Problem occurs in setRarity since another state is also set in it as well
+- Think on Result blocks color
+- Hover modal on controls
+	- EX. Hover on condition blocks, read explaination
+- Start Thinking about Start + Info Screen
+
+
+## July 16th:
+
+
+- Add Image cropper
+- Fix canvas issues

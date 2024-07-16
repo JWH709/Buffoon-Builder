@@ -15,7 +15,7 @@ const BuildingSpace = ({
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
   if card.ability.name == "${jokerName}" `;
   const jokerEffectEnd = `    
-      ends
+      end
   end`;
   let [contextLua, setContextLua] = React.useState(null);
   let [conditionsLua, setConditionsLua] = React.useState(null);
