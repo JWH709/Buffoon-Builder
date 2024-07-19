@@ -162,7 +162,10 @@ const JokerInfo = ({
             />
           </div>
         </div>
-        <JokerRarity setDataFromRarity={setDataFromRarity} />
+        <JokerRarity
+          setDataFromRarity={setDataFromRarity}
+          dataFromRarity={dataFromRarity}
+        />
       </div>
     </>
   );

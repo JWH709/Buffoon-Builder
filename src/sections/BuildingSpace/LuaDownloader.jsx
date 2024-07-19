@@ -61,7 +61,6 @@ const LuaDownloader = ({
   // Create zip file:
   const zip = new JSZip();
   const pack = zip.folder("pack");
-
   // If there's no name, deny the download. I need to add the denial in the if true statement:
   const getJokerID = (name) => {
     if (name == null) {

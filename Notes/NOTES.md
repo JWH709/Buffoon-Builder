@@ -316,7 +316,7 @@ TASKS FOR THE WEEK:
 
 
 - Add suspense to canvas, full screen loader
-- Add image cropper/resizer
+- Add image cropper/resizer ✔️
 - Fix Background load
 	- Causing by balatroMaterial.current being null and conditionally rendering the primitive
 - Fix Shader resize reso
@@ -334,4 +334,21 @@ TASKS FOR THE WEEK:
 
 
 - Add Image cropper
-- Fix canvas issues
+
+
+## July 17th:
+
+
+- Busy/day off
+
+
+## July 18th: 
+
+
+- Busy/day off
+
+
+## July 19th:
+
+- Fixed the bad state call in JokerRarity by passing dataFromRarity to it, then using that instead of the redundant useState I had set up for the handleClick function.
+- 

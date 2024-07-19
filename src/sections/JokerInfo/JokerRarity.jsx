@@ -3,7 +3,7 @@ import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
 import { useSpring, animated } from "@react-spring/web";
 
-const JokerRarity = ({ setDataFromRarity }) => {
+const JokerRarity = ({ setDataFromRarity, dataFromRarity }) => {
   // Set up shake effect for icons:
   const [shakeState, setShakeState] = React.useState(false);
 
@@ -23,7 +23,7 @@ const JokerRarity = ({ setDataFromRarity }) => {
   });
 
   // Set States for rarity and button styles:
-  const [rarity, setRarity] = React.useState(1);
+
   const [minusIsClicked, setMinusIsClicked] = React.useState(false);
   const [plusIsClicked, setPlusIsClicked] = React.useState(false);
 
@@ -46,23 +46,24 @@ const JokerRarity = ({ setDataFromRarity }) => {
   const handleRarityClick = (type) => {
     handleClickStyle(type);
     setShakeState(true);
-    setRarity((prevRarity) => {
-      const newRarity =
-        type === "minus"
-          ? prevRarity === 1
-            ? 4
-            : prevRarity - 1
-          : prevRarity === 4
-          ? 1
-          : prevRarity + 1;
-      setDataFromRarity(newRarity);
-      return newRarity;
-    });
+    if (type == "+") {
+      if (dataFromRarity == 4) {
+        setDataFromRarity(1);
+      } else {
+        setDataFromRarity(dataFromRarity + 1);
+      }
+    } else {
+      if (dataFromRarity == 1) {
+        setDataFromRarity(4);
+      } else {
+        setDataFromRarity(dataFromRarity - 1);
+      }
+    }
   };
 
   // Create function for getting a rarity based on a corresponding number:
   const getRarityImg = React.useMemo(() => {
-    switch (rarity) {
+    switch (dataFromRarity) {
       case 1:
         return IMAGES.common;
       case 2:
@@ -74,10 +75,10 @@ const JokerRarity = ({ setDataFromRarity }) => {
       default:
         return IMAGES.common;
     }
-  }, [rarity]);
+  }, [dataFromRarity]);
 
   const getRarityText = React.useMemo(() => {
-    switch (rarity) {
+    switch (dataFromRarity) {
       case 1:
         return "Common";
       case 2:
@@ -89,7 +90,7 @@ const JokerRarity = ({ setDataFromRarity }) => {
       default:
         return "Common";
     }
-  }, [rarity]);
+  }, [dataFromRarity]);
 
   // Return component:
   return (
