@@ -317,13 +317,12 @@ TASKS FOR THE WEEK:
 
 - Add suspense to canvas, full screen loader
 - Add image cropper/resizer ✔️
-- Fix Background load
-	- Causing by balatroMaterial.current being null and conditionally rendering the primitive
-- Fix Shader resize reso
-	- Bugs probably caused from ShaderMaterial getting created in render loop
-	- Look into examples with material creation moved outside the loop
-- Joker Rarity State Fix
-	- Problem occurs in setRarity since another state is also set in it as well
+- Fix Background load ✔️
+	- Causing by balatroMaterial.current being null and conditionally rendering the primitive ✔️
+- Fix Shader resize reso ✔️
+	- Bugs probably caused from ShaderMaterial getting created in render loop ✔️
+	- Look into examples with material creation moved outside the loop ✔️
+- Joker Rarity State Fix ✔️
 - Think on Result blocks color
 - Hover modal on controls
 	- EX. Hover on condition blocks, read explaination
@@ -351,4 +350,5 @@ TASKS FOR THE WEEK:
 ## July 19th:
 
 - Fixed the bad state call in JokerRarity by passing dataFromRarity to it, then using that instead of the redundant useState I had set up for the handleClick function.
-- 
+- Moved the shader material outside of the component in BalatroShaderComponent. This prevents re-render issues. I initally thought it would be best to just move it above the component, but after taking a look at some code online, it seems like the best practice is to move its own file, so I created BalatroShaderMaterial.js, and moved the code there.
+- Created a useEffect function for resizing the canvas when the window resizes. Works really smoothly now that the mat is outside the component.
