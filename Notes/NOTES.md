@@ -353,3 +353,9 @@ TASKS FOR THE WEEK:
 - Moved the shader material outside of the component in BalatroShaderComponent. This prevents re-render issues. I initially thought it would be best to just move it above the component, but after taking a look at some code online, it seems like the best practice is to move its own file, so I created BalatroShaderMaterial.js, and moved the code there.
 - Created a useEffect function for resizing the canvas when the window resizes. Works really smoothly now that the mat is outside the component.
 - Kinda got the suspense set up. Not quite sure how to implement this.
+
+
+## July 22nd:
+
+
+- Add info tabs to the building lists so people can understand what's going on. Create a set up based on the joker preview comp, works pretty well. Need to go back to the text and make sure it's a descriptive as possible while remaining short. 

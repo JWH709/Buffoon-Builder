@@ -5,9 +5,20 @@ import DroppedBlock from "./DroppedBlock";
 import { IMAGES } from "../../config/assetImports";
 import ClearListButton from "./ClearListButton";
 import SectionTitle from "../../config/SectionTitle";
+import BuildingListInfo from "./BuildingListInfo";
+import jokerListInfoText from "../../config/JokerListInfoText";
 
 const BuldingList = ({ blockType, updateLua }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+  const [infoText, setInfoText] = React.useState(null);
   const [droppedItem, setDroppedItem] = React.useState(null);
+  const [title, setTitle] = React.useState(null);
+  const [backgroundImage, setBackgroundImage] = React.useState(null);
+
+  const handleMouseMove = (e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
 
   const [, drop] = useDrop({
     accept: blockType,
@@ -18,22 +29,26 @@ const BuldingList = ({ blockType, updateLua }) => {
     collect: () => ({}),
   });
 
-  let backgroundImage = null;
-  let title = null;
-  switch (blockType) {
-    case "context-block":
-      backgroundImage = IMAGES.contextListBackground;
-      title = "Context Blocks";
-      break;
-    case "condition-block":
-      backgroundImage = IMAGES.conditionListBackground;
-      title = "Condition Blocks";
-      break;
-    case "results-block":
-      title = "Result Blocks";
-      backgroundImage = IMAGES.resultsListBackground;
-      break;
-  }
+  React.useEffect(() => {
+    switch (blockType) {
+      case "context-block":
+        setBackgroundImage(IMAGES.contextListBackground);
+        setTitle("Context Blocks");
+        setInfoText(jokerListInfoText.context);
+        break;
+      case "condition-block":
+        setBackgroundImage(IMAGES.conditionListBackground);
+        setTitle("Condition Blocks");
+        setInfoText(jokerListInfoText.condition);
+        break;
+      case "results-block":
+        setTitle("Result Blocks");
+        setBackgroundImage(IMAGES.resultsListBackground);
+        setInfoText(jokerListInfoText.results);
+        break;
+    }
+  }, [setBackgroundImage, setTitle, setInfoText, blockType]);
+
   return (
     <div
       className={`building-list`}
@@ -43,7 +58,40 @@ const BuldingList = ({ blockType, updateLua }) => {
         flexDirection: "column",
       }}
     >
-      <SectionTitle text={title} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <SectionTitle text={title} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            border: "solid 5px aliceblue",
+            backgroundColor: "aliceblue",
+            color: "black",
+            height: "38px",
+            width: "38px",
+            borderRadius: "50%",
+            userSelect: "none",
+            clipPath:
+              "polygon(0px calc(100% - 8px), 4px calc(100% - 8px), 4px calc(100% - 4px), 8px calc(100% - 4px), 8px 100%, calc(100% - 8px) 100%, calc(100% - 8px) calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) calc(100% - 8px), 100% calc(100% - 8px), 100% 8px,calc(100% - 4px) 8px,calc(100% - 4px) 4px,calc(100% - 8px) 4px,calc(100% - 8px) 0px,8px 0px,8px 4px,4px 4px,4px 8px,0px 8px",
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onMouseMove={handleMouseMove}
+        >
+          i
+        </div>
+        {isHovered && (
+          <BuildingListInfo infoText={infoText} mousePosition={mousePosition} />
+        )}
+      </div>
       <div
         ref={drop}
         style={{
