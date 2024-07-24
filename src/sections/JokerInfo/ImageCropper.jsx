@@ -7,14 +7,12 @@ import { IMAGES } from "../../config/assetImports";
 const ImageCropper = ({ image, setImage, setIsCropped }) => {
   const [crop, setCrop] = React.useState({
     unit: "px",
-    aspect: 71 / 95,
     width: 142,
     height: 190,
     x: 0,
     y: 0,
   });
 
-  //Button:
   const [isClicked, setIsClicked] = React.useState(false);
 
   const handleClick = () => {
@@ -53,14 +51,15 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
     setImage(croppedImage);
     setIsCropped(true);
   };
-
   return (
     <div
       style={{
         zIndex: "1",
         position: "fixed",
-        height: "40%",
-        width: "20%",
+        top: "5%",
+        left: "5%",
+        height: "90%",
+        width: "90%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -94,7 +93,7 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
           style={{
             userSelect: "none",
             fontFamily: "balatro",
-            marginTop: "5%",
+            marginTop: "2%",
           }}
         >
           Crop

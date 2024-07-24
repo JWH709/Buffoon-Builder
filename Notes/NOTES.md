@@ -385,3 +385,5 @@ TASKS FOR THE WEEK:
 ## July 24th:
 
 
+- Make changes to image cropper, look into mobile changes.
+- Set the image uploader to only accept images that meet the basic crop dimensions or images that are below 1001x1001. Right now I have an alert set that specifies the user that the upload didn't work. I should add some sort of animation to the cropper appearing, and make the alert a bit more interesting.

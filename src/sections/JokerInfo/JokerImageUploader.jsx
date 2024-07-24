@@ -38,6 +38,17 @@ const JokerImageUploader = ({
       const image = new Image();
 
       image.onload = () => {
+        const width = image.width;
+        const height = image.height;
+        console.log(width);
+
+        if (width < 142 || width > 1000 || height < 190 || height > 1000) {
+          alert(
+            "Image dimensions must be between 142px and 700px in width, and between 190px and 700px in height."
+          );
+          return;
+        }
+
         setImage(reader.result);
         localStorage.setItem("uploadedImage", reader.result);
       };
