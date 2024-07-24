@@ -324,8 +324,8 @@ TASKS FOR THE WEEK:
 	- Look into examples with material creation moved outside the loop ✔️
 - Joker Rarity State Fix ✔️
 - Think on Result blocks color
-- Hover modal on controls
-	- EX. Hover on condition blocks, read explaination
+- Hover modal on controls ✔️
+	- EX. Hover on condition blocks, read explaination ✔️
 - Start Thinking about Start + Info Screen
 
 
@@ -359,3 +359,29 @@ TASKS FOR THE WEEK:
 
 
 - Add info tabs to the building lists so people can understand what's going on. Create a set up based on the joker preview comp, works pretty well. Need to go back to the text and make sure it's a descriptive as possible while remaining short. 
+
+
+## July 23rd:
+
+- Reviewed image cropper code. Best approach to fixing the resize issues would be to turn the cropper into a model, making it full screen and adding restrictions to the size of the image a user wants to upload
+
+
+# Goals for the 22nd-29th:
+
+
+- Add animation to text box when hovering
+- For image crop, switch to a full screen model with full image size
+	- If image size is too big, Say no
+- Commit to a mobile design
+	- Message for feedback if not confident
+- Then begin working on the new format
+- Add input to other blocks
+	- For both Context blocks and condition blocks
+	- look into icon packs which may include card
+	- Change for suit
+	- Change for Value
+
+
+## July 24th:
+
+
