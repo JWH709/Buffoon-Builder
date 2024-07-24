@@ -370,8 +370,8 @@ TASKS FOR THE WEEK:
 
 
 - Add animation to text box when hovering
-- For image crop, switch to a full screen model with full image size
-	- If image size is too big, Say no
+- For image crop, switch to a full screen model with full image size ✔️
+	- If image size is too big, Say no ✔️
 - Commit to a mobile design
 	- Message for feedback if not confident
 - Then begin working on the new format
@@ -387,3 +387,4 @@ TASKS FOR THE WEEK:
 
 - Make changes to image cropper, look into mobile changes.
 - Set the image uploader to only accept images that meet the basic crop dimensions or images that are below 1001x1001. Right now I have an alert set that specifies the user that the upload didn't work. I should add some sort of animation to the cropper appearing, and make the alert a bit more interesting.
+- Made mark up for mobile layout. Going to submit it for feedback, then start working on it.
