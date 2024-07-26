@@ -388,3 +388,16 @@ TASKS FOR THE WEEK:
 - Make changes to image cropper, look into mobile changes.
 - Set the image uploader to only accept images that meet the basic crop dimensions or images that are below 1001x1001. Right now I have an alert set that specifies the user that the upload didn't work. I should add some sort of animation to the cropper appearing, and make the alert a bit more interesting.
 - Made mark up for mobile layout. Going to submit it for feedback, then start working on it.
+
+
+## July 25th:
+
+
+ - busy
+
+
+## July 26th:
+
+
+- Begin writing code that changes the returned elements based on the size of the screen.
+- Basic layout is complete, however, I still need to add media queries for individual components. The big fish to fry right now is changing between the lists and tabs without losing info. If I set the props for the type of the building list that's being displayed, the blocks will carry over when I change those types, however, when I use conditional rendering, all data is lost on switch. Maybe look into local storage to solve this problem?
