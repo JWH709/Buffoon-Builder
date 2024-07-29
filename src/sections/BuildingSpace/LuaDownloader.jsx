@@ -13,6 +13,9 @@ const LuaDownloader = ({
   tableInsert,
   jokerName,
   image,
+  isMobile,
+  currentTab,
+  setCurrentTab,
 }) => {
   // Create shake effect to apply to voucher when download button is clicked:
   const [rotate, setRotate] = React.useState(false);
@@ -107,6 +110,10 @@ const LuaDownloader = ({
     console.log("Missing info!"); //replace with alert
   };
 
+  let voucherHeight = "100%";
+  if (isMobile) {
+    voucherHeight = "90%";
+  }
   return (
     <div
       className="downloader-button-wrapper"
@@ -128,6 +135,19 @@ const LuaDownloader = ({
           margin: "1%",
         }}
       >
+        {isMobile && (
+          <button
+            onClick={() => {
+              if (currentTab) {
+                setCurrentTab(false);
+              } else {
+                setCurrentTab(true);
+              }
+            }}
+          >
+            Switch to Details
+          </button>
+        )}
         <animated.div
           style={{
             ...props,
@@ -139,7 +159,7 @@ const LuaDownloader = ({
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              height: "100%",
+              height: voucherHeight,
               margin: "0 auto",
             }}
           >

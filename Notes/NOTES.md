@@ -401,3 +401,9 @@ TASKS FOR THE WEEK:
 
 - Begin writing code that changes the returned elements based on the size of the screen.
 - Basic layout is complete, however, I still need to add media queries for individual components. The big fish to fry right now is changing between the lists and tabs without losing info. If I set the props for the type of the building list that's being displayed, the blocks will carry over when I change those types, however, when I use conditional rendering, all data is lost on switch. Maybe look into local storage to solve this problem?
+
+
+## July 29th: 
+
+
+- Started by adding media queries for components. Everything seems to be in pretty good working order. I now have four buttons I need to style (realistically two), and a few small tweraks to make. I need to look into setting up local storage for my building lists/info.

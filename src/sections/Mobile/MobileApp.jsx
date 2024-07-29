@@ -5,6 +5,7 @@ import LuaDownloader from "../BuildingSpace/LuaDownloader";
 import SidePanel from "../SidePanel/SidePanel";
 import JokerInfo from "../JokerInfo/JokerInfo";
 import ItemTypes from "../../config/ItemTypes";
+import { IMAGES } from "../../config/assetImports";
 
 const MobileApp = ({
   setLuaJokerEffect,
@@ -17,6 +18,7 @@ const MobileApp = ({
   luaTableInsert,
   setImage,
   image,
+  isMobile,
 }) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
     if card.ability.name == "${dataFromName}" `;
@@ -56,7 +58,7 @@ const MobileApp = ({
 
   return (
     <>
-      {currentTab && (
+      {!currentTab && (
         <div
           style={{
             display: "flex",
@@ -65,6 +67,13 @@ const MobileApp = ({
             alignItems: "center",
             width: "100%",
             height: "80%",
+            fontFamily: "balatro",
+            backgroundImage: `url(${IMAGES.builderBackground})`,
+            imageRendering: "pixelated",
+            backgroundSize: " 100% 100%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            overflow: "hidden",
           }}
         >
           <div
@@ -84,7 +93,6 @@ const MobileApp = ({
                 justifyContent: "center",
                 alignItems: "center",
                 width: "50%",
-                border: "1px solid aliceblue",
                 height: "100%",
               }}
             >
@@ -117,16 +125,20 @@ const MobileApp = ({
               {currentList == ItemTypes.CONDITIONBLOCK && (
                 <BuldingList
                   blockType={ItemTypes.CONDITIONBLOCK}
-                  updateLua={setContextLua}
+                  updateLua={setConditionsLua}
                 />
               )}
               {currentList == ItemTypes.RESULTSBLOCK && (
                 <BuldingList
                   blockType={ItemTypes.RESULTSBLOCK}
-                  updateLua={setContextLua}
+                  updateLua={setResultsLua}
                 />
               )}
               <button
+                style={{
+                  width: "5%",
+                  height: "90%",
+                }}
                 onClick={() => {
                   switch (currentList) {
                     case ItemTypes.CONTEXTBLOCK:
@@ -155,33 +167,24 @@ const MobileApp = ({
                 justifyContent: "center",
                 width: "50%",
                 height: "100%",
-                border: "1px solid aliceblue",
               }}
             >
-              <button
-                onClick={() => {
-                  if (currentTab) {
-                    setCurrentTab(false);
-                  } else {
-                    setCurrentTab(true);
-                  }
-                }}
-              >
-                Switch to Details
-              </button>
               <LuaDownloader
                 jokerName={dataFromName}
                 jokerEffect={luaJokerEffect}
                 localVariables={luaLocals}
                 tableInsert={luaTableInsert}
                 image={image}
+                currentTab={currentTab}
+                setCurrentTab={setCurrentTab}
+                isMobile={isMobile}
               />
             </div>
           </div>
           <SidePanel />
         </div>
       )}
-      {!currentTab && (
+      {currentTab && (
         <div
           style={{
             display: "flex",
@@ -192,7 +195,16 @@ const MobileApp = ({
             height: "80%",
           }}
         >
-          <JokerInfo />
+          <JokerInfo
+            setCurrentTab={setCurrentTab}
+            currentTab={currentTab}
+            handleDataFromName={handleDataFromName}
+            dataFromName={dataFromName}
+            image={image}
+            setImage={setImage}
+            updateLuaLocals={setLuaLocals}
+            updateLuaTableInsert={setLuaTableInsert}
+          />
         </div>
       )}
     </>

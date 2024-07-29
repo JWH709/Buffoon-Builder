@@ -13,6 +13,8 @@ const JokerInfo = ({
   handleDataFromName,
   image,
   setImage,
+  setCurrentTab,
+  currentTab,
 }) => {
   const [dataFromRarity, setDataFromRarity] = React.useState(1);
   const [dataFromDescription, setDataFromDescription] = React.useState(null);
@@ -162,10 +164,33 @@ const JokerInfo = ({
             />
           </div>
         </div>
-        <JokerRarity
-          setDataFromRarity={setDataFromRarity}
-          dataFromRarity={dataFromRarity}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <JokerRarity
+            setDataFromRarity={setDataFromRarity}
+            dataFromRarity={dataFromRarity}
+          />
+          {currentTab && (
+            <button
+              onClick={() => {
+                if (currentTab) {
+                  setCurrentTab(false);
+                } else {
+                  setCurrentTab(true);
+                }
+              }}
+            >
+              Switch Tab
+            </button>
+          )}
+        </div>
       </div>
     </>
   );

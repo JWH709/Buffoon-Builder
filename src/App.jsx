@@ -69,6 +69,7 @@ const App = () => {
           luaTableInsert={luaTableInsert}
           setImage={setImage}
           image={image}
+          isMobile={isMobile}
         />
       )}
     </>

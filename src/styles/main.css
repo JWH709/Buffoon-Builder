@@ -916,3 +916,16 @@ html, body {
   align-items: center;
   height: 100%;
 }
+
+/* MEDIA QUERIES: */
+
+@media only screen and (max-width: 768px) {
+  .joker-details-container {width: 96%;
+  height: 96%;}
+  .building-list {width: 96%;
+    height: 96%;}
+  .downloader-button-wrapper {width: 96%;
+    height: 96%;}
+  .tab-container {width: 96%;
+    height: 44%;}
+}
