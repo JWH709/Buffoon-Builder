@@ -407,3 +407,4 @@ TASKS FOR THE WEEK:
 
 
 - Started by adding media queries for components. Everything seems to be in pretty good working order. I now have four buttons I need to style (realistically two), and a few small tweraks to make. I need to look into setting up local storage for my building lists/info.
+- Made some more tweaks to CSS. I 100% want to move those buttons that change the type of building list being render to the inside of the list themselves.

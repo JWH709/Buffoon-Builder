@@ -25,8 +25,14 @@ const MobileApp = ({
         end
     end`;
   let [contextLua, setContextLua] = React.useState(null);
+
   let [conditionsLua, setConditionsLua] = React.useState(null);
+
   let [resultsLua, setResultsLua] = React.useState(null);
+
+  const [currentTab, setCurrentTab] = React.useState(true);
+
+  const [currentList, setCurrentList] = React.useState(ItemTypes.CONTEXTBLOCK);
 
   React.useEffect(() => {
     if (contextLua == null || conditionsLua == null || resultsLua == null) {
@@ -48,12 +54,6 @@ const MobileApp = ({
     jokerEffectDeclaration,
     jokerEffectEnd,
   ]);
-
-  //
-  const [currentTab, setCurrentTab] = React.useState(true);
-
-  //Switches displayed BuildingList
-  const [currentList, setCurrentList] = React.useState(ItemTypes.CONTEXTBLOCK);
 
   return (
     <>
