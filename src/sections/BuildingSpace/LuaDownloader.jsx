@@ -135,8 +135,15 @@ const LuaDownloader = ({
           margin: "1%",
         }}
       >
+        {/* ToDo: onClick styles for button */}
         {isMobile && (
           <button
+            className="mobile-switch-button"
+            style={{
+              height: "16%",
+              width: "130%",
+              marginBottom: "10%",
+            }}
             onClick={() => {
               if (currentTab) {
                 setCurrentTab(false);
@@ -178,7 +185,7 @@ const LuaDownloader = ({
             isClicked ? "downloader-button-clicked" : "downloader-button"
           }
           style={{
-            marginTop: "8%",
+            marginTop: "3%",
           }}
           onClick={() => {
             downloadState ? downloadJoker() : missingInfoAlert();

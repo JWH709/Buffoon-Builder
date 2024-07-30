@@ -96,6 +96,39 @@ const JokerInfo = ({
   return (
     <>
       <div className="joker-details-container">
+        {currentTab && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <JokerRarity
+              setDataFromRarity={setDataFromRarity}
+              dataFromRarity={dataFromRarity}
+            />
+
+            <button
+              className="mobile-switch-button"
+              style={{
+                height: "80%",
+                width: "30%",
+              }}
+              onClick={() => {
+                if (currentTab) {
+                  setCurrentTab(false);
+                } else {
+                  setCurrentTab(true);
+                }
+              }}
+            >
+              Switch Tab
+            </button>
+          </div>
+        )}
         <div
           style={{
             display: "flex",
@@ -164,33 +197,22 @@ const JokerInfo = ({
             />
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: "100%",
-          }}
-        >
-          <JokerRarity
-            setDataFromRarity={setDataFromRarity}
-            dataFromRarity={dataFromRarity}
-          />
-          {currentTab && (
-            <button
-              onClick={() => {
-                if (currentTab) {
-                  setCurrentTab(false);
-                } else {
-                  setCurrentTab(true);
-                }
-              }}
-            >
-              Switch Tab
-            </button>
-          )}
-        </div>
+        {!currentTab && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <JokerRarity
+              setDataFromRarity={setDataFromRarity}
+              dataFromRarity={dataFromRarity}
+            />
+          </div>
+        )}
       </div>
     </>
   );

@@ -966,6 +966,38 @@ html, body {
   margin: 1%;
   margin-top: 20%;
 }
+.mobile-switch-button {  text-align: center;
+  background-color: rgb(187,123,195);
+  text-shadow: 2px 2px rgb(109,53,116);
+  color: aliceblue;
+  border: 2px solid rgb(109,53,116);
+  border-radius: 15px;
+  filter: drop-shadow(2px 2px rgb(63, 63, 63));
+  transition: background-color 0.2s;
+  font-family: 'balatro';
+  clip-path: polygon(
+    0px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px 100%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 8px),
+    100% calc(100% - 8px),
+    100% 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 0px,
+    8px 0px,
+    8px 4px,
+    4px 4px,
+    4px 8px,
+    0px 8px
+  );
+}
 @media only screen and (max-width: 1024px) {
   .mobile-container {width: 62%;
     height: 100%;}

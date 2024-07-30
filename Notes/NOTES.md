@@ -414,3 +414,4 @@ TASKS FOR THE WEEK:
 
 
 - Moved the buttons that let you change the building list you're on to the building list component. Also styled both buttons.
+- Styled both buttons that switch between info and building space. Adjust the layout of JokerInfo to make the switch less awkward on mobile.
