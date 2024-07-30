@@ -90,68 +90,33 @@ const MobileApp = ({
                   height: "100%",
                 }}
               >
-                <button
-                  onClick={() => {
-                    switch (currentList) {
-                      case ItemTypes.CONTEXTBLOCK:
-                        setCurrentList(ItemTypes.RESULTSBLOCK);
-                        break;
-                      case ItemTypes.CONDITIONBLOCK:
-                        setCurrentList(ItemTypes.CONTEXTBLOCK);
-                        break;
-                      case ItemTypes.RESULTSBLOCK:
-                        setCurrentList(ItemTypes.CONDITIONBLOCK);
-                        break;
-                      default:
-                        setCurrentList(ItemTypes.CONTEXTBLOCK);
-                        break;
-                    }
-                  }}
-                >
-                  -
-                </button>
                 {currentList == ItemTypes.CONTEXTBLOCK && (
                   <BuldingList
                     blockType={ItemTypes.CONTEXTBLOCK}
                     updateLua={setContextLua}
+                    isMobile={isMobile}
+                    setCurrentList={setCurrentList}
+                    currentList={currentList}
                   />
                 )}
                 {currentList == ItemTypes.CONDITIONBLOCK && (
                   <BuldingList
                     blockType={ItemTypes.CONDITIONBLOCK}
                     updateLua={setConditionsLua}
+                    isMobile={isMobile}
+                    setCurrentList={setCurrentList}
+                    currentList={currentList}
                   />
                 )}
                 {currentList == ItemTypes.RESULTSBLOCK && (
                   <BuldingList
                     blockType={ItemTypes.RESULTSBLOCK}
                     updateLua={setResultsLua}
+                    isMobile={isMobile}
+                    setCurrentList={setCurrentList}
+                    currentList={currentList}
                   />
                 )}
-                <button
-                  style={{
-                    width: "5%",
-                    height: "90%",
-                  }}
-                  onClick={() => {
-                    switch (currentList) {
-                      case ItemTypes.CONTEXTBLOCK:
-                        setCurrentList(ItemTypes.CONDITIONBLOCK);
-                        break;
-                      case ItemTypes.CONDITIONBLOCK:
-                        setCurrentList(ItemTypes.RESULTSBLOCK);
-                        break;
-                      case ItemTypes.RESULTSBLOCK:
-                        setCurrentList(ItemTypes.CONTEXTBLOCK);
-                        break;
-                      default:
-                        setCurrentList(ItemTypes.CONTEXTBLOCK);
-                        break;
-                    }
-                  }}
-                >
-                  +
-                </button>
               </div>
               <div
                 style={{

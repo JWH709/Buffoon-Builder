@@ -7,8 +7,15 @@ import ClearListButton from "./ClearListButton";
 import SectionTitle from "../../config/SectionTitle";
 import BuildingListInfo from "./BuildingListInfo";
 import jokerListInfoText from "../../config/JokerListInfoText";
+import ItemTypes from "../../config/ItemTypes";
 
-const BuldingList = ({ blockType, updateLua }) => {
+const BuldingList = ({
+  blockType,
+  updateLua,
+  isMobile,
+  setCurrentList,
+  currentList,
+}) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const [infoText, setInfoText] = React.useState(null);
@@ -93,27 +100,84 @@ const BuldingList = ({ blockType, updateLua }) => {
         )}
       </div>
       <div
-        ref={drop}
         style={{
-          height: "66%",
-          width: "100%",
           display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          width: "100%",
+          height: "66%",
         }}
       >
-        {droppedItem && (
-          <DroppedBlock
-            styles={droppedItem.styles}
-            title={droppedItem.title}
-            lua={droppedItem.lua}
-            id={droppedItem.id}
-            additionalInput={droppedItem.additionalInput}
-            inputType={droppedItem.inputType}
-            blockType={blockType}
-            updateLua={updateLua}
-          />
+        {/* ToDo: Add onClick styles to buttons */}
+        {isMobile && (
+          <button
+            className="current-list-button-left"
+            onClick={() => {
+              switch (currentList) {
+                case ItemTypes.CONTEXTBLOCK:
+                  setCurrentList(ItemTypes.RESULTSBLOCK);
+                  break;
+                case ItemTypes.CONDITIONBLOCK:
+                  setCurrentList(ItemTypes.CONTEXTBLOCK);
+                  break;
+                case ItemTypes.RESULTSBLOCK:
+                  setCurrentList(ItemTypes.CONDITIONBLOCK);
+                  break;
+                default:
+                  setCurrentList(ItemTypes.CONTEXTBLOCK);
+                  break;
+              }
+            }}
+          >
+            -
+          </button>
+        )}
+        <div
+          ref={drop}
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {droppedItem && (
+            <DroppedBlock
+              styles={droppedItem.styles}
+              title={droppedItem.title}
+              lua={droppedItem.lua}
+              id={droppedItem.id}
+              additionalInput={droppedItem.additionalInput}
+              inputType={droppedItem.inputType}
+              blockType={blockType}
+              updateLua={updateLua}
+            />
+          )}
+        </div>
+        {isMobile && (
+          <button
+            className="current-list-button-right"
+            onClick={() => {
+              switch (currentList) {
+                case ItemTypes.CONTEXTBLOCK:
+                  setCurrentList(ItemTypes.CONDITIONBLOCK);
+                  break;
+                case ItemTypes.CONDITIONBLOCK:
+                  setCurrentList(ItemTypes.RESULTSBLOCK);
+                  break;
+                case ItemTypes.RESULTSBLOCK:
+                  setCurrentList(ItemTypes.CONTEXTBLOCK);
+                  break;
+                default:
+                  setCurrentList(ItemTypes.CONTEXTBLOCK);
+                  break;
+              }
+            }}
+          >
+            +
+          </button>
         )}
       </div>
       <ClearListButton setDroppedItem={setDroppedItem} updateLua={updateLua} />
