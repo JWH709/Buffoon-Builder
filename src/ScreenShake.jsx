@@ -74,6 +74,36 @@ const ScreenShake = () => {
     config: { duration: 300 },
   });
 
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      const screenSize = [window.innerHeight, window.innerWidth];
+      if (screenSize[0] < 769 || screenSize[1] < 1024) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [setIsMobile]);
+
+  const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
+  const [luaLocals, setLuaLocals] = React.useState(null);
+  const [luaTableInsert, setLuaTableInsert] = React.useState(null);
+  const [dataFromName, setDataFromName] = React.useState(null);
+  const [image, setImage] = React.useState(null);
+
+  const [contextMemory, setContextMemory] = React.useState(null);
+  const [conditionsMemory, setConditionsMemory] = React.useState(null);
+  const [resultsMemory, setResultsMemory] = React.useState(null);
+
   return (
     <>
       <Suspense fallback={null}>
@@ -84,23 +114,69 @@ const ScreenShake = () => {
         >
           <BalatroShaderComponent />
         </Canvas>
-        <animated.div
-          ref={shakeRef}
-          style={{
-            height: "100%",
-            width: "100%",
-            position: "relative",
-            transform: `translate(${to(
-              springProps.x,
-              (value) => `${value}px`
-            )}, ${to(springProps.y, (value) => `${value}px`)})`,
-          }}
-        >
-          <Navbar />
-          <DndProvider backend={HTML5Backend}>
-            <App />
-          </DndProvider>
-        </animated.div>
+        {!isMobile && (
+          <animated.div
+            ref={shakeRef}
+            style={{
+              height: "100%",
+              width: "100%",
+              position: "relative",
+              transform: `translate(${to(
+                springProps.x,
+                (value) => `${value}px`
+              )}, ${to(springProps.y, (value) => `${value}px`)})`,
+            }}
+          >
+            <Navbar />
+            <DndProvider backend={HTML5Backend}>
+              <App
+                isMobile={isMobile}
+                luaJokerEffect={luaJokerEffect}
+                setLuaJokerEffect={setLuaJokerEffect}
+                luaLocals={luaLocals}
+                setLuaLocals={setLuaLocals}
+                luaTableInsert={luaTableInsert}
+                setLuaTableInsert={setLuaTableInsert}
+                dataFromName={dataFromName}
+                setDataFromName={setDataFromName}
+                image={image}
+                setImage={setImage}
+              />
+            </DndProvider>
+          </animated.div>
+        )}
+        {isMobile && (
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+              position: "relative",
+            }}
+          >
+            <Navbar />
+            <DndProvider backend={HTML5Backend}>
+              <App
+                isMobile={isMobile}
+                luaJokerEffect={luaJokerEffect}
+                setLuaJokerEffect={setLuaJokerEffect}
+                luaLocals={luaLocals}
+                setLuaLocals={setLuaLocals}
+                luaTableInsert={luaTableInsert}
+                setLuaTableInsert={setLuaTableInsert}
+                dataFromName={dataFromName}
+                setDataFromName={setDataFromName}
+                image={image}
+                setImage={setImage}
+                contextMemory={contextMemory}
+                setContextMemory={setContextMemory}
+                conditionsMemory={conditionsMemory}
+                setConditionsMemory={setConditionsMemory}
+                resultsMemory={resultsMemory}
+                setResultsMemory={setResultsMemory}
+              />
+            </DndProvider>
+          </div>
+        )}
       </Suspense>
     </>
   );

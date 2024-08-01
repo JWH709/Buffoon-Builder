@@ -15,6 +15,8 @@ const BuldingList = ({
   isMobile,
   setCurrentList,
   currentList,
+  blockMemory,
+  setBlockMemory,
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
@@ -30,11 +32,22 @@ const BuldingList = ({
   const [, drop] = useDrop({
     accept: blockType,
     drop: (item) => {
-      console.log("Item dropped:", item);
-      setDroppedItem(item);
+      if (isMobile) {
+        setDroppedItem(item);
+        handleBlockMemory(item);
+      } else {
+        setDroppedItem(item);
+      }
     },
     collect: () => ({}),
   });
+
+  const handleBlockMemory = React.useCallback(
+    (i) => {
+      setBlockMemory(i);
+    },
+    [setBlockMemory]
+  );
 
   React.useEffect(() => {
     switch (blockType) {
@@ -143,7 +156,7 @@ const BuldingList = ({
             alignItems: "center",
           }}
         >
-          {droppedItem && (
+          {droppedItem && !isMobile && (
             <DroppedBlock
               styles={droppedItem.styles}
               title={droppedItem.title}
@@ -151,6 +164,18 @@ const BuldingList = ({
               id={droppedItem.id}
               additionalInput={droppedItem.additionalInput}
               inputType={droppedItem.inputType}
+              blockType={blockType}
+              updateLua={updateLua}
+            />
+          )}
+          {blockMemory && isMobile && (
+            <DroppedBlock
+              styles={blockMemory.styles}
+              title={blockMemory.title}
+              lua={blockMemory.lua}
+              id={blockMemory.id}
+              additionalInput={blockMemory.additionalInput}
+              inputType={blockMemory.inputType}
               blockType={blockType}
               updateLua={updateLua}
             />
@@ -180,7 +205,12 @@ const BuldingList = ({
           </button>
         )}
       </div>
-      <ClearListButton setDroppedItem={setDroppedItem} updateLua={updateLua} />
+      <ClearListButton
+        setDroppedItem={setDroppedItem}
+        updateLua={updateLua}
+        isMobile={isMobile}
+        setBlockMemory={setBlockMemory}
+      />
     </div>
   );
 };

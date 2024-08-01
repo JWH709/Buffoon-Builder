@@ -1,13 +1,24 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const ClearListButton = ({ setDroppedItem, updateLua }) => {
+const ClearListButton = ({
+  setDroppedItem,
+  updateLua,
+  isMobile,
+  setBlockMemory,
+}) => {
   //Set up state for button styles & create handler for click:
   const [isClicked, setIsClicked] = React.useState(false);
 
   const handleClick = () => {
-    setDroppedItem(null);
-    updateLua(null);
+    if (isMobile) {
+      setBlockMemory(null);
+      setDroppedItem(null);
+      updateLua(null);
+    } else {
+      setDroppedItem(null);
+      updateLua(null);
+    }
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);

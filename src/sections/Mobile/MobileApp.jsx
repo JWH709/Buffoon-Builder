@@ -18,6 +18,12 @@ const MobileApp = ({
   setImage,
   image,
   isMobile,
+  contextMemory,
+  setContextMemory,
+  conditionsMemory,
+  setConditionsMemory,
+  resultsMemory,
+  setResultsMemory,
 }) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
     if card.ability.name == "${dataFromName}" `;
@@ -97,6 +103,8 @@ const MobileApp = ({
                     isMobile={isMobile}
                     setCurrentList={setCurrentList}
                     currentList={currentList}
+                    blockMemory={contextMemory}
+                    setBlockMemory={setContextMemory}
                   />
                 )}
                 {currentList == ItemTypes.CONDITIONBLOCK && (
@@ -106,6 +114,8 @@ const MobileApp = ({
                     isMobile={isMobile}
                     setCurrentList={setCurrentList}
                     currentList={currentList}
+                    blockMemory={conditionsMemory}
+                    setBlockMemory={setConditionsMemory}
                   />
                 )}
                 {currentList == ItemTypes.RESULTSBLOCK && (
@@ -115,6 +125,8 @@ const MobileApp = ({
                     isMobile={isMobile}
                     setCurrentList={setCurrentList}
                     currentList={currentList}
+                    blockMemory={resultsMemory}
+                    setBlockMemory={setResultsMemory}
                   />
                 )}
               </div>

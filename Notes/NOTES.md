@@ -439,3 +439,5 @@ TASKS FOR THE WEEK:
 
 
 - Finish mobile layout stuff today.
+- Migrated state from app up to screenshake, also created three sates for memorizing blocks in the building list during conditional rendering.
+- 

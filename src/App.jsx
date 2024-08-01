@@ -1,39 +1,28 @@
+/* eslint-disable react/prop-types */
 import SidePanel from "./sections/SidePanel/SidePanel";
 import BuildingSpace from "./sections/BuildingSpace/BuildingSpace";
 import JokerInfo from "./sections/JokerInfo/JokerInfo";
-import React from "react";
 import MobileApp from "./sections/Mobile/MobileApp";
 
-const App = () => {
-  const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
-  const [luaLocals, setLuaLocals] = React.useState(null);
-  const [luaTableInsert, setLuaTableInsert] = React.useState(null);
-  const [dataFromName, setDataFromName] = React.useState(null);
-  const [image, setImage] = React.useState(null);
-  const handleDataFromName = (data) => {
-    setDataFromName(data);
-  };
-
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      const screenSize = [window.innerHeight, window.innerWidth];
-      if (screenSize[0] < 769 || screenSize[1] < 1024) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [setIsMobile]);
-
+const App = ({
+  isMobile,
+  luaJokerEffect,
+  setLuaJokerEffect,
+  luaLocals,
+  setLuaLocals,
+  luaTableInsert,
+  setLuaTableInsert,
+  dataFromName,
+  setDataFromName,
+  image,
+  setImage,
+  contextMemory,
+  setContextMemory,
+  conditionsMemory,
+  setConditionsMemory,
+  resultsMemory,
+  setResultsMemory,
+}) => {
   return (
     <>
       {!isMobile && (
@@ -51,7 +40,7 @@ const App = () => {
             updateLuaLocals={setLuaLocals}
             updateLuaTableInsert={setLuaTableInsert}
             dataFromName={dataFromName}
-            handleDataFromName={handleDataFromName}
+            handleDataFromName={setDataFromName}
             image={image}
             setImage={setImage}
           />
@@ -60,7 +49,7 @@ const App = () => {
       {isMobile && (
         <MobileApp
           setLuaJokerEffect={setLuaJokerEffect}
-          handleDataFromName={handleDataFromName}
+          handleDataFromName={setDataFromName}
           dataFromName={dataFromName}
           luaJokerEffect={luaJokerEffect}
           setLuaLocals={setLuaLocals}
@@ -70,6 +59,12 @@ const App = () => {
           setImage={setImage}
           image={image}
           isMobile={isMobile}
+          contextMemory={contextMemory}
+          setContextMemory={setContextMemory}
+          conditionsMemory={conditionsMemory}
+          setConditionsMemory={setConditionsMemory}
+          resultsMemory={resultsMemory}
+          setResultsMemory={setResultsMemory}
         />
       )}
     </>
