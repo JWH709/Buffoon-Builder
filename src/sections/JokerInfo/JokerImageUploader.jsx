@@ -10,6 +10,8 @@ const JokerImageUploader = ({
   dataFromRarity,
   image,
   setImage,
+  isCropped,
+  setIsCropped,
 }) => {
   React.useEffect(() => {
     const savedImage = localStorage.getItem("uploadedImage");
@@ -17,8 +19,6 @@ const JokerImageUploader = ({
       setImage(savedImage);
     }
   }, [setImage]);
-
-  const [isCropped, setIsCropped] = React.useState(false);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];

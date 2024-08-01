@@ -21,6 +21,8 @@ const JokerInfo = ({
   setDataFromDescription,
   dataFromCost,
   setDataFromCost,
+  isCropped,
+  setIsCropped,
 }) => {
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
@@ -158,6 +160,8 @@ const JokerInfo = ({
                 dataFromRarity={dataFromRarity}
                 image={image}
                 setImage={setImage}
+                isCropped={isCropped}
+                setIsCropped={setIsCropped}
               />
             </div>
           </div>

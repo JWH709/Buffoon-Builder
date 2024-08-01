@@ -102,6 +102,7 @@ const ScreenShake = () => {
   const [dataFromRarity, setDataFromRarity] = React.useState(1);
   const [dataFromDescription, setDataFromDescription] = React.useState(null);
   const [dataFromCost, setDataFromCost] = React.useState(null);
+  const [isCropped, setIsCropped] = React.useState(false);
 
   const [contextMemory, setContextMemory] = React.useState(null);
   const [conditionsMemory, setConditionsMemory] = React.useState(null);
@@ -150,6 +151,8 @@ const ScreenShake = () => {
                 setDataFromRarity={setDataFromRarity}
                 setDataFromCost={setDataFromCost}
                 setDataFromDescription={setDataFromDescription}
+                isCropped={isCropped}
+                setIsCropped={setIsCropped}
               />
             </DndProvider>
           </animated.div>
@@ -188,6 +191,8 @@ const ScreenShake = () => {
                 setDataFromRarity={setDataFromRarity}
                 setDataFromCost={setDataFromCost}
                 setDataFromDescription={setDataFromDescription}
+                isCropped={isCropped}
+                setIsCropped={setIsCropped}
               />
             </DndProvider>
           </div>

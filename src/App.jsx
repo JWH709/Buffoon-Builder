@@ -28,6 +28,8 @@ const App = ({
   setDataFromDescription,
   dataFromCost,
   setDataFromCost,
+  isCropped,
+  setIsCropped,
 }) => {
   return (
     <>
@@ -55,6 +57,8 @@ const App = ({
             setDataFromRarity={setDataFromRarity}
             setDataFromCost={setDataFromCost}
             setDataFromDescription={setDataFromDescription}
+            isCropped={isCropped}
+            setIsCropped={setIsCropped}
           />
         </div>
       )}
@@ -83,6 +87,8 @@ const App = ({
           setDataFromRarity={setDataFromRarity}
           setDataFromCost={setDataFromCost}
           setDataFromDescription={setDataFromDescription}
+          isCropped={isCropped}
+          setIsCropped={setIsCropped}
         />
       )}
     </>

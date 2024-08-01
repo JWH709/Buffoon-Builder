@@ -30,6 +30,8 @@ const MobileApp = ({
   setDataFromDescription,
   dataFromCost,
   setDataFromCost,
+  isCropped,
+  setIsCropped,
 }) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
     if card.ability.name == "${dataFromName}" `;
@@ -188,6 +190,8 @@ const MobileApp = ({
             setDataFromRarity={setDataFromRarity}
             setDataFromCost={setDataFromCost}
             setDataFromDescription={setDataFromDescription}
+            isCropped={isCropped}
+            setIsCropped={setIsCropped}
           />
         </div>
       )}
