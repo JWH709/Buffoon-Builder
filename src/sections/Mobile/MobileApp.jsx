@@ -24,6 +24,12 @@ const MobileApp = ({
   setConditionsMemory,
   resultsMemory,
   setResultsMemory,
+  dataFromRarity,
+  setDataFromRarity,
+  dataFromDescription,
+  setDataFromDescription,
+  dataFromCost,
+  setDataFromCost,
 }) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
     if card.ability.name == "${dataFromName}" `;
@@ -176,6 +182,12 @@ const MobileApp = ({
             setImage={setImage}
             updateLuaLocals={setLuaLocals}
             updateLuaTableInsert={setLuaTableInsert}
+            dataFromRarity={dataFromRarity}
+            dataFromCost={dataFromCost}
+            dataFromDescription={dataFromDescription}
+            setDataFromRarity={setDataFromRarity}
+            setDataFromCost={setDataFromCost}
+            setDataFromDescription={setDataFromDescription}
           />
         </div>
       )}

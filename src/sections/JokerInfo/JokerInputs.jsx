@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const JokerInput = ({ inputType, handler, length, type }) => {
+const JokerInput = ({ inputType, handler, length, type, defaultValue }) => {
   const handleInputChange = (event) => {
     if (inputType == "input-joker-cost") {
       if (event.target.value <= 0) {
@@ -14,6 +14,7 @@ const JokerInput = ({ inputType, handler, length, type }) => {
     const data = event.target.value;
     handler(data);
   };
+
   return (
     <>
       <div className="joker-input-container">
@@ -23,6 +24,7 @@ const JokerInput = ({ inputType, handler, length, type }) => {
             className={inputType}
             onChange={handleInputChange}
             maxLength={length}
+            value={defaultValue}
           />
         </div>
       </div>

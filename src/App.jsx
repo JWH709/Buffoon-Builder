@@ -22,6 +22,12 @@ const App = ({
   setConditionsMemory,
   resultsMemory,
   setResultsMemory,
+  dataFromRarity,
+  setDataFromRarity,
+  dataFromDescription,
+  setDataFromDescription,
+  dataFromCost,
+  setDataFromCost,
 }) => {
   return (
     <>
@@ -43,6 +49,12 @@ const App = ({
             handleDataFromName={setDataFromName}
             image={image}
             setImage={setImage}
+            dataFromRarity={dataFromRarity}
+            dataFromCost={dataFromCost}
+            dataFromDescription={dataFromDescription}
+            setDataFromRarity={setDataFromRarity}
+            setDataFromCost={setDataFromCost}
+            setDataFromDescription={setDataFromDescription}
           />
         </div>
       )}
@@ -65,6 +77,12 @@ const App = ({
           setConditionsMemory={setConditionsMemory}
           resultsMemory={resultsMemory}
           setResultsMemory={setResultsMemory}
+          dataFromRarity={dataFromRarity}
+          dataFromCost={dataFromCost}
+          dataFromDescription={dataFromDescription}
+          setDataFromRarity={setDataFromRarity}
+          setDataFromCost={setDataFromCost}
+          setDataFromDescription={setDataFromDescription}
         />
       )}
     </>

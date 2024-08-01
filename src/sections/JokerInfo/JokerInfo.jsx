@@ -15,17 +15,13 @@ const JokerInfo = ({
   setImage,
   setCurrentTab,
   currentTab,
+  dataFromRarity,
+  setDataFromRarity,
+  dataFromDescription,
+  setDataFromDescription,
+  dataFromCost,
+  setDataFromCost,
 }) => {
-  const [dataFromRarity, setDataFromRarity] = React.useState(1);
-  const [dataFromDescription, setDataFromDescription] = React.useState(null);
-  const [dataFromCost, setDataFromCost] = React.useState(null);
-
-  const handleDataFromDescription = (data) => {
-    setDataFromDescription(data);
-  };
-  const handleDataFromCost = (data) => {
-    setDataFromCost(data);
-  };
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
       const luaJokerNameLower = dataFromName.toLowerCase();
@@ -93,6 +89,19 @@ const JokerInfo = ({
     updateLuaLocals,
     updateLuaTableInsert,
   ]);
+
+  let defaultCost = 0;
+  if (dataFromCost) {
+    defaultCost = dataFromCost;
+  }
+  let defaultName = "";
+  if (dataFromName) {
+    defaultName = dataFromName;
+  }
+  let defaultDescription = "";
+  if (dataFromDescription) {
+    defaultDescription = dataFromDescription;
+  }
   return (
     <>
       <div className="joker-details-container">
@@ -159,7 +168,9 @@ const JokerInfo = ({
             </div>
             <JokerDescription
               inputType={"input-joker-effect"}
-              handler={handleDataFromDescription}
+              setDataFromDescription={setDataFromDescription}
+              dataFromDescription={dataFromDescription}
+              defaultDescription={defaultDescription}
             />
           </div>
         </div>
@@ -183,6 +194,8 @@ const JokerInfo = ({
               handler={handleDataFromName}
               length={18}
               type={"text"}
+              dataFromName={dataFromName}
+              defaultValue={defaultName}
             />
           </div>
           <div className="container-cost">
@@ -191,9 +204,11 @@ const JokerInfo = ({
             </div>
             <JokerInput
               inputType={"input-joker-cost"}
-              handler={handleDataFromCost}
+              handler={setDataFromCost}
               length={3}
               type={"number"}
+              dataFromCost={dataFromCost}
+              defaultValue={defaultCost}
             />
           </div>
         </div>

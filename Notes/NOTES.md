@@ -440,4 +440,4 @@ TASKS FOR THE WEEK:
 
 - Finish mobile layout stuff today.
 - Migrated state from app up to screenshake, also created three sates for memorizing blocks in the building list during conditional rendering.
-- 
+- Did the same thing for all of the jokerinfo props. The inputs/textarea for JokerInput/JokerDescription were giving me a bunch of errors so I enacted some voodoo. Should check to see if this is a nono

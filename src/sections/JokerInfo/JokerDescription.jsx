@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
-const JokerDescription = ({ inputTitle, inputType, handler }) => {
+const JokerDescription = ({
+  inputTitle,
+  inputType,
+  setDataFromDescription,
+  defaultDescription,
+}) => {
   const sendDataToPreview = () => {
     const data = event.target.value;
-    handler(data);
+    setDataFromDescription(data);
   };
 
   return (
@@ -19,6 +24,7 @@ const JokerDescription = ({ inputTitle, inputType, handler }) => {
             className={inputType}
             onChange={sendDataToPreview}
             maxLength={66}
+            value={defaultDescription}
           ></textarea>
         </div>
       </div>

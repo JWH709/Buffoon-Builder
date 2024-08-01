@@ -99,6 +99,9 @@ const ScreenShake = () => {
   const [luaTableInsert, setLuaTableInsert] = React.useState(null);
   const [dataFromName, setDataFromName] = React.useState(null);
   const [image, setImage] = React.useState(null);
+  const [dataFromRarity, setDataFromRarity] = React.useState(1);
+  const [dataFromDescription, setDataFromDescription] = React.useState(null);
+  const [dataFromCost, setDataFromCost] = React.useState(null);
 
   const [contextMemory, setContextMemory] = React.useState(null);
   const [conditionsMemory, setConditionsMemory] = React.useState(null);
@@ -141,6 +144,12 @@ const ScreenShake = () => {
                 setDataFromName={setDataFromName}
                 image={image}
                 setImage={setImage}
+                dataFromRarity={dataFromRarity}
+                dataFromCost={dataFromCost}
+                dataFromDescription={dataFromDescription}
+                setDataFromRarity={setDataFromRarity}
+                setDataFromCost={setDataFromCost}
+                setDataFromDescription={setDataFromDescription}
               />
             </DndProvider>
           </animated.div>
@@ -173,6 +182,12 @@ const ScreenShake = () => {
                 setConditionsMemory={setConditionsMemory}
                 resultsMemory={resultsMemory}
                 setResultsMemory={setResultsMemory}
+                dataFromRarity={dataFromRarity}
+                dataFromCost={dataFromCost}
+                dataFromDescription={dataFromDescription}
+                setDataFromRarity={setDataFromRarity}
+                setDataFromCost={setDataFromCost}
+                setDataFromDescription={setDataFromDescription}
               />
             </DndProvider>
           </div>
