@@ -1,3 +1,5 @@
+//ToDo: Fix lower case import error (github)
+
 const jokerListInfoText = {
     context: 'Context blocks provide the context for when your joker effect is activating. ',
     results: 'Result blocks provide the dersired effect of your joker.',

@@ -105,6 +105,7 @@ const JokerImageUploader = ({
             setIsCropped={setIsCropped}
             setImage={setImage}
           />
+          {/* ToDo: Make this button look good */}
           <button className="button-delete-image" onClick={handleDeleteImage}>
             &times;
           </button>

@@ -369,12 +369,11 @@ TASKS FOR THE WEEK:
 # Goals for the 22nd-29th:
 
 
-- Add animation to text box when hovering
 - For image crop, switch to a full screen model with full image size ✔️
 	- If image size is too big, Say no ✔️
-- Commit to a mobile design
-	- Message for feedback if not confident
-- Then begin working on the new format
+- Commit to a mobile design ✔️
+	- Message for feedback if not confident ✔️
+- Then begin working on the new format ✔️
 - Add input to other blocks
 	- For both Context blocks and condition blocks
 	- look into icon packs which may include card
@@ -415,3 +414,28 @@ TASKS FOR THE WEEK:
 
 - Moved the buttons that let you change the building list you're on to the building list component. Also styled both buttons.
 - Styled both buttons that switch between info and building space. Adjust the layout of JokerInfo to make the switch less awkward on mobile.
+### Questions:
+- Should I use spring to add all of the animations I want to add? Now That I've figured out how to use it with async functions, can I just apply those to any transformation I want? 
+- How should I manage storing state for all of the non-rendered components?
+- Intro page layout, animations, info, etc
+- Sounds and background music?
+- better rounding on buttons
+
+
+# Goals for the 30th-6th:
+
+- Typo in Results Block info
+- Fix up Mobile Interface (Can also set dpr to 1 in Canvas for Shader fix)
+	- Move State up/retain state
+	- That or content-visibility none using ?
+- Change Results tab/block to be matching in some capacity
+- Potentially Add a few more animations
+- Intro Page/Big description Page
+
+- Bonus: Maybe swiping on some stuff
+
+
+## August 1st:
+
+
+- Finish mobile layout stuff today.
