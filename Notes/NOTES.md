@@ -425,8 +425,8 @@ TASKS FOR THE WEEK:
 # Goals for the 30th-6th:
 
 - Typo in Results Block info
-- Fix up Mobile Interface (Can also set dpr to 1 in Canvas for Shader fix)
-	- Move State up/retain state
+- Fix up Mobile Interface (Can also set dpr to 1 in Canvas for Shader fix) ✔️
+	- Move State up/retain state ✔️
 	- That or content-visibility none using ?
 - Change Results tab/block to be matching in some capacity
 - Potentially Add a few more animations
