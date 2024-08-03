@@ -442,3 +442,13 @@ TASKS FOR THE WEEK:
 - Migrated state from app up to screenshake, also created three sates for memorizing blocks in the building list during conditional rendering.
 - Did the same thing for all of the jokerinfo props. The inputs/textarea for JokerInput/JokerDescription were giving me a bunch of errors so I enacted some voodoo. Should check to see if this is a nono
 - Cropper was way easier to fix than expected. I had a setState declared in it that tells the component whether or not an image has been cropped. All I had to do was move that up.
+
+
+## August 3rd:
+
+
+- Make final tweaks to mobile before moving on too spring animations foor entire page.
+- ToDo: Drop blocks need to have a feature where you can add them by tapping on mobile as DnD doesn't work with touch/it's awkward. The following componets need to be fixed on resize: LuaDownloader (everything), BlockLists (text, button), JokerInfo (inputs too big, Rarity text too big). Once The previous things are fixed, animations can be added to the following: Switch tab button(s): Add an animation that plays when swapping between info and building space. ImageCropper: Add an animation that plays when the image cropper pops up, ideally, it should descend from the top of the screen on open, and ascend back up offscreen on close.
+- Bonus stuff: If everything above is completed early, and I have some extra time today, take a look into making the switch buttons a single component, replacing the buttons for changing whatever list is active to a swiping feature (use lib for this), revamp local storage for an image to be overridden with a crop (also check to see if there's a setting to allow for transparency).
+
+- Made the blocks tap to place on mobile

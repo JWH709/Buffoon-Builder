@@ -160,7 +160,12 @@ const MobileApp = ({
                 />
               </div>
             </div>
-            <SidePanel />
+            <SidePanel
+              isMobile={isMobile}
+              setResultsMemory={setResultsMemory}
+              setConditionsMemory={setConditionsMemory}
+              setContextMemory={setContextMemory}
+            />
           </div>
         </div>
       )}

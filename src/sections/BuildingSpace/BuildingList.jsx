@@ -37,6 +37,7 @@ const BuldingList = ({
         handleBlockMemory(item);
       } else {
         setDroppedItem(item);
+        console.log(item);
       }
     },
     collect: () => ({}),

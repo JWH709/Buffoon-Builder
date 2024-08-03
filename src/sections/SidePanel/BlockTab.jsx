@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import LogicBlock from "./LogicBlocks";
-const BlockTab = ({ blockArray, blockType }) => {
+const BlockTab = ({ blockArray, blockType, isMobile, setBlockMemory }) => {
   let background = null;
   switch (blockType) {
     case "context-block":
@@ -32,6 +32,8 @@ const BlockTab = ({ blockArray, blockType }) => {
               additionalInput={block.additionalInput}
               inputType={block.inputType}
               blockType={blockType}
+              isMobile={isMobile}
+              setBlockMemory={setBlockMemory}
             />
           );
         })}

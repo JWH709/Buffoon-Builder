@@ -9,7 +9,12 @@ import contextBlocks from "../../config/contextBlocks.js";
 import conditionBlocks from "../../config/conditionBlocks.js";
 import resultBlocks from "../../config/resultBlocks.js";
 import ItemTypes from "../../config/ItemTypes.jsx";
-function SidePanel() {
+function SidePanel({
+  isMobile,
+  setConditionsMemory,
+  setResultsMemory,
+  setContextMemory,
+}) {
   const [key, setKey] = useState("home");
   return (
     <div className="tab-container">
@@ -23,6 +28,9 @@ function SidePanel() {
           height: "95%",
         }}
       >
+        {
+          //ToDo: if isMobile, make the tabs switch with the active building list
+        }
         <Tabs
           id="controlled-tab"
           activeKey={key}
@@ -33,18 +41,24 @@ function SidePanel() {
             <BlockTab
               blockArray={contextBlocks}
               blockType={ItemTypes.CONTEXTBLOCK}
+              isMobile={isMobile}
+              setBlockMemory={setContextMemory}
             />
           </Tab>
           <Tab eventKey="conditions" title="Conditions">
             <BlockTab
               blockArray={conditionBlocks}
               blockType={ItemTypes.CONDITIONBLOCK}
+              isMobile={isMobile}
+              setBlockMemory={setConditionsMemory}
             />
           </Tab>
           <Tab eventKey="results" title="Results">
             <BlockTab
               blockArray={resultBlocks}
               blockType={ItemTypes.RESULTSBLOCK}
+              isMobile={isMobile}
+              setBlockMemory={setResultsMemory}
             />
           </Tab>
         </Tabs>
