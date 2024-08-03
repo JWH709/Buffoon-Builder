@@ -23,6 +23,7 @@ const JokerInfo = ({
   setDataFromCost,
   isCropped,
   setIsCropped,
+  isMobile,
 }) => {
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
@@ -120,6 +121,7 @@ const JokerInfo = ({
             <JokerRarity
               setDataFromRarity={setDataFromRarity}
               dataFromRarity={dataFromRarity}
+              isMobile={isMobile}
             />
 
             <button

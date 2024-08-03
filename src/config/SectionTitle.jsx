@@ -7,7 +7,6 @@ const SectionTitle = ({ text }) => {
   React.useEffect(() => {
     const handleResize = () => {
       const screenSize = window.innerWidth;
-      console.log(screenSize);
       if (screenSize > 1670) {
         setTextSize(false);
       } else if (screenSize < 1670 && screenSize >= 1500) {

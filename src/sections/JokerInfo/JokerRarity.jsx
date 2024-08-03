@@ -3,7 +3,7 @@ import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
 import { useSpring, animated } from "@react-spring/web";
 
-const JokerRarity = ({ setDataFromRarity, dataFromRarity }) => {
+const JokerRarity = ({ setDataFromRarity, dataFromRarity, isMobile }) => {
   // Set up shake effect for icons:
   const [shakeState, setShakeState] = React.useState(false);
 
@@ -120,7 +120,8 @@ const JokerRarity = ({ setDataFromRarity, dataFromRarity }) => {
           alignItems: "center",
         }}
       >
-        <h3 style={{ userSelect: "none" }}>{getRarityText}</h3>
+        {isMobile && <h4 style={{ userSelect: "none" }}>{getRarityText}</h4>}
+        {!isMobile && <h3 style={{ userSelect: "none" }}>{getRarityText}</h3>}
       </animated.div>
       <button
         className={plusIsClicked ? "rarity-buttons-clicked" : "rarity-buttons"}

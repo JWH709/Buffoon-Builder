@@ -197,6 +197,7 @@ const MobileApp = ({
             setDataFromDescription={setDataFromDescription}
             isCropped={isCropped}
             setIsCropped={setIsCropped}
+            isMobile={isMobile}
           />
         </div>
       )}
