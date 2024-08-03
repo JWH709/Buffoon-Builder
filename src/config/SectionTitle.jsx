@@ -1,45 +1,84 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 const SectionTitle = ({ text }) => {
-  const textRef = useRef();
-  const [fontSize, setFontSize] = useState(30);
+  const [textSize, setTextSize] = React.useState(false);
 
-  //ToDo: This is pretty Jank and gets screwed up easily. Need to think of a way for it to react more instantaneously. Add Something that detects when I'm maximizing the window.
-  useEffect(() => {
-    const resizeText = () => {
-      const containerWidth = textRef.current.parentElement.clientWidth;
-      const textWidth = textRef.current.scrollWidth;
-
-      if (textWidth > containerWidth) {
-        setFontSize((prevFontSize) => prevFontSize - 1);
+  React.useEffect(() => {
+    const handleResize = () => {
+      const screenSize = window.innerWidth;
+      console.log(screenSize);
+      if (screenSize > 1670) {
+        setTextSize(false);
+      } else if (screenSize < 1670 && screenSize >= 1500) {
+        setTextSize(3);
+      } else if (screenSize < 1500 && screenSize >= 1340) {
+        setTextSize(2);
+      } else if (screenSize < 1340) {
+        setTextSize(1);
       } else {
-        setFontSize((prevFontSize) => Math.min(prevFontSize + 1, 30));
+        setTextSize(false);
       }
     };
+    handleResize();
 
-    resizeText();
-    window.addEventListener("resize", resizeText);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", resizeText);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [text]);
+  }, [setTextSize, textSize]);
 
   return (
     <div className="auto-resize-container">
-      <h2
-        ref={textRef}
-        className="auto-resize-text"
-        style={{
-          fontSize: `${fontSize}px`,
-          color: "aliceblue",
-          fontFamily: "balatro",
-          userSelect: "none",
-        }}
-      >
-        {text}
-      </h2>
+      {!textSize && (
+        <h2
+          className="auto-resize-text"
+          style={{
+            color: "aliceblue",
+            fontFamily: "balatro",
+            userSelect: "none",
+          }}
+        >
+          {text}
+        </h2>
+      )}
+      {textSize == 3 && (
+        <h3
+          className="auto-resize-text"
+          style={{
+            color: "aliceblue",
+            fontFamily: "balatro",
+            userSelect: "none",
+          }}
+        >
+          {text}
+        </h3>
+      )}
+      {textSize == 2 && (
+        <h4
+          className="auto-resize-text"
+          style={{
+            color: "aliceblue",
+            fontFamily: "balatro",
+            userSelect: "none",
+          }}
+        >
+          {text}
+        </h4>
+      )}
+      {textSize == 1 && (
+        <h5
+          className="auto-resize-text"
+          style={{
+            color: "aliceblue",
+            fontFamily: "balatro",
+            userSelect: "none",
+          }}
+        >
+          {text}
+        </h5>
+      )}
     </div>
   );
 };

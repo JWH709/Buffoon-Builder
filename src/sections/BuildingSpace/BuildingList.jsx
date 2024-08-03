@@ -87,7 +87,19 @@ const BuldingList = ({
           alignItems: "center",
         }}
       >
-        <SectionTitle text={title} />
+        {isMobile && (
+          <h5
+            style={{
+              color: "aliceblue",
+              fontFamily: "balatro",
+              userSelect: "none",
+              marginRight: "4px",
+            }}
+          >
+            {title}
+          </h5>
+        )}
+        {!isMobile && <SectionTitle text={title} />}
         <div
           style={{
             display: "flex",
@@ -95,6 +107,7 @@ const BuldingList = ({
             alignItems: "center",
             border: "solid 5px aliceblue",
             backgroundColor: "aliceblue",
+            marginBottom: "2%",
             color: "black",
             height: "38px",
             width: "38px",

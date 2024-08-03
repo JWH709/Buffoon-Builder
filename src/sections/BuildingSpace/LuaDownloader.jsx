@@ -112,7 +112,7 @@ const LuaDownloader = ({
 
   let voucherHeight = "100%";
   if (isMobile) {
-    voucherHeight = "90%";
+    voucherHeight = "80%";
   }
   return (
     <div
@@ -140,8 +140,8 @@ const LuaDownloader = ({
           <button
             className="mobile-switch-button"
             style={{
-              height: "16%",
-              width: "130%",
+              height: "20%",
+              width: "180%",
               marginBottom: "10%",
             }}
             onClick={() => {
@@ -155,31 +155,43 @@ const LuaDownloader = ({
             Switch to Details
           </button>
         )}
-        <animated.div
-          style={{
-            ...props,
-          }}
-        >
-          <Tilt
+        {!isMobile && (
+          <animated.div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              height: voucherHeight,
-              margin: "0 auto",
+              ...props,
             }}
           >
-            <img
-              src={IMAGES.jokerVoucher}
-              alt="A custom joker voucher"
+            <Tilt
               style={{
-                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: voucherHeight,
                 margin: "0 auto",
               }}
-            />
-          </Tilt>
-        </animated.div>
+            >
+              <img
+                src={IMAGES.jokerVoucher}
+                alt="A custom joker voucher"
+                style={{
+                  height: "100%",
+                  margin: "0 auto",
+                }}
+              />
+            </Tilt>
+          </animated.div>
+        )}
+        {isMobile && (
+          <img
+            src={IMAGES.jokerVoucher}
+            alt="A custom joker voucher"
+            style={{
+              height: "65%",
+              margin: "0 auto",
+            }}
+          />
+        )}
         <button
           className={
             isClicked ? "downloader-button-clicked" : "downloader-button"
