@@ -454,3 +454,14 @@ TASKS FOR THE WEEK:
 - Made the blocks tap to place on mobile, fixed the section title component, fixed the joker info mobile stuff
 
 - Noticed Issues: onClick stuff seems to persist on mobile
+
+
+## August 4th:
+
+
+- Spring stuff:
+	- Cropper (mobile & main) ✔️
+	- switch tabs (mobile)
+- Manged to get the cropper working after some battling. Seems like it's working fine as of right now, but noticed some issues while working tooday. 
+- ToDo: Fix screen shake bug. Breaks when the app changes back from mobile to desktop
+- ToDo: Fix that ugly X button. I'm sure something can be done to fix it.
