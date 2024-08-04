@@ -2,6 +2,7 @@
 import React from "react";
 import DroppedArt from "./DroppedArt";
 import ImageCropper from "./ImageCropper";
+import { useSpring, animated } from "@react-spring/web";
 
 const JokerImageUploader = ({
   dataFromName,
@@ -44,7 +45,7 @@ const JokerImageUploader = ({
 
         if (width < 142 || width > 1000 || height < 190 || height > 1000) {
           alert(
-            "Image dimensions must be between 142px and 700px in width, and between 190px and 700px in height."
+            "Image dimensions must be between 142px and 1000px in width, and between 190px and 1000px in height."
           );
           return;
         }
@@ -70,6 +71,16 @@ const JokerImageUploader = ({
     setIsCropped(false);
     localStorage.removeItem("uploadedImage");
   };
+
+  // Adjusted animation
+  const cropperAnimation = useSpring({
+    from: { transform: "translateY(-100%)", opacity: 0 },
+    to: {
+      transform: image && !isCropped ? "translateY(0%)" : "translateY(-100%)",
+      opacity: image && !isCropped ? 1 : 0,
+    },
+    config: { duration: 300 },
+  });
 
   return (
     <div>
@@ -99,17 +110,29 @@ const JokerImageUploader = ({
         </>
       )}
       {image && !isCropped && (
-        <div style={{ position: "relative", display: "inline-block" }}>
-          <ImageCropper
-            image={image}
-            setIsCropped={setIsCropped}
-            setImage={setImage}
-          />
-          {/* ToDo: Make this button look good */}
-          <button className="button-delete-image" onClick={handleDeleteImage}>
-            &times;
-          </button>
-        </div>
+        <animated.div
+          key={image}
+          style={{
+            ...cropperAnimation,
+            position: "fixed",
+            top: "5%",
+            left: "5%",
+            height: "90%",
+            width: "90%",
+            zIndex: "1",
+          }}
+        >
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <ImageCropper
+              image={image}
+              setIsCropped={setIsCropped}
+              setImage={setImage}
+            />
+            <button className="button-delete-image" onClick={handleDeleteImage}>
+              &times;
+            </button>
+          </div>
+        </animated.div>
       )}
       {image && isCropped && (
         <div style={{ position: "relative", display: "inline-block" }}>
