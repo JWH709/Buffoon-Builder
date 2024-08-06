@@ -18,7 +18,7 @@ const conditionBlocks = [
         inputType: 'none'
     },
     {
-        title: "Scoring Card is Divisible by 2",
+        title: "Scoring Card is Even",
         id: "cd-3",
         LUA: "context.other_card:get_id() <= 10 and context.other_card:get_id() >= 0 and context.other_card:get_id() % 2 == 0",
         styles: ['rgb(53,108,85)','2px 2px rgb(45,95,74)'],

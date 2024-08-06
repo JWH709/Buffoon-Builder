@@ -8,6 +8,7 @@ import { useSpring, animated, to } from "@react-spring/web";
 import { Canvas } from "@react-three/fiber";
 import BalatroShaderComponent from "./assets/Background Shader/BalatroShaderComponent.jsx";
 import { Suspense } from "react";
+import IntroPage from "./IntroPage.jsx";
 const ScreenShake = () => {
   const shakeFactor = 5;
   const shakeRef = React.useRef(null);
@@ -103,6 +104,7 @@ const ScreenShake = () => {
   const [dataFromDescription, setDataFromDescription] = React.useState(null);
   const [dataFromCost, setDataFromCost] = React.useState(null);
   const [isCropped, setIsCropped] = React.useState(false);
+  const [helpPageVisible, setHelpPageVisible] = React.useState(true);
 
   const [contextMemory, setContextMemory] = React.useState(null);
   const [conditionsMemory, setConditionsMemory] = React.useState(null);
@@ -131,30 +133,50 @@ const ScreenShake = () => {
               )}, ${to(springProps.y, (value) => `${value}px`)})`,
             }}
           >
-            <Navbar />
-            <DndProvider backend={HTML5Backend}>
-              <App
-                isMobile={isMobile}
-                luaJokerEffect={luaJokerEffect}
-                setLuaJokerEffect={setLuaJokerEffect}
-                luaLocals={luaLocals}
-                setLuaLocals={setLuaLocals}
-                luaTableInsert={luaTableInsert}
-                setLuaTableInsert={setLuaTableInsert}
-                dataFromName={dataFromName}
-                setDataFromName={setDataFromName}
-                image={image}
-                setImage={setImage}
-                dataFromRarity={dataFromRarity}
-                dataFromCost={dataFromCost}
-                dataFromDescription={dataFromDescription}
-                setDataFromRarity={setDataFromRarity}
-                setDataFromCost={setDataFromCost}
-                setDataFromDescription={setDataFromDescription}
-                isCropped={isCropped}
-                setIsCropped={setIsCropped}
-              />
-            </DndProvider>
+            {helpPageVisible && (
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <IntroPage
+                  setHelpPageVisible={setHelpPageVisible}
+                  isMobile={isMobile}
+                />
+              </div>
+            )}
+            {!helpPageVisible && (
+              <>
+                <Navbar />
+                <DndProvider backend={HTML5Backend}>
+                  <App
+                    isMobile={isMobile}
+                    luaJokerEffect={luaJokerEffect}
+                    setLuaJokerEffect={setLuaJokerEffect}
+                    luaLocals={luaLocals}
+                    setLuaLocals={setLuaLocals}
+                    luaTableInsert={luaTableInsert}
+                    setLuaTableInsert={setLuaTableInsert}
+                    dataFromName={dataFromName}
+                    setDataFromName={setDataFromName}
+                    image={image}
+                    setImage={setImage}
+                    dataFromRarity={dataFromRarity}
+                    dataFromCost={dataFromCost}
+                    dataFromDescription={dataFromDescription}
+                    setDataFromRarity={setDataFromRarity}
+                    setDataFromCost={setDataFromCost}
+                    setDataFromDescription={setDataFromDescription}
+                    isCropped={isCropped}
+                    setIsCropped={setIsCropped}
+                  />
+                </DndProvider>
+              </>
+            )}
           </animated.div>
         )}
         {isMobile && (
@@ -165,36 +187,56 @@ const ScreenShake = () => {
               position: "relative",
             }}
           >
-            <Navbar />
-            <DndProvider backend={HTML5Backend}>
-              <App
-                isMobile={isMobile}
-                luaJokerEffect={luaJokerEffect}
-                setLuaJokerEffect={setLuaJokerEffect}
-                luaLocals={luaLocals}
-                setLuaLocals={setLuaLocals}
-                luaTableInsert={luaTableInsert}
-                setLuaTableInsert={setLuaTableInsert}
-                dataFromName={dataFromName}
-                setDataFromName={setDataFromName}
-                image={image}
-                setImage={setImage}
-                contextMemory={contextMemory}
-                setContextMemory={setContextMemory}
-                conditionsMemory={conditionsMemory}
-                setConditionsMemory={setConditionsMemory}
-                resultsMemory={resultsMemory}
-                setResultsMemory={setResultsMemory}
-                dataFromRarity={dataFromRarity}
-                dataFromCost={dataFromCost}
-                dataFromDescription={dataFromDescription}
-                setDataFromRarity={setDataFromRarity}
-                setDataFromCost={setDataFromCost}
-                setDataFromDescription={setDataFromDescription}
-                isCropped={isCropped}
-                setIsCropped={setIsCropped}
-              />
-            </DndProvider>
+            {helpPageVisible && (
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <IntroPage
+                  setHelpPageVisible={setHelpPageVisible}
+                  isMobile={isMobile}
+                />
+              </div>
+            )}
+            {!helpPageVisible && (
+              <>
+                <Navbar />
+                <DndProvider backend={HTML5Backend}>
+                  <App
+                    isMobile={isMobile}
+                    luaJokerEffect={luaJokerEffect}
+                    setLuaJokerEffect={setLuaJokerEffect}
+                    luaLocals={luaLocals}
+                    setLuaLocals={setLuaLocals}
+                    luaTableInsert={luaTableInsert}
+                    setLuaTableInsert={setLuaTableInsert}
+                    dataFromName={dataFromName}
+                    setDataFromName={setDataFromName}
+                    image={image}
+                    setImage={setImage}
+                    contextMemory={contextMemory}
+                    setContextMemory={setContextMemory}
+                    conditionsMemory={conditionsMemory}
+                    setConditionsMemory={setConditionsMemory}
+                    resultsMemory={resultsMemory}
+                    setResultsMemory={setResultsMemory}
+                    dataFromRarity={dataFromRarity}
+                    dataFromCost={dataFromCost}
+                    dataFromDescription={dataFromDescription}
+                    setDataFromRarity={setDataFromRarity}
+                    setDataFromCost={setDataFromCost}
+                    setDataFromDescription={setDataFromDescription}
+                    isCropped={isCropped}
+                    setIsCropped={setIsCropped}
+                  />
+                </DndProvider>
+              </>
+            )}
           </div>
         )}
       </Suspense>

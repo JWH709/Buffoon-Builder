@@ -12,6 +12,9 @@ import conditionListBackground from '../assets/condition_list_background.png'
 import resultsListBackground from '../assets/results_list_background.png'
 import jokerVoucher from '../assets/download_joker.png'
 import downloaderBg from '../assets/downloader_bg.png'
+import buildingSpaceExample from '../assets/building_space_example.png'
+import jokerInfoExample from '../assets/info_space_example.png'
+
 
 export const IMAGES = {
     background,
@@ -27,5 +30,7 @@ export const IMAGES = {
     conditionListBackground,
     resultsListBackground,
     jokerVoucher,
-    downloaderBg
+    downloaderBg,
+    buildingSpaceExample,
+    jokerInfoExample
 };
