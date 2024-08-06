@@ -424,12 +424,11 @@ TASKS FOR THE WEEK:
 
 # Goals for the 30th-6th:
 
-- Typo in Results Block info
+- Typo in Results Block info ✔️
 - Fix up Mobile Interface (Can also set dpr to 1 in Canvas for Shader fix) ✔️
 	- Move State up/retain state ✔️
-	- That or content-visibility none using ?
 - Change Results tab/block to be matching in some capacity
-- Potentially Add a few more animations
+- Potentially Add a few more animations ✔️
 - Intro Page/Big description Page
 
 - Bonus: Maybe swiping on some stuff
@@ -465,3 +464,10 @@ TASKS FOR THE WEEK:
 - Manged to get the cropper working after some battling. Seems like it's working fine as of right now, but noticed some issues while working tooday. 
 - ToDo: Fix screen shake bug. Breaks when the app changes back from mobile to desktop
 - ToDo: Fix that ugly X button. I'm sure something can be done to fix it.
+
+
+## August 6th:
+
+
+- Fixed results block typo
+- 
