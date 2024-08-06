@@ -10,7 +10,7 @@ const BlockTab = ({ blockArray, blockType, isMobile, setBlockMemory }) => {
       background = "rgb(30, 63, 49)";
       break;
     case "results-block":
-      background = "rgb(134, 34, 28)";
+      background = "rgb(0, 81, 139)";
       break;
   }
   return (

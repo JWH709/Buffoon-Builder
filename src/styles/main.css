@@ -813,7 +813,7 @@ html, body {
 }
 
 #controlled-tab-tab-results {
-  background-color: rgb(134, 34, 28); 
+  background-color: rgb(0, 81, 139); 
   color: white; 
   border: solid 1px rgb(27, 38, 41);
   user-select: none;
@@ -830,7 +830,7 @@ html, body {
 }
 
 .nav-link.active#controlled-tab-tab-results {
-  background-color: rgb(255, 76, 76); 
+  background-color: rgb(0,147,255); 
   color: aliceblue; 
 }
 

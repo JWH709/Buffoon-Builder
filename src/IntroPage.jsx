@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "./config/assetImports";
-
+//ToDo: This gets squishy on small laptop screens & tablets
+//ToDo: useSpring
 const IntroPage = ({ setHelpPageVisible, isMobile }) => {
   return (
     <div
