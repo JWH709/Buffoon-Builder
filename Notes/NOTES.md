@@ -476,4 +476,14 @@ TASKS FOR THE WEEK:
 	- Credits on what's used to set the page up.
 	- Interesting layout. ✔️
 - Got everything working correctly, bit of head scratching on the img sizing for mobile, but I just used conditional rendering to change the layout to compensate for them. Need to add animations. Will start working on the remaining animations now. Things still get a bit squishy on smaller screeens, look into this in a bit.
+- Changed the results tab/blocks to blue
+
+
+## August 7th:
+
+
+- Add more spring animations, go through some ToDos.
 - 
+
+
+# Goals for the 7th-14th:

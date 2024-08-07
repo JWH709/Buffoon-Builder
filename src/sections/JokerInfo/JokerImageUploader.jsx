@@ -72,7 +72,6 @@ const JokerImageUploader = ({
     localStorage.removeItem("uploadedImage");
   };
 
-  // Adjusted animation
   const cropperAnimation = useSpring({
     from: { transform: "translateY(-100%)", opacity: 0 },
     to: {

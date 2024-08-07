@@ -5,6 +5,7 @@ import LuaDownloader from "../BuildingSpace/LuaDownloader";
 import SidePanel from "../SidePanel/SidePanel";
 import JokerInfo from "../JokerInfo/JokerInfo";
 import ItemTypes from "../../config/ItemTypes";
+import { animated, useSpring, config } from "@react-spring/web";
 
 const MobileApp = ({
   setLuaJokerEffect,
@@ -69,9 +70,58 @@ const MobileApp = ({
     jokerEffectEnd,
   ]);
 
+  //Delete Me, animation stuff:
+
+  const [activeAnimationTarget, setActiveAnimationTarget] = React.useState(1);
+  const [step, setStep] = React.useState(0);
+
+  const firstTabProps = useSpring({
+    transform:
+      activeAnimationTarget === 1
+        ? step === 0
+          ? "translateX(0%)"
+          : "translateX(100%)"
+        : "translateX(0%)",
+    config: config.stiff,
+    onRest: () => {
+      if (activeAnimationTarget === 1 && step === 0) {
+        setStep(1);
+      } else if (activeAnimationTarget === 1 && step === 1) {
+        setActiveAnimationTarget(2);
+        setStep(0);
+      }
+    },
+  });
+
+  const secondTabProps = useSpring({
+    transform:
+      activeAnimationTarget === 2
+        ? step === 0
+          ? "translateX(0%)"
+          : "translateX(100%)"
+        : "translateX(0%)",
+    config: config.stiff,
+    onRest: () => {
+      if (activeAnimationTarget === 2 && step === 0) {
+        setStep(1);
+      } else if (activeAnimationTarget === 2 && step === 1) {
+        setActiveAnimationTarget(1);
+        setStep(0);
+      }
+    },
+  });
+
   return (
     <>
-      {!currentTab && (
+      <animated.div
+        style={{
+          width: "100%",
+          height: "80%",
+          position: "absolute",
+          zIndex: activeAnimationTarget === 1 ? 2 : 1,
+          ...firstTabProps,
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -79,7 +129,7 @@ const MobileApp = ({
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            height: "80%",
+            height: "100%",
             fontFamily: "balatro",
           }}
         >
@@ -157,6 +207,10 @@ const MobileApp = ({
                   currentTab={currentTab}
                   setCurrentTab={setCurrentTab}
                   isMobile={isMobile}
+                  activeAnimationTarget={activeAnimationTarget}
+                  setActiveAnimationTarget={setActiveAnimationTarget}
+                  step={step}
+                  setStep={setStep}
                 />
               </div>
             </div>
@@ -168,8 +222,16 @@ const MobileApp = ({
             />
           </div>
         </div>
-      )}
-      {currentTab && (
+      </animated.div>
+      <animated.div
+        style={{
+          width: "100%",
+          height: "80%",
+          position: "absolute",
+          zIndex: activeAnimationTarget === 2 ? 2 : 1,
+          ...secondTabProps,
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -177,7 +239,7 @@ const MobileApp = ({
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            height: "80%",
+            height: "100%",
           }}
         >
           <JokerInfo
@@ -198,9 +260,13 @@ const MobileApp = ({
             isCropped={isCropped}
             setIsCropped={setIsCropped}
             isMobile={isMobile}
+            activeAnimationTarget={activeAnimationTarget}
+            setActiveAnimationTarget={setActiveAnimationTarget}
+            step={step}
+            setStep={setStep}
           />
         </div>
-      )}
+      </animated.div>
     </>
   );
 };

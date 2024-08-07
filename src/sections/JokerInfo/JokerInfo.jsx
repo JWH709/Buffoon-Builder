@@ -24,6 +24,10 @@ const JokerInfo = ({
   isCropped,
   setIsCropped,
   isMobile,
+  activeAnimationTarget,
+  setActiveAnimationTarget,
+  step,
+  setStep,
 }) => {
   React.useEffect(() => {
     if (dataFromName && dataFromDescription && dataFromCost) {
@@ -131,10 +135,18 @@ const JokerInfo = ({
                 width: "30%",
               }}
               onClick={() => {
+                if (activeAnimationTarget === 1 && step === 0) {
+                  setStep(1);
+                } else if (activeAnimationTarget === 2 && step === 0) {
+                  setStep(1);
+                } else if (activeAnimationTarget === 2 && step === 1) {
+                  setActiveAnimationTarget(1);
+                  setStep(0);
+                }
                 if (currentTab) {
-                  setCurrentTab(false);
-                } else {
                   setCurrentTab(true);
+                } else {
+                  setCurrentTab(false);
                 }
               }}
             >

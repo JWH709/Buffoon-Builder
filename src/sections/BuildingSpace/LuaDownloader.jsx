@@ -16,6 +16,10 @@ const LuaDownloader = ({
   isMobile,
   currentTab,
   setCurrentTab,
+  activeAnimationTarget,
+  setActiveAnimationTarget,
+  step,
+  setStep,
 }) => {
   // Create shake effect to apply to voucher when download button is clicked:
   const [rotate, setRotate] = React.useState(false);
@@ -145,10 +149,18 @@ const LuaDownloader = ({
               marginBottom: "10%",
             }}
             onClick={() => {
+              if (activeAnimationTarget === 1 && step === 0) {
+                setStep(1);
+              } else if (activeAnimationTarget === 2 && step === 0) {
+                setStep(1);
+              } else if (activeAnimationTarget === 2 && step === 1) {
+                setActiveAnimationTarget(1);
+                setStep(0);
+              }
               if (currentTab) {
-                setCurrentTab(false);
-              } else {
                 setCurrentTab(true);
+              } else {
+                setCurrentTab(false);
               }
             }}
           >
