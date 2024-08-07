@@ -6,7 +6,7 @@ import { IMAGES } from "../../config/assetImports";
 import ClearListButton from "./ClearListButton";
 import SectionTitle from "../../config/SectionTitle";
 import BuildingListInfo from "./BuildingListInfo";
-import jokerListInfoText from "../../config/JokerListInfoText";
+import JokerListInfoText from "../../config/JokerListInfoText";
 
 const BuldingList = ({
   blockType,
@@ -52,17 +52,17 @@ const BuldingList = ({
       case "context-block":
         setBackgroundImage(IMAGES.contextListBackground);
         setTitle("Context Blocks");
-        setInfoText(jokerListInfoText.context);
+        setInfoText(JokerListInfoText.context);
         break;
       case "condition-block":
         setBackgroundImage(IMAGES.conditionListBackground);
         setTitle("Condition Blocks");
-        setInfoText(jokerListInfoText.condition);
+        setInfoText(JokerListInfoText.condition);
         break;
       case "results-block":
         setTitle("Result Blocks");
         setBackgroundImage(IMAGES.resultsListBackground);
-        setInfoText(jokerListInfoText.results);
+        setInfoText(JokerListInfoText.results);
         break;
     }
   }, [setBackgroundImage, setTitle, setInfoText, blockType]);

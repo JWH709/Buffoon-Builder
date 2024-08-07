@@ -427,11 +427,11 @@ TASKS FOR THE WEEK:
 - Typo in Results Block info ✔️
 - Fix up Mobile Interface (Can also set dpr to 1 in Canvas for Shader fix) ✔️
 	- Move State up/retain state ✔️
-- Change Results tab/block to be matching in some capacity
+- Change Results tab/block to be matching in some capacity ✔️
 - Potentially Add a few more animations ✔️
 - Intro Page/Big description Page ✔️
 
-- Bonus: Maybe swiping on some stuff
+- Bonus: Maybe swiping on some stuff ✔️
 
 
 ## August 1st:
@@ -460,7 +460,7 @@ TASKS FOR THE WEEK:
 
 - Spring stuff:
 	- Cropper (mobile & main) ✔️
-	- switch tabs (mobile)
+	- switch tabs (mobile) ✔️
 - Manged to get the cropper working after some battling. Seems like it's working fine as of right now, but noticed some issues while working tooday. 
 - ToDo: Fix screen shake bug. Breaks when the app changes back from mobile to desktop
 - ToDo: Fix that ugly X button. I'm sure something can be done to fix it.
@@ -487,3 +487,8 @@ TASKS FOR THE WEEK:
 
 
 # Goals for the 7th-14th:
+
+- Pre-Session:
+  - NavBar, make the joker icon toggle the help, revamp blocks, go through ToDo:, set up github pages, interpolation on screenshake, take a look to see if there are any libraries or easy useSpring cases for making something look "floaty", that irritating crop bug, something to denote that mobile has swipe, building list info mobile bug, voucher looks ugly on mobile, match swapped list with correct block tab, fix the pixels in that one background image
+- Post-Session:
+  - 
