@@ -6,6 +6,8 @@ import SidePanel from "../SidePanel/SidePanel";
 import JokerInfo from "../JokerInfo/JokerInfo";
 import ItemTypes from "../../config/ItemTypes";
 import { animated, useSpring, config } from "@react-spring/web";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const MobileApp = ({
   setLuaJokerEffect,
@@ -70,9 +72,8 @@ const MobileApp = ({
     jokerEffectEnd,
   ]);
 
-  //Delete Me, animation stuff:
-
   const [activeAnimationTarget, setActiveAnimationTarget] = React.useState(1);
+
   const [step, setStep] = React.useState(0);
 
   const firstTabProps = useSpring({
@@ -152,41 +153,53 @@ const MobileApp = ({
                   alignItems: "center",
                   width: "50%",
                   height: "100%",
+                  marginLeft: "1%",
                 }}
               >
-                {currentList == ItemTypes.CONTEXTBLOCK && (
-                  <BuldingList
-                    blockType={ItemTypes.CONTEXTBLOCK}
-                    updateLua={setContextLua}
-                    isMobile={isMobile}
-                    setCurrentList={setCurrentList}
-                    currentList={currentList}
-                    blockMemory={contextMemory}
-                    setBlockMemory={setContextMemory}
-                  />
-                )}
-                {currentList == ItemTypes.CONDITIONBLOCK && (
-                  <BuldingList
-                    blockType={ItemTypes.CONDITIONBLOCK}
-                    updateLua={setConditionsLua}
-                    isMobile={isMobile}
-                    setCurrentList={setCurrentList}
-                    currentList={currentList}
-                    blockMemory={conditionsMemory}
-                    setBlockMemory={setConditionsMemory}
-                  />
-                )}
-                {currentList == ItemTypes.RESULTSBLOCK && (
-                  <BuldingList
-                    blockType={ItemTypes.RESULTSBLOCK}
-                    updateLua={setResultsLua}
-                    isMobile={isMobile}
-                    setCurrentList={setCurrentList}
-                    currentList={currentList}
-                    blockMemory={resultsMemory}
-                    setBlockMemory={setResultsMemory}
-                  />
-                )}
+                <Swiper
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <SwiperSlide>
+                    <BuldingList
+                      blockType={ItemTypes.CONTEXTBLOCK}
+                      updateLua={setContextLua}
+                      isMobile={isMobile}
+                      setCurrentList={setCurrentList}
+                      currentList={currentList}
+                      blockMemory={contextMemory}
+                      setBlockMemory={setContextMemory}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <BuldingList
+                      blockType={ItemTypes.CONDITIONBLOCK}
+                      updateLua={setConditionsLua}
+                      isMobile={isMobile}
+                      setCurrentList={setCurrentList}
+                      currentList={currentList}
+                      blockMemory={conditionsMemory}
+                      setBlockMemory={setConditionsMemory}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <BuldingList
+                      blockType={ItemTypes.RESULTSBLOCK}
+                      updateLua={setResultsLua}
+                      isMobile={isMobile}
+                      setCurrentList={setCurrentList}
+                      currentList={currentList}
+                      blockMemory={resultsMemory}
+                      setBlockMemory={setResultsMemory}
+                    />
+                  </SwiperSlide>
+                </Swiper>
               </div>
               <div
                 style={{

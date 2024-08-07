@@ -7,14 +7,11 @@ import ClearListButton from "./ClearListButton";
 import SectionTitle from "../../config/SectionTitle";
 import BuildingListInfo from "./BuildingListInfo";
 import jokerListInfoText from "../../config/JokerListInfoText";
-import ItemTypes from "../../config/ItemTypes";
 
 const BuldingList = ({
   blockType,
   updateLua,
   isMobile,
-  setCurrentList,
-  currentList,
   blockMemory,
   setBlockMemory,
 }) => {
@@ -123,7 +120,11 @@ const BuldingList = ({
           i
         </div>
         {isHovered && (
-          <BuildingListInfo infoText={infoText} mousePosition={mousePosition} />
+          <BuildingListInfo
+            infoText={infoText}
+            mousePosition={mousePosition}
+            isMobile={isMobile}
+          />
         )}
       </div>
       <div
@@ -136,29 +137,7 @@ const BuldingList = ({
         }}
       >
         {/* ToDo: Add onClick styles to buttons */}
-        {isMobile && (
-          <button
-            className="current-list-button-left"
-            onClick={() => {
-              switch (currentList) {
-                case ItemTypes.CONTEXTBLOCK:
-                  setCurrentList(ItemTypes.RESULTSBLOCK);
-                  break;
-                case ItemTypes.CONDITIONBLOCK:
-                  setCurrentList(ItemTypes.CONTEXTBLOCK);
-                  break;
-                case ItemTypes.RESULTSBLOCK:
-                  setCurrentList(ItemTypes.CONDITIONBLOCK);
-                  break;
-                default:
-                  setCurrentList(ItemTypes.CONTEXTBLOCK);
-                  break;
-              }
-            }}
-          >
-            -
-          </button>
-        )}
+
         <div
           ref={drop}
           style={{
@@ -195,29 +174,6 @@ const BuldingList = ({
             />
           )}
         </div>
-        {isMobile && (
-          <button
-            className="current-list-button-right"
-            onClick={() => {
-              switch (currentList) {
-                case ItemTypes.CONTEXTBLOCK:
-                  setCurrentList(ItemTypes.CONDITIONBLOCK);
-                  break;
-                case ItemTypes.CONDITIONBLOCK:
-                  setCurrentList(ItemTypes.RESULTSBLOCK);
-                  break;
-                case ItemTypes.RESULTSBLOCK:
-                  setCurrentList(ItemTypes.CONTEXTBLOCK);
-                  break;
-                default:
-                  setCurrentList(ItemTypes.CONTEXTBLOCK);
-                  break;
-              }
-            }}
-          >
-            +
-          </button>
-        )}
       </div>
       <ClearListButton
         setDroppedItem={setDroppedItem}

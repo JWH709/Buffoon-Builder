@@ -483,7 +483,7 @@ TASKS FOR THE WEEK:
 
 
 - Add more spring animations, go through some ToDos.
-- 
+- Nightmare animation with spring, managed to get it working after bashing my head off documentation and GPT. Would like to tweak the animation timing a little bit, however, before I do that I'm going to take a look at that swiping library first.
 
 
 # Goals for the 7th-14th:
