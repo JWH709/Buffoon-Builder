@@ -19,7 +19,6 @@ const ScreenShake = () => {
     shakeRef.current.style.left = `${x * shakeFactor}px`;
     shakeRef.current.style.top = `${y * shakeFactor}px`;
   };
-  //ToDo: Figure out why screenshake breaks when going from desktop -> mobile -> desktop
   React.useEffect(() => {
     const shakeElement = shakeRef.current;
     const initializeMousePosition = (event) => {

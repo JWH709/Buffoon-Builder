@@ -222,7 +222,6 @@ TASKS FOR THE WEEK:
 - Fixed issue by filling out blank if statement I left for when I added this feature. Good job me, I guess. BuildingSpace will make sure JokerEffect is null so long as one or more blocks is missing from the overall LUA code.
 - Going to play a round of Balatro to see what I could do to make the download area more interesting.
 - Look into adding a pack to the download section. You can get the pack explosion asset from the game via Balamod.
-- ToDo: Style downloader, add more blocks, get three.js bg working, screenshake interpolation.
 
 
 
@@ -447,7 +446,7 @@ TASKS FOR THE WEEK:
 
 
 - Make final tweaks to mobile before moving on too spring animations foor entire page.
-- ToDo: Drop blocks need to have a feature where you can add them by tapping on mobile as DnD doesn't work with touch/it's awkward. The following componets need to be fixed on resize: LuaDownloader (everything), BlockLists (text, button), JokerInfo (inputs too big, Rarity text too big). Once The previous things are fixed, animations can be added to the following: Switch tab button(s): Add an animation that plays when swapping between info and building space. ImageCropper: Add an animation that plays when the image cropper pops up, ideally, it should descend from the top of the screen on open, and ascend back up offscreen on close.
+- LuaDownloader (everything), BlockLists (text, button), JokerInfo (inputs too big, Rarity text too big). Once The previous things are fixed, animations can be added to the following: Switch tab button(s): Add an animation that plays when swapping between info and building space. ImageCropper: Add an animation that plays when the image cropper pops up, ideally, it should descend from the top of the screen on open, and ascend back up offscreen on close.
 - Bonus stuff: If everything above is completed early, and I have some extra time today, take a look into making the switch buttons a single component, replacing the buttons for changing whatever list is active to a swiping feature (use lib for this), revamp local storage for an image to be overridden with a crop (also check to see if there's a setting to allow for transparency).
 
 - Made the blocks tap to place on mobile, fixed the section title component, fixed the joker info mobile stuff
@@ -462,9 +461,6 @@ TASKS FOR THE WEEK:
 	- Cropper (mobile & main) ✔️
 	- switch tabs (mobile) ✔️
 - Manged to get the cropper working after some battling. Seems like it's working fine as of right now, but noticed some issues while working tooday. 
-- ToDo: Fix screen shake bug. Breaks when the app changes back from mobile to desktop
-- ToDo: Fix that ugly X button. I'm sure something can be done to fix it.
-
 
 ## August 6th:
 
@@ -488,7 +484,23 @@ TASKS FOR THE WEEK:
 
 # Goals for the 7th-14th:
 
-- Pre-Session:
-  - NavBar, make the joker icon toggle the help, revamp blocks, go through ToDo:, set up github pages, interpolation on screenshake, take a look to see if there are any libraries or easy useSpring cases for making something look "floaty", that irritating crop bug, something to denote that mobile has swipe, building list info mobile bug, voucher looks ugly on mobile, match swapped list with correct block tab, fix the pixels in that one background image
-- Post-Session:
-  - 
+- NavBar 
+- make the joker icon toggle the help screen 
+- revamp blocks plus inputs 
+- go through ToDo:
+- set up github pages 
+- interpolation on screenshake 
+- that irritating crop bug (Try using breakpoints here)
+- something to denote that mobile has swipe 
+- building list info mobile bug
+- voucher looks ugly on mobile
+- match swapped list with correct block tab 
+- fix the pixels in that one background image
+- move introscreen around so the CRT effect is still applied to it 
+- Fix that ugly X button 
+- fix the screen shake mobile to desktop bug 
+- cropping bug still exists on mobile
+- remove tilt on mobile
+- Add animation to swiper
+- take a look to see if there are any libraries or easy useSpring cases for making something look "floaty" (https://stackoverflow.com/questions/49028340/css-image-underwater-effect)
+- README.md
