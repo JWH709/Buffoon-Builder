@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import "../../styles/main.css";
 import { IMAGES } from "../../config/assetImports.js";
 import CrtToggle from "./CrtToggle.jsx";
 
-const Navbar = () => {
+const Navbar = ({ toggleButton, setToggleButton }) => {
   return (
     <div className="navbar-div">
       <img
@@ -20,7 +21,10 @@ const Navbar = () => {
       >
         Buffoon Builder
       </h1>
-      <CrtToggle />
+      <CrtToggle
+        toggleButton={toggleButton}
+        setToggleButton={setToggleButton}
+      />
     </div>
   );
 };

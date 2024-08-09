@@ -486,14 +486,14 @@ TASKS FOR THE WEEK:
 
 
 ## Priority:
-- set up github pages 
+- set up github pages  ✔️
 - README.md
 - that irritating crop bug (Try using breakpoints here)
 - something to denote that mobile has swipe 
 - building list info mobile bug
 - make the joker icon toggle the help screen 
 - match swapped list with correct block tab 
-- move introscreen around so the CRT effect is still applied to it 
+- move introscreen around so the CRT effect is still applied to it ✔️
 - fix the screen shake mobile to desktop bug
 - cropping bug still exists on mobile
 - remove tilt on mobile
@@ -510,3 +510,10 @@ TASKS FOR THE WEEK:
 - remove tilt on mobile
 - Add animation to swiper
 - take a look to see if there are any libraries or easy useSpring cases for making something look "floaty" (https://stackoverflow.com/questions/49028340/css-image-underwater-effect)
+
+
+## August 9th:
+
+
+- Set up GH pages. Made a mess of a bunch oof stuff, but I eventually figured it out. Turns out I'm stupid, and mistyped Buffoon Builder in the configs.
+- Moved up the toggle button logic for the CRT effect so that the effect isn't dependant on the button being rendered
