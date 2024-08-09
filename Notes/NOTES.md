@@ -484,23 +484,29 @@ TASKS FOR THE WEEK:
 
 # Goals for the 7th-14th:
 
-- NavBar 
-- make the joker icon toggle the help screen 
-- revamp blocks plus inputs 
-- go through ToDo:
+
+## Priority:
 - set up github pages 
-- interpolation on screenshake 
+- README.md
 - that irritating crop bug (Try using breakpoints here)
 - something to denote that mobile has swipe 
 - building list info mobile bug
-- voucher looks ugly on mobile
+- make the joker icon toggle the help screen 
 - match swapped list with correct block tab 
-- fix the pixels in that one background image
 - move introscreen around so the CRT effect is still applied to it 
-- Fix that ugly X button 
-- fix the screen shake mobile to desktop bug 
+- fix the screen shake mobile to desktop bug
 - cropping bug still exists on mobile
+- remove tilt on mobile
+
+## Assets:
+- NavBar 
+- revamp blocks plus inputs 
+- voucher looks ugly on mobile
+- fix the pixels in that one background image
+- Fix that ugly X button 
+
+## Animation:
+- interpolation on screenshake  
 - remove tilt on mobile
 - Add animation to swiper
 - take a look to see if there are any libraries or easy useSpring cases for making something look "floaty" (https://stackoverflow.com/questions/49028340/css-image-underwater-effect)
-- README.md
