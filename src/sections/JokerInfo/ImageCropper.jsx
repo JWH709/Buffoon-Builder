@@ -50,7 +50,11 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
     const croppedImage = canvas.toDataURL("image/jpeg");
     setImage(croppedImage);
     setIsCropped(true);
+
+    localStorage.setItem("croppedImage", croppedImage);
+    localStorage.setItem("isCropped", "true");
   };
+
   return (
     <div
       style={{

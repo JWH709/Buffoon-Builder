@@ -488,8 +488,8 @@ TASKS FOR THE WEEK:
 ## Priority:
 - set up github pages  ✔️
 - README.md
-- that irritating crop bug (Try using breakpoints here)
-- something to denote that mobile has swipe 
+- that irritating crop bug (Try using breakpoints here) ✔️
+- something to denote that mobile has swipe  
 - building list info mobile bug
 - make the joker icon toggle the help screen 
 - match swapped list with correct block tab 
@@ -497,6 +497,7 @@ TASKS FOR THE WEEK:
 - fix the screen shake mobile to desktop bug
 - cropping bug still exists on mobile
 - remove tilt on mobile
+- Fix info pop ups to fit with new logo
 
 ## Assets:
 - NavBar 

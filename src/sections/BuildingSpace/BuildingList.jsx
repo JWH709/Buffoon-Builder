@@ -162,16 +162,18 @@ const BuldingList = ({
             />
           )}
           {blockMemory && isMobile && (
-            <DroppedBlock
-              styles={blockMemory.styles}
-              title={blockMemory.title}
-              lua={blockMemory.lua}
-              id={blockMemory.id}
-              additionalInput={blockMemory.additionalInput}
-              inputType={blockMemory.inputType}
-              blockType={blockType}
-              updateLua={updateLua}
-            />
+            <>
+              <DroppedBlock
+                styles={blockMemory.styles}
+                title={blockMemory.title}
+                lua={blockMemory.lua}
+                id={blockMemory.id}
+                additionalInput={blockMemory.additionalInput}
+                inputType={blockMemory.inputType}
+                blockType={blockType}
+                updateLua={updateLua}
+              />
+            </>
           )}
         </div>
       </div>

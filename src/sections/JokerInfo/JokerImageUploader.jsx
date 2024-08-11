@@ -15,11 +15,19 @@ const JokerImageUploader = ({
   setIsCropped,
 }) => {
   React.useEffect(() => {
-    const savedImage = localStorage.getItem("uploadedImage");
-    if (savedImage) {
-      setImage(savedImage);
+    const savedCroppedImage = localStorage.getItem("croppedImage");
+    const savedIsCropped = localStorage.getItem("isCropped");
+
+    if (savedCroppedImage && savedIsCropped === "true") {
+      setImage(savedCroppedImage);
+      setIsCropped(true);
+    } else {
+      const savedImage = localStorage.getItem("uploadedImage");
+      if (savedImage) {
+        setImage(savedImage);
+      }
     }
-  }, [setImage]);
+  }, [setImage, setIsCropped]);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -41,7 +49,6 @@ const JokerImageUploader = ({
       image.onload = () => {
         const width = image.width;
         const height = image.height;
-        console.log(width);
 
         if (width < 142 || width > 1000 || height < 190 || height > 1000) {
           alert(
@@ -52,6 +59,8 @@ const JokerImageUploader = ({
 
         setImage(reader.result);
         localStorage.setItem("uploadedImage", reader.result);
+        localStorage.removeItem("croppedImage");
+        localStorage.removeItem("isCropped");
       };
 
       image.src = reader.result;
@@ -70,6 +79,8 @@ const JokerImageUploader = ({
     setImage(null);
     setIsCropped(false);
     localStorage.removeItem("uploadedImage");
+    localStorage.removeItem("croppedImage");
+    localStorage.removeItem("isCropped");
   };
 
   const cropperAnimation = useSpring({
