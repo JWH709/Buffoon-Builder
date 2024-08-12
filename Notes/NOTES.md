@@ -518,3 +518,15 @@ TASKS FOR THE WEEK:
 
 - Set up GH pages. Made a mess of a bunch oof stuff, but I eventually figured it out. Turns out I'm stupid, and mistyped Buffoon Builder in the configs.
 - Moved up the toggle button logic for the CRT effect so that the effect isn't dependant on the button being rendered
+
+
+## August 10th:
+
+
+- Created a custom joker logo for the site, updated the favicon and the logo. Need to make adjustments to fit the logo on the info tab.
+
+
+## August 12th:
+
+
+- Added a state that tracks what list is currently displayed and then displays the corresponding block tab to go along with said list.

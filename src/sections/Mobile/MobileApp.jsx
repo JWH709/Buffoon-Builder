@@ -51,6 +51,23 @@ const MobileApp = ({
 
   const [currentList, setCurrentList] = React.useState(ItemTypes.CONTEXTBLOCK);
 
+  const handleSlideChange = (swiper) => {
+    switch (swiper.activeIndex) {
+      case 0:
+        setCurrentList("home");
+        break;
+      case 1:
+        setCurrentList("conditions");
+        break;
+      case 2:
+        setCurrentList("results");
+        break;
+      default:
+        setCurrentList("home");
+        break;
+    }
+  };
+
   React.useEffect(() => {
     if (contextLua == null || conditionsLua == null || resultsLua == null) {
       setLuaJokerEffect(null);
@@ -165,14 +182,13 @@ const MobileApp = ({
                     justifyContent: "center",
                     alignItems: "center",
                   }}
+                  onSlideChange={handleSlideChange}
                 >
                   <SwiperSlide>
                     <BuldingList
                       blockType={ItemTypes.CONTEXTBLOCK}
                       updateLua={setContextLua}
                       isMobile={isMobile}
-                      setCurrentList={setCurrentList}
-                      currentList={currentList}
                       blockMemory={contextMemory}
                       setBlockMemory={setContextMemory}
                     />
@@ -182,8 +198,6 @@ const MobileApp = ({
                       blockType={ItemTypes.CONDITIONBLOCK}
                       updateLua={setConditionsLua}
                       isMobile={isMobile}
-                      setCurrentList={setCurrentList}
-                      currentList={currentList}
                       blockMemory={conditionsMemory}
                       setBlockMemory={setConditionsMemory}
                     />
@@ -193,8 +207,6 @@ const MobileApp = ({
                       blockType={ItemTypes.RESULTSBLOCK}
                       updateLua={setResultsLua}
                       isMobile={isMobile}
-                      setCurrentList={setCurrentList}
-                      currentList={currentList}
                       blockMemory={resultsMemory}
                       setBlockMemory={setResultsMemory}
                     />
@@ -232,6 +244,7 @@ const MobileApp = ({
               setResultsMemory={setResultsMemory}
               setConditionsMemory={setConditionsMemory}
               setContextMemory={setContextMemory}
+              currentList={currentList}
             />
           </div>
         </div>

@@ -14,8 +14,10 @@ function SidePanel({
   setConditionsMemory,
   setResultsMemory,
   setContextMemory,
+  currentList,
 }) {
   const [key, setKey] = useState("home");
+
   return (
     <div className="tab-container">
       <div
@@ -28,12 +30,9 @@ function SidePanel({
           height: "95%",
         }}
       >
-        {
-          //ToDo: if isMobile, make the tabs switch with the active building list
-        }
         <Tabs
           id="controlled-tab"
-          activeKey={key}
+          activeKey={isMobile ? currentList : key}
           onSelect={(k) => setKey(k)}
           className="mb-3"
         >
