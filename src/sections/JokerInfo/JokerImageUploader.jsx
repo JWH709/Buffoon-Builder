@@ -111,6 +111,7 @@ const JokerImageUploader = ({
               cursor: "pointer",
               fontFamily: "balatro",
               color: "aliceblue",
+              userSelect: "none",
             }}
             onDrop={handleDrop}
             onDragOver={handleDragOver}

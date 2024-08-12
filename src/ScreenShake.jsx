@@ -105,7 +105,6 @@ const ScreenShake = () => {
   const [isCropped, setIsCropped] = React.useState(false);
   const [helpPageVisible, setHelpPageVisible] = React.useState(true);
 
-  //Move CRT up:
   const [toggleButton, setToggleButton] = React.useState(true);
 
   const bodyBeforeStyles = {
@@ -216,6 +215,7 @@ const ScreenShake = () => {
                 <Navbar
                   toggleButton={toggleButton}
                   setToggleButton={setToggleButton}
+                  setHelpPageVisible={setHelpPageVisible}
                 />
                 <DndProvider backend={HTML5Backend}>
                   <App
@@ -273,6 +273,7 @@ const ScreenShake = () => {
                 <Navbar
                   toggleButton={toggleButton}
                   setToggleButton={setToggleButton}
+                  setHelpPageVisible={setHelpPageVisible}
                 />
                 <DndProvider backend={HTML5Backend}>
                   <App

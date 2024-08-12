@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "../../config/assetImports";
 
-const BuildingListInfo = ({ infoText, mousePosition }) => {
+const BuildingListInfo = ({ infoText, mousePosition, isMobile }) => {
   return (
     <div
       style={{
-        zIndex: "1",
+        zIndex: "9999",
         position: "fixed",
-        top: mousePosition.y + 10,
-        left: mousePosition.x + 10,
         backgroundImage: `url(${IMAGES.previewBackground})`,
-        height: "272px",
-        width: "202px",
+        top: isMobile ? "0" : mousePosition.y + 10,
+        left: isMobile ? "0" : mousePosition.x + 10,
+        height: isMobile ? "100%" : "272px",
+        width: isMobile ? "100%" : "202px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -24,7 +24,14 @@ const BuildingListInfo = ({ infoText, mousePosition }) => {
         overflow: "hidden",
       }}
     >
-      <img src={IMAGES.logo} alt="Jimmy" />
+      <img
+        src={IMAGES.logo}
+        alt="Buffoon Builder forman"
+        style={{
+          width: "62.4px",
+          height: "68.8px",
+        }}
+      />
       <div
         style={{
           margin: "5%",

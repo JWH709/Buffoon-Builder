@@ -49,7 +49,7 @@ const MobileApp = ({
 
   const [currentTab, setCurrentTab] = React.useState(true);
 
-  const [currentList, setCurrentList] = React.useState(ItemTypes.CONTEXTBLOCK);
+  const [currentList, setCurrentList] = React.useState("home");
 
   const handleSlideChange = (swiper) => {
     switch (swiper.activeIndex) {

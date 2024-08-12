@@ -189,6 +189,7 @@ const LuaDownloader = ({
                 style={{
                   height: "100%",
                   margin: "0 auto",
+                  userSelect: "none",
                 }}
               />
             </Tilt>
@@ -201,6 +202,7 @@ const LuaDownloader = ({
             style={{
               height: "65%",
               margin: "0 auto",
+              userSelect: "none",
             }}
           />
         )}
@@ -210,6 +212,7 @@ const LuaDownloader = ({
           }
           style={{
             marginTop: "3%",
+            userSelect: "none",
           }}
           onClick={() => {
             downloadState ? downloadJoker() : missingInfoAlert();
