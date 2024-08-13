@@ -494,7 +494,7 @@ TASKS FOR THE WEEK:
 - move introscreen around so the CRT effect is still applied to it ✔️
 - Fix info pop ups to fit with new logo ✔️
 - fix the screen shake mobile to desktop bug
-- cropping bug still exists on mobile
+- cropping bug still exists on mobile ✔️
 - remove tilt on mobile ✔️
 - something to denote that mobile has swipe  
 - README.md
@@ -537,3 +537,4 @@ TASKS FOR THE WEEK:
 
 
 - Removed tilt on mobile.
+- Fixed the cropper bug on mobile where the img css conflicts with the crop dimensions/scaling.

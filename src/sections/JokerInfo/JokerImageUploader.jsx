@@ -139,6 +139,7 @@ const JokerImageUploader = ({
               image={image}
               setIsCropped={setIsCropped}
               setImage={setImage}
+              isMobile={isMobile}
             />
             <button className="button-delete-image" onClick={handleDeleteImage}>
               &times;

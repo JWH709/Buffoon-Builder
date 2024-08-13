@@ -4,7 +4,7 @@ import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 import { IMAGES } from "../../config/assetImports";
 
-const ImageCropper = ({ image, setImage, setIsCropped }) => {
+const ImageCropper = ({ image, setImage, setIsCropped, isMobile }) => {
   const [crop, setCrop] = React.useState({
     unit: "px",
     width: 142,
@@ -27,32 +27,34 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
     const imageElement = document.createElement("img");
     imageElement.src = image;
 
-    const canvas = document.createElement("canvas");
-    const scaleX = imageElement.naturalWidth / imageElement.width;
-    const scaleY = imageElement.naturalHeight / imageElement.height;
+    imageElement.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleX = imageElement.naturalWidth / imageElement.width;
+      const scaleY = imageElement.naturalHeight / imageElement.height;
 
-    canvas.width = crop.width;
-    canvas.height = crop.height;
-    const ctx = canvas.getContext("2d");
+      canvas.width = crop.width * scaleX;
+      canvas.height = crop.height * scaleY;
+      const ctx = canvas.getContext("2d");
 
-    ctx.drawImage(
-      imageElement,
-      crop.x * scaleX,
-      crop.y * scaleY,
-      crop.width * scaleX,
-      crop.height * scaleY,
-      0,
-      0,
-      crop.width,
-      crop.height
-    );
+      ctx.drawImage(
+        imageElement,
+        crop.x * scaleX,
+        crop.y * scaleY,
+        crop.width * scaleX,
+        crop.height * scaleY,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
-    const croppedImage = canvas.toDataURL("image/jpeg");
-    setImage(croppedImage);
-    setIsCropped(true);
+      const croppedImage = canvas.toDataURL("image/jpeg");
+      setImage(croppedImage);
+      setIsCropped(true);
 
-    localStorage.setItem("croppedImage", croppedImage);
-    localStorage.setItem("isCropped", "true");
+      localStorage.setItem("croppedImage", croppedImage);
+      localStorage.setItem("isCropped", "true");
+    };
   };
 
   return (
@@ -60,10 +62,10 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
       style={{
         zIndex: "1",
         position: "fixed",
-        top: "5%",
-        left: "5%",
-        height: "90%",
-        width: "90%",
+        top: isMobile ? "10%" : "5%",
+        left: isMobile ? "5%" : "10%",
+        height: isMobile ? "80%" : "90%",
+        width: isMobile ? "90%" : "80%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -77,7 +79,13 @@ const ImageCropper = ({ image, setImage, setIsCropped }) => {
       }}
     >
       <ReactCrop crop={crop} onChange={(c) => setCrop(c)} locked>
-        <img src={image} />
+        <img
+          src={image}
+          style={{
+            maxWidth: isMobile ? "100%" : "auto",
+            maxHeight: isMobile ? "80vh" : "auto",
+          }}
+        />
       </ReactCrop>
       <div
         style={{
