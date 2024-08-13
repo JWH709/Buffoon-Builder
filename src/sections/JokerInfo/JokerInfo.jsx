@@ -30,7 +30,7 @@ const JokerInfo = ({
   setStep,
 }) => {
   React.useEffect(() => {
-    if (dataFromName && dataFromDescription && dataFromCost) {
+    if (dataFromName && dataFromDescription && dataFromCost != null) {
       const luaJokerNameLower = dataFromName.toLowerCase();
       const luaJokerID = luaJokerNameLower.replaceAll(" ", "_");
       updateLuaLocals(`--All mods made using the center_hook api (https://github.com/nicholassam6425/balatro-mods)

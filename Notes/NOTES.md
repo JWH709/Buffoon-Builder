@@ -496,7 +496,6 @@ TASKS FOR THE WEEK:
 - cropping bug still exists on mobile ✔️
 - remove tilt on mobile ✔️
 - something to denote that mobile has swipe ✔️ 
-- README.md
 
 ## Assets:
 - NavBar 
@@ -538,3 +537,17 @@ TASKS FOR THE WEEK:
 - Removed tilt on mobile.
 - Fixed the cropper bug on mobile where the img css conflicts with the crop dimensions/scaling.
 - Used spring to create a fade out effect on an h3 that denotes that swipe can be used on mobile
+
+
+## Goals for the 13th-20th:
+
+
+- that weird issue with 
+- Set the info to onClick
+- Hide the tabs on mobile swap
+- overscroll issue on CRT filter mobile
+- Fix cost issue
+- Replace alert with a proper notification
+- add JokerPreview to voucher on mobile.
+- add links for all my stuff
+- README.md

@@ -10,6 +10,24 @@ import BalatroShaderComponent from "./assets/Background Shader/BalatroShaderComp
 import { Suspense } from "react";
 import IntroPage from "./IntroPage.jsx";
 const ScreenShake = () => {
+  const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
+  const [luaLocals, setLuaLocals] = React.useState(null);
+  const [luaTableInsert, setLuaTableInsert] = React.useState(null);
+  const [dataFromName, setDataFromName] = React.useState(null);
+  const [image, setImage] = React.useState(null);
+  const [dataFromRarity, setDataFromRarity] = React.useState(1);
+  const [dataFromDescription, setDataFromDescription] = React.useState(null);
+  const [dataFromCost, setDataFromCost] = React.useState(0);
+  const [isCropped, setIsCropped] = React.useState(false);
+  const [helpPageVisible, setHelpPageVisible] = React.useState(true);
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [toggleButton, setToggleButton] = React.useState(true);
+  const [storedIn, setStoredIn] = React.useState([0, 0]);
+  const [storedOut, setStoredOut] = React.useState([0, 0]);
+  const [contextMemory, setContextMemory] = React.useState(null);
+  const [conditionsMemory, setConditionsMemory] = React.useState(null);
+  const [resultsMemory, setResultsMemory] = React.useState(null);
+
   const shakeFactor = 5;
   const shakeRef = React.useRef(null);
 
@@ -36,9 +54,6 @@ const ScreenShake = () => {
   }, []);
 
   //ToDo: UseSpring hell:
-
-  const [storedIn, setStoredIn] = React.useState([0, 0]);
-  const [storedOut, setStoredOut] = React.useState([0, 0]);
 
   React.useEffect(() => {
     const shakeElement = shakeRef.current;
@@ -74,8 +89,6 @@ const ScreenShake = () => {
     config: { duration: 300 },
   });
 
-  const [isMobile, setIsMobile] = React.useState(false);
-
   React.useEffect(() => {
     const handleResize = () => {
       const screenSize = [window.innerHeight, window.innerWidth];
@@ -93,19 +106,6 @@ const ScreenShake = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [setIsMobile]);
-
-  const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
-  const [luaLocals, setLuaLocals] = React.useState(null);
-  const [luaTableInsert, setLuaTableInsert] = React.useState(null);
-  const [dataFromName, setDataFromName] = React.useState(null);
-  const [image, setImage] = React.useState(null);
-  const [dataFromRarity, setDataFromRarity] = React.useState(1);
-  const [dataFromDescription, setDataFromDescription] = React.useState(null);
-  const [dataFromCost, setDataFromCost] = React.useState(null);
-  const [isCropped, setIsCropped] = React.useState(false);
-  const [helpPageVisible, setHelpPageVisible] = React.useState(true);
-
-  const [toggleButton, setToggleButton] = React.useState(true);
 
   const bodyBeforeStyles = {
     content: '" "',
@@ -166,10 +166,6 @@ const ScreenShake = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleButton]);
-
-  const [contextMemory, setContextMemory] = React.useState(null);
-  const [conditionsMemory, setConditionsMemory] = React.useState(null);
-  const [resultsMemory, setResultsMemory] = React.useState(null);
 
   return (
     <>

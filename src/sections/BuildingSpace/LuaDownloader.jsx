@@ -58,7 +58,6 @@ const LuaDownloader = ({
 
   const handleClick = () => {
     setRotate(true);
-    console.log(rotate);
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
