@@ -487,17 +487,17 @@ TASKS FOR THE WEEK:
 
 ## Priority:
 - set up github pages  ✔️
-- README.md
 - that irritating crop bug (Try using breakpoints here) ✔️
-- something to denote that mobile has swipe  
 - building list info mobile bug ✔️
 - make the joker icon toggle the help screen ✔️
 - match swapped list with correct block tab ✔️
 - move introscreen around so the CRT effect is still applied to it ✔️
+- Fix info pop ups to fit with new logo ✔️
 - fix the screen shake mobile to desktop bug
 - cropping bug still exists on mobile
-- remove tilt on mobile
-- Fix info pop ups to fit with new logo
+- remove tilt on mobile ✔️
+- something to denote that mobile has swipe  
+- README.md
 
 ## Assets:
 - NavBar 
@@ -531,3 +531,9 @@ TASKS FOR THE WEEK:
 
 - Added a state that tracks what list is currently displayed and then displays the corresponding block tab to go along with said list.
 - Added the ability too click the Builder logo to bring up the introscreen again. Tweaked the building list info to display correctly when clicked
+
+
+## August 13th: 
+
+
+- Removed tilt on mobile.

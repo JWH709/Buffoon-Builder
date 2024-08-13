@@ -9,6 +9,7 @@ const DroppedArt = ({
   dataFromRarity,
   dataFromCost,
   dataFromDescription,
+  isMobile,
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
@@ -24,9 +25,12 @@ const DroppedArt = ({
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
-      <Tilt>
-        <img src={artSrc} alt="Uploaded Art" />
-      </Tilt>
+      {!isMobile && (
+        <Tilt>
+          <img src={artSrc} alt="Uploaded Art" />
+        </Tilt>
+      )}
+      {isMobile && <img src={artSrc} alt="Uploaded Art" />}
       {isHovered && (
         <JokerPreview
           jokerName={dataFromName}

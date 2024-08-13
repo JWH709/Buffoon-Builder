@@ -176,6 +176,7 @@ const JokerInfo = ({
                 setImage={setImage}
                 isCropped={isCropped}
                 setIsCropped={setIsCropped}
+                isMobile={isMobile}
               />
             </div>
           </div>

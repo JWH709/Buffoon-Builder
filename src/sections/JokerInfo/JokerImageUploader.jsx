@@ -13,6 +13,7 @@ const JokerImageUploader = ({
   setImage,
   isCropped,
   setIsCropped,
+  isMobile,
 }) => {
   React.useEffect(() => {
     const savedCroppedImage = localStorage.getItem("croppedImage");
@@ -153,6 +154,7 @@ const JokerImageUploader = ({
             dataFromCost={dataFromCost}
             dataFromDescription={dataFromDescription}
             dataFromRarity={dataFromRarity}
+            isMobile={isMobile}
           />
           <button className="button-delete-image" onClick={handleDeleteImage}>
             &times;
