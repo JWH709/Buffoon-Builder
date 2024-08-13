@@ -7,6 +7,7 @@ import ClearListButton from "./ClearListButton";
 import SectionTitle from "../../config/SectionTitle";
 import BuildingListInfo from "./BuildingListInfo";
 import JokerListInfoText from "../../config/JokerListInfoText";
+import { animated, useSpring } from "@react-spring/web";
 
 const BuldingList = ({
   blockType,
@@ -21,6 +22,21 @@ const BuldingList = ({
   const [droppedItem, setDroppedItem] = React.useState(null);
   const [title, setTitle] = React.useState(null);
   const [backgroundImage, setBackgroundImage] = React.useState(null);
+  const [displaySwipeInfo, setDisplaySwipeInfo] = React.useState(true);
+
+  React.useEffect(() => {
+    if (displaySwipeInfo) {
+      setTimeout(() => {
+        setDisplaySwipeInfo(false);
+      }, 3000);
+    }
+  }, [displaySwipeInfo, setDisplaySwipeInfo]);
+
+  const fadeOut = useSpring({
+    opacity: 0,
+    from: { opacity: 1 },
+    config: { duration: 3000 },
+  });
 
   const handleMouseMove = (e) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
@@ -135,8 +151,6 @@ const BuldingList = ({
           height: "66%",
         }}
       >
-        {/* ToDo: Add onClick styles to buttons */}
-
         <div
           ref={drop}
           style={{
@@ -148,6 +162,19 @@ const BuldingList = ({
             alignItems: "center",
           }}
         >
+          {isMobile && displaySwipeInfo && (
+            <animated.h3
+              style={{
+                color: "aliceblue",
+                margin: "7%",
+                zIndex: "2",
+                position: "fixed",
+                ...fadeOut,
+              }}
+            >
+              Swipe to change tabs
+            </animated.h3>
+          )}
           {droppedItem && !isMobile && (
             <DroppedBlock
               styles={droppedItem.styles}

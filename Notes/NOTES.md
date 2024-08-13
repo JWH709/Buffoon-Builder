@@ -493,10 +493,9 @@ TASKS FOR THE WEEK:
 - match swapped list with correct block tab ✔️
 - move introscreen around so the CRT effect is still applied to it ✔️
 - Fix info pop ups to fit with new logo ✔️
-- fix the screen shake mobile to desktop bug
 - cropping bug still exists on mobile ✔️
 - remove tilt on mobile ✔️
-- something to denote that mobile has swipe  
+- something to denote that mobile has swipe ✔️ 
 - README.md
 
 ## Assets:
@@ -538,3 +537,4 @@ TASKS FOR THE WEEK:
 
 - Removed tilt on mobile.
 - Fixed the cropper bug on mobile where the img css conflicts with the crop dimensions/scaling.
+- Used spring to create a fade out effect on an h3 that denotes that swipe can be used on mobile
