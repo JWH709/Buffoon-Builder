@@ -19,6 +19,8 @@ const BlockTab = ({ blockArray, blockType, isMobile, setBlockMemory }) => {
         className="block-container"
         style={{
           backgroundColor: background,
+          borderTopLeftRadius: isMobile ? "15px" : "0px",
+          borderTopRightRadius: isMobile ? "15px" : "0px",
         }}
       >
         {blockArray.map((block) => {

@@ -543,8 +543,8 @@ TASKS FOR THE WEEK:
 
 
 - that weird issue with 
-- Set the info to onClick
-- Hide the tabs on mobile swap
+- Set the info to onClick ✔️ 
+- Hide the tabs on mobile swap ✔️
 - overscroll issue on CRT filter mobile
 - Fix cost issue
 - Replace alert with a proper notification
@@ -557,3 +557,4 @@ TASKS FOR THE WEEK:
 
 
 - Fixed the JokerListInfo component to account for mobile. The onHover event gets changed to onClick when mobile.
+- Hid the block tabs on mobile. Blocks still swap with swipe on the building list

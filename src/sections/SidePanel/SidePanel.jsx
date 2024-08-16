@@ -35,6 +35,9 @@ function SidePanel({
           activeKey={isMobile ? currentList : key}
           onSelect={(k) => setKey(k)}
           className="mb-3"
+          style={{
+            display: isMobile ? "none" : "flex",
+          }}
         >
           <Tab eventKey="home" title="Context">
             <BlockTab
