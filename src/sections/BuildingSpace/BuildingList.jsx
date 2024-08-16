@@ -39,7 +39,9 @@ const BuldingList = ({
   });
 
   const handleMouseMove = (e) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
+    if (!isMobile) {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    }
   };
 
   const [, drop] = useDrop({
@@ -128,9 +130,10 @@ const BuldingList = ({
             clipPath:
               "polygon(0px calc(100% - 8px), 4px calc(100% - 8px), 4px calc(100% - 4px), 8px calc(100% - 4px), 8px 100%, calc(100% - 8px) 100%, calc(100% - 8px) calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) calc(100% - 8px), 100% calc(100% - 8px), 100% 8px,calc(100% - 4px) 8px,calc(100% - 4px) 4px,calc(100% - 8px) 4px,calc(100% - 8px) 0px,8px 0px,8px 4px,4px 4px,4px 8px,0px 8px",
           }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => (isMobile ? "" : setIsHovered(true))}
+          onMouseLeave={() => (isMobile ? "" : setIsHovered(false))}
           onMouseMove={handleMouseMove}
+          onClick={() => (isMobile ? setIsHovered(true) : "")}
         >
           i
         </div>
@@ -139,6 +142,7 @@ const BuldingList = ({
             infoText={infoText}
             mousePosition={mousePosition}
             isMobile={isMobile}
+            setIsHovered={setIsHovered}
           />
         )}
       </div>

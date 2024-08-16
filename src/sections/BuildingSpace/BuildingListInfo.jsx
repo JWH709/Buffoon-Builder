@@ -1,7 +1,16 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "../../config/assetImports";
+import React from "react";
 
-const BuildingListInfo = ({ infoText, mousePosition, isMobile }) => {
+const BuildingListInfo = ({
+  infoText,
+  mousePosition,
+  isMobile,
+  setIsHovered,
+}) => {
+  const handleButtonClick = React.useCallback(() => {
+    setIsHovered(false);
+  }, [setIsHovered]);
   return (
     <div
       style={{
@@ -24,6 +33,24 @@ const BuildingListInfo = ({ infoText, mousePosition, isMobile }) => {
         overflow: "hidden",
       }}
     >
+      {isMobile && (
+        <button
+          style={{
+            top: "10px",
+            right: "15px",
+            position: "fixed",
+            height: "32px",
+            width: "30px",
+            borderRadius: "15px",
+            backgroundColor: "rgb(255, 76, 76)",
+            color: "aliceblue",
+            border: "none",
+          }}
+          onClick={handleButtonClick}
+        >
+          x
+        </button>
+      )}
       <img
         src={IMAGES.logo}
         alt="Buffoon Builder forman"

@@ -551,3 +551,9 @@ TASKS FOR THE WEEK:
 - add JokerPreview to voucher on mobile.
 - add links for all my stuff
 - README.md
+
+
+## August 16th: 
+
+
+- Fixed the JokerListInfo component to account for mobile. The onHover event gets changed to onClick when mobile.
