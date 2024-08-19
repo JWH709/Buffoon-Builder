@@ -550,7 +550,7 @@ TASKS FOR THE WEEK:
 - Replace alert with a proper notification
 - add JokerPreview to voucher on mobile.
 - add links for all my stuff
-- README.md
+- README.md ✔️
 
 
 ## August 16th: 
@@ -558,3 +558,10 @@ TASKS FOR THE WEEK:
 
 - Fixed the JokerListInfo component to account for mobile. The onHover event gets changed to onClick when mobile.
 - Hid the block tabs on mobile. Blocks still swap with swipe on the building list
+
+
+
+## August 19th: 
+
+
+- Created a proper readme.md
