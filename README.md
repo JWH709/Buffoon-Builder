@@ -1,7 +1,5 @@
 # Buffoon Builder
 
-## Overview
-
 - [Buffoon Builder](#buffoon-builder)
   - [Overview](#overview)
     - [What is Buffoon Builder?](#what-is-buffoon-builder)
@@ -14,6 +12,8 @@
   - [Notes](#notes)
     - [Planned Features](#planned-features)
     - [Known Bugs \& Issues](#known-bugs--issues)
+
+## Overview
 
 ### What is Buffoon Builder?
 
