@@ -6,6 +6,7 @@ import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
 import { Tilt } from "@jdion/tilt-react";
 import { useSpring, animated } from "@react-spring/web";
+import JokerPreview from "../JokerInfo/JokerPreview.jsx";
 
 const LuaDownloader = ({
   jokerEffect,
@@ -20,9 +21,14 @@ const LuaDownloader = ({
   setActiveAnimationTarget,
   step,
   setStep,
+  dataFromDescription,
+  dataFromCost,
+  dataFromRarity,
 }) => {
   // Create shake effect to apply to voucher when download button is clicked:
   const [rotate, setRotate] = React.useState(false);
+
+  const [voucherClicked, setVoucherClicked] = React.useState(false);
 
   const props = useSpring({
     to: async (next) => {
@@ -203,6 +209,19 @@ const LuaDownloader = ({
               margin: "0 auto",
               userSelect: "none",
             }}
+            onClick={() => {
+              setVoucherClicked(true);
+            }}
+          />
+        )}
+        {isMobile && voucherClicked && (
+          <JokerPreview
+            jokerName={jokerName}
+            jokerEffect={dataFromDescription}
+            jokerRarity={dataFromRarity}
+            jokerCost={dataFromCost}
+            isMobile={isMobile}
+            setVoucherClicked={setVoucherClicked}
           />
         )}
         <button

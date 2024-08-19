@@ -236,6 +236,9 @@ const MobileApp = ({
                   setActiveAnimationTarget={setActiveAnimationTarget}
                   step={step}
                   setStep={setStep}
+                  dataFromRarity={dataFromRarity}
+                  dataFromCost={dataFromCost}
+                  dataFromDescription={dataFromDescription}
                 />
               </div>
             </div>

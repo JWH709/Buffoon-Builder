@@ -31,7 +31,7 @@ const DroppedArt = ({
         </Tilt>
       )}
       {isMobile && <img src={artSrc} alt="Uploaded Art" />}
-      {isHovered && (
+      {!isMobile && isHovered && (
         <JokerPreview
           jokerName={dataFromName}
           jokerEffect={dataFromDescription}

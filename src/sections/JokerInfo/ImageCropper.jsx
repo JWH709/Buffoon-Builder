@@ -106,6 +106,11 @@ const ImageCropper = ({ image, setImage, setIsCropped, isMobile }) => {
             userSelect: "none",
             fontFamily: "balatro",
             marginTop: "2%",
+            zIndex: "2",
+            position: "fixed",
+            width: "50%",
+            height: "8%",
+            bottom: "60px",
           }}
         >
           Crop

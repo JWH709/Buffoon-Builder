@@ -565,3 +565,4 @@ TASKS FOR THE WEEK:
 
 
 - Created a proper readme.md
+- Add jokerPreview to voucher on Mobile 
