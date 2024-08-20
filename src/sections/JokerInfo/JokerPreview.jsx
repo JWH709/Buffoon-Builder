@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import JokerCostTab from "./JokerCost";
 import { IMAGES } from "../../config/assetImports.js";
-import React from "react";
 
 const JokerPreview = ({
   jokerName,
@@ -10,12 +9,7 @@ const JokerPreview = ({
   jokerCost,
   position,
   isMobile,
-  setVoucherClicked,
 }) => {
-  const handleXClick = React.useCallback(() => {
-    setVoucherClicked(false);
-  }, [setVoucherClicked]);
-
   let rarityTitle = "Common";
   let rarityImg = IMAGES.common;
 
@@ -57,19 +51,6 @@ const JokerPreview = ({
         style={{ backgroundImage: `url(${IMAGES.previewBackground})` }}
       >
         <h2 className="joker-preview-name">{jokerName}</h2>
-        {isMobile && (
-          <h2
-            style={{
-              color: "black",
-              position: "fixed",
-              top: "80px",
-              right: "200px",
-            }}
-            onClick={handleXClick}
-          >
-            X
-          </h2>
-        )}
         <div
           className="joker-preview-effect-container"
           style={{ backgroundImage: `url(${IMAGES.previewEffect})` }}

@@ -210,7 +210,7 @@ const LuaDownloader = ({
               userSelect: "none",
             }}
             onClick={() => {
-              setVoucherClicked(true);
+              setVoucherClicked(!voucherClicked);
             }}
           />
         )}
@@ -221,7 +221,6 @@ const LuaDownloader = ({
             jokerRarity={dataFromRarity}
             jokerCost={dataFromCost}
             isMobile={isMobile}
-            setVoucherClicked={setVoucherClicked}
           />
         )}
         <button

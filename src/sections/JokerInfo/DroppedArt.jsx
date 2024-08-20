@@ -45,7 +45,7 @@ const DroppedArt = ({
           src={artSrc}
           alt="Uploaded Art"
           onClick={() => {
-            setShowPreviewMobile(true);
+            setShowPreviewMobile(!showPreviewMobile);
           }}
         />
       )}
@@ -56,7 +56,6 @@ const DroppedArt = ({
           jokerRarity={dataFromRarity}
           jokerCost={dataFromCost}
           isMobile={isMobile}
-          setVoucherClicked={setShowPreviewMobile}
         />
       )}
     </div>
