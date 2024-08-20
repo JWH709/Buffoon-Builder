@@ -541,12 +541,11 @@ TASKS FOR THE WEEK:
 
 ## Goals for the 13th-20th:
 
-
-- that weird issue with 
+- Cropper issues
 - Set the info to onClick ✔️ 
 - Hide the tabs on mobile swap ✔️
 - overscroll issue on CRT filter mobile
-- Fix cost issue
+- Fix cost issue ✔️
 - Replace alert with a proper notification
 - add JokerPreview to voucher on mobile. ✔️
 - add links for all my stuff
@@ -572,4 +571,5 @@ TASKS FOR THE WEEK:
 
 
 - Fixed bug with JokerPreview that caused close button to display on desktop version.
-- Changed the JokerInput to conditionally render based on what input is being used. Cost now uses select instead of input
+- Changed the JokerInput to conditionally render based on what input is being used. Cost now uses select instead of input.
+- Added the onClick to show joker preview to dropped art on mobile
