@@ -57,17 +57,19 @@ const JokerPreview = ({
         style={{ backgroundImage: `url(${IMAGES.previewBackground})` }}
       >
         <h2 className="joker-preview-name">{jokerName}</h2>
-        <h2
-          style={{
-            color: "black",
-            position: "fixed",
-            top: "80px",
-            right: "200px",
-          }}
-          onClick={handleXClick}
-        >
-          X
-        </h2>
+        {isMobile && (
+          <h2
+            style={{
+              color: "black",
+              position: "fixed",
+              top: "80px",
+              right: "200px",
+            }}
+            onClick={handleXClick}
+          >
+            X
+          </h2>
+        )}
         <div
           className="joker-preview-effect-container"
           style={{ backgroundImage: `url(${IMAGES.previewEffect})` }}

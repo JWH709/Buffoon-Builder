@@ -548,7 +548,7 @@ TASKS FOR THE WEEK:
 - overscroll issue on CRT filter mobile
 - Fix cost issue
 - Replace alert with a proper notification
-- add JokerPreview to voucher on mobile.
+- add JokerPreview to voucher on mobile. ✔️
 - add links for all my stuff
 - README.md ✔️
 
@@ -566,3 +566,10 @@ TASKS FOR THE WEEK:
 
 - Created a proper readme.md
 - Add jokerPreview to voucher on Mobile 
+
+
+## August 20th:
+
+
+- Fixed bug with JokerPreview that caused close button to display on desktop version.
+- Changed the JokerInput to conditionally render based on what input is being used. Cost now uses select instead of input

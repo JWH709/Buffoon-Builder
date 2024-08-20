@@ -619,8 +619,6 @@ html, body {
 }
 
 .input-joker-cost {
-  height: 63px;
-  width: 192px;
   font-family: 'balatro';
   font-size: xx-large;
   color: rgb(225,136,0);

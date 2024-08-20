@@ -215,6 +215,7 @@ const JokerInfo = ({
               type={"text"}
               dataFromName={dataFromName}
               defaultValue={defaultName}
+              isMobile={isMobile}
             />
           </div>
           <div className="container-cost">
@@ -228,6 +229,7 @@ const JokerInfo = ({
               type={"number"}
               dataFromCost={dataFromCost}
               defaultValue={defaultCost}
+              isMobile={isMobile}
             />
           </div>
         </div>
