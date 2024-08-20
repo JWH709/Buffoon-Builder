@@ -542,13 +542,15 @@ TASKS FOR THE WEEK:
 ## Goals for the 13th-20th:
 
 - Cropper issues
+- overscroll issue on CRT filter mobile
+- add links for all my stuff
+- Change scaling on intro screen, opening up inspect tools hides button
+- Change x button location (cropper)
+- Gentle scale effect on hover over draggable components
 - Set the info to onClick ✔️ 
 - Hide the tabs on mobile swap ✔️
-- overscroll issue on CRT filter mobile
 - Fix cost issue ✔️
-- Replace alert with a proper notification
 - add JokerPreview to voucher on mobile. ✔️
-- add links for all my stuff
 - README.md ✔️
 
 
