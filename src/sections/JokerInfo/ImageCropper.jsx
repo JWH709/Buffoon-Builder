@@ -24,28 +24,31 @@ const ImageCropper = ({ image, setImage, setIsCropped, isMobile }) => {
   };
 
   const cropImage = () => {
-    const imageElement = document.createElement("img");
+    const imageElement = new Image();
     imageElement.src = image;
 
     imageElement.onload = () => {
       const canvas = document.createElement("canvas");
       const scaleX = imageElement.naturalWidth / imageElement.width;
       const scaleY = imageElement.naturalHeight / imageElement.height;
+      const scaledCropWidth = crop.width * scaleX;
+      const scaledCropHeight = crop.height * scaleY;
 
-      canvas.width = crop.width * scaleX;
-      canvas.height = crop.height * scaleY;
+      canvas.width = scaledCropWidth;
+      canvas.height = scaledCropHeight;
+
       const ctx = canvas.getContext("2d");
 
       ctx.drawImage(
         imageElement,
         crop.x * scaleX,
         crop.y * scaleY,
-        crop.width * scaleX,
-        crop.height * scaleY,
+        scaledCropWidth,
+        scaledCropHeight,
         0,
         0,
-        canvas.width,
-        canvas.height
+        scaledCropWidth,
+        scaledCropHeight
       );
 
       const croppedImage = canvas.toDataURL("image/jpeg");

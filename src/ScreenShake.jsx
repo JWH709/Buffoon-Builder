@@ -120,6 +120,7 @@ const ScreenShake = () => {
     zIndex: 2,
     backgroundSize: "100% 2px, 3px 100%",
     pointerEvents: "none",
+    overscrollBehavior: "none",
   };
 
   const bodyAfterStyles = {
@@ -135,6 +136,7 @@ const ScreenShake = () => {
     zIndex: 2,
     pointerEvents: "none",
     animation: "flicker 0.15s infinite",
+    overscrollBehavior: "none",
   };
 
   React.useEffect(() => {
