@@ -9,6 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import BalatroShaderComponent from "./assets/Background Shader/BalatroShaderComponent.jsx";
 import { Suspense } from "react";
 import IntroPage from "./IntroPage.jsx";
+
 const ScreenShake = () => {
   const [luaJokerEffect, setLuaJokerEffect] = React.useState(null);
   const [luaLocals, setLuaLocals] = React.useState(null);
@@ -214,6 +215,7 @@ const ScreenShake = () => {
                   toggleButton={toggleButton}
                   setToggleButton={setToggleButton}
                   setHelpPageVisible={setHelpPageVisible}
+                  isMobile={isMobile}
                 />
                 <DndProvider backend={HTML5Backend}>
                   <App
@@ -272,6 +274,7 @@ const ScreenShake = () => {
                   toggleButton={toggleButton}
                   setToggleButton={setToggleButton}
                   setHelpPageVisible={setHelpPageVisible}
+                  isMobile={isMobile}
                 />
                 <DndProvider backend={HTML5Backend}>
                   <App

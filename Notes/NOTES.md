@@ -540,12 +540,11 @@ TASKS FOR THE WEEK:
 
 
 ## Goals for the 13th-20th:
-
+- Change scaling on intro screen, opening up inspect tools hides button
+- add links for all my stuff
+- Change x button location (cropper)
 - Cropper issues
 - overscroll issue on CRT filter mobile
-- add links for all my stuff
-- Change scaling on intro screen, opening up inspect tools hides button
-- Change x button location (cropper)
 - Gentle scale effect on hover over draggable components
 - Set the info to onClick ✔️ 
 - Hide the tabs on mobile swap ✔️
@@ -575,3 +574,9 @@ TASKS FOR THE WEEK:
 - Fixed bug with JokerPreview that caused close button to display on desktop version.
 - Changed the JokerInput to conditionally render based on what input is being used. Cost now uses select instead of input.
 - Added the onClick to show joker preview to dropped art on mobile
+
+
+## August 21st:
+
+- Need to finish bug fixes today. I'm thinking I should start with one of the twoo big issues (cropper & overscrol) and move on to the smaller ones as a break.
+- Cropper fix: So there are two fixes I can think of for the cropper. 1. I could resize the image when it's uploaded to match the resize VIA css. 2. I can find a way to also change the parameters of the cropper to change with the scaling of the CSS. I think the first option is easier, however, it's way less optimal. the second is 100% the prefered option.

@@ -85,8 +85,8 @@ const ImageCropper = ({ image, setImage, setIsCropped, isMobile }) => {
         <img
           src={image}
           style={{
-            maxWidth: isMobile ? "100%" : "auto",
-            maxHeight: isMobile ? "80vh" : "auto",
+            maxWidth: isMobile ? "auto" : "auto",
+            maxHeight: isMobile ? "auto" : "auto",
           }}
         />
       </ReactCrop>

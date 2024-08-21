@@ -8,6 +8,7 @@ import ItemTypes from "../../config/ItemTypes";
 import { animated, useSpring, config } from "@react-spring/web";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { IMAGES } from "../../config/assetImports.js";
 
 const MobileApp = ({
   setLuaJokerEffect,
@@ -36,6 +37,7 @@ const MobileApp = ({
   isCropped,
   setIsCropped,
 }) => {
+  const [gitHubHovered, setGitHubHovered] = React.useState(false);
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
     if card.ability.name == "${dataFromName}" `;
   const jokerEffectEnd = `    
@@ -294,6 +296,42 @@ const MobileApp = ({
             step={step}
             setStep={setStep}
           />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "10%",
+          }}
+        >
+          <a
+            href="https://github.com/JWH709/Buffoon-Builder"
+            target="_blank"
+            title="Buffoon Builder repo"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "20%",
+            }}
+          >
+            <img
+              src={gitHubHovered ? IMAGES.gitHubWhite : IMAGES.gitHubBlack}
+              alt=""
+              style={{
+                width: "100%",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                setGitHubHovered(true);
+                setTimeout(() => {
+                  setGitHubHovered(false);
+                }, 1000);
+              }}
+            />
+          </a>
         </div>
       </animated.div>
     </>

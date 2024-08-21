@@ -14,6 +14,8 @@ import jokerVoucher from '../assets/download_joker.png'
 import downloaderBg from '../assets/downloader_bg.png'
 import buildingSpaceExample from '../assets/building_space_example.png'
 import jokerInfoExample from '../assets/info_space_example.png'
+import gitHubBlack from '../assets/github_logo_black.png'
+import gitHubWhite from '../assets/github_logo_white.png'
 
 
 export const IMAGES = {
@@ -32,5 +34,7 @@ export const IMAGES = {
     jokerVoucher,
     downloaderBg,
     buildingSpaceExample,
-    jokerInfoExample
+    jokerInfoExample,
+    gitHubBlack,
+    gitHubWhite
 };
