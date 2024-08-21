@@ -1,8 +1,29 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "./config/assetImports";
-//ToDo: This gets squishy on small laptop screens & tablets
+import React from "react";
+//I get an error message over the way overflow is being set, however there doesn't seem to be any issue. I need x removed and y dynamic, so I guess I'll just let it ride for now
 //ToDo: useSpring
-const IntroPage = ({ setHelpPageVisible, isMobile }) => {
+const IntroPage = ({ setHelpPageVisible }) => {
+  const [isSmall, setIsSmall] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 1664) {
+        setIsSmall(true);
+      } else {
+        setIsSmall(false);
+      }
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [setIsSmall]);
+
   return (
     <div
       style={{
@@ -31,8 +52,10 @@ const IntroPage = ({ setHelpPageVisible, isMobile }) => {
           fontFamily: "balatro",
           color: "aliceblue",
           width: "100%",
-          height: isMobile ? "98.5%" : "100%",
-          overflow: isMobile ? "scroll" : "hidden",
+          height: isSmall ? "96.8%" : "100%",
+          overflowX: "none",
+          overflowY: isSmall ? "scroll" : "hidden",
+          marginTop: "1%",
         }}
       >
         <div
@@ -86,15 +109,15 @@ const IntroPage = ({ setHelpPageVisible, isMobile }) => {
           <div
             style={{
               display: "flex",
-              flexDirection: isMobile ? "column" : "row",
+              flexDirection: isSmall ? "column" : "row",
               width: "97%",
             }}
           >
             <div
               style={{
                 display: "flex",
-                flexDirection: isMobile ? "column" : "row",
-                width: isMobile ? "98%" : "48%",
+                flexDirection: isSmall ? "column" : "row",
+                width: isSmall ? "98%" : "48%",
                 margin: "1%",
               }}
             >
@@ -130,8 +153,8 @@ const IntroPage = ({ setHelpPageVisible, isMobile }) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "flex-start",
-                  marginBottom: isMobile ? "4%" : "0%",
-                  marginLeft: isMobile ? "0%" : "4%",
+                  marginBottom: isSmall ? "4%" : "0%",
+                  marginLeft: isSmall ? "0%" : "4%",
                 }}
               >
                 <img
@@ -145,8 +168,8 @@ const IntroPage = ({ setHelpPageVisible, isMobile }) => {
             <div
               style={{
                 display: "flex",
-                flexDirection: isMobile ? "column" : "row",
-                width: isMobile ? "98%" : "48%",
+                flexDirection: isSmall ? "column" : "row",
+                width: isSmall ? "98%" : "48%",
                 margin: "1%",
               }}
             >
@@ -196,8 +219,8 @@ const IntroPage = ({ setHelpPageVisible, isMobile }) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "flex-start",
-                  marginBottom: isMobile ? "4%" : "0%",
-                  marginLeft: isMobile ? "0%" : "4%",
+                  marginBottom: isSmall ? "4%" : "0%",
+                  marginLeft: isSmall ? "0%" : "4%",
                 }}
               >
                 <img

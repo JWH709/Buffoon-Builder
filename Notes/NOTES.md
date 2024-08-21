@@ -540,8 +540,8 @@ TASKS FOR THE WEEK:
 
 
 ## Goals for the 13th-20th:
-- Change scaling on intro screen, opening up inspect tools hides button
-- add links for all my stuff
+- Change scaling on intro screen, opening up inspect tools hides button ✔️
+- add links for all my stuff ✔️
 - Change x button location (cropper)
 - Cropper issues
 - overscroll issue on CRT filter mobile
@@ -580,3 +580,5 @@ TASKS FOR THE WEEK:
 
 - Need to finish bug fixes today. I'm thinking I should start with one of the twoo big issues (cropper & overscrol) and move on to the smaller ones as a break.
 - Cropper fix: So there are two fixes I can think of for the cropper. 1. I could resize the image when it's uploaded to match the resize VIA css. 2. I can find a way to also change the parameters of the cropper to change with the scaling of the CSS. I think the first option is easier, however, it's way less optimal. the second is 100% the prefered option.
+
+- Added links for the github repo and fixed the scaling issues on the introscreen.
