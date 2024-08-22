@@ -111,7 +111,7 @@ const ScreenShake = () => {
   const bodyBeforeStyles = {
     content: '" "',
     display: "block",
-    position: "absolute",
+    position: "fixed",
     top: 0,
     left: 0,
     bottom: 0,
@@ -122,12 +122,13 @@ const ScreenShake = () => {
     backgroundSize: "100% 2px, 3px 100%",
     pointerEvents: "none",
     overscrollBehavior: "none",
+    touchAction: "none",
   };
 
   const bodyAfterStyles = {
     content: '" "',
     display: "block",
-    position: "absolute",
+    position: "fixed",
     top: 0,
     left: 0,
     bottom: 0,
@@ -138,6 +139,7 @@ const ScreenShake = () => {
     pointerEvents: "none",
     animation: "flicker 0.15s infinite",
     overscrollBehavior: "none",
+    touchAction: "none",
   };
 
   React.useEffect(() => {

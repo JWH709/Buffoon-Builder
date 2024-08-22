@@ -544,7 +544,7 @@ TASKS FOR THE WEEK:
 - add links for all my stuff ✔️
 - Change x button location (cropper)
 - Cropper issues
-- overscroll issue on CRT filter mobile
+- overscroll issue on CRT filter mobile ✔️
 - Gentle scale effect on hover over draggable components
 - Set the info to onClick ✔️ 
 - Hide the tabs on mobile swap ✔️
@@ -582,3 +582,9 @@ TASKS FOR THE WEEK:
 - Cropper fix: So there are two fixes I can think of for the cropper. 1. I could resize the image when it's uploaded to match the resize VIA css. 2. I can find a way to also change the parameters of the cropper to change with the scaling of the CSS. I think the first option is easier, however, it's way less optimal. the second is 100% the prefered option.
 
 - Added links for the github repo and fixed the scaling issues on the introscreen.
+
+
+## August 22nd: 
+
+
+- Fixed the rubberband/overscroll issues with the CRT filter on mobile
