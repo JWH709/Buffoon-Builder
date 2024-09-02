@@ -578,13 +578,20 @@ TASKS FOR THE WEEK:
 
 ## August 21st:
 
-- Need to finish bug fixes today. I'm thinking I should start with one of the twoo big issues (cropper & overscrol) and move on to the smaller ones as a break.
+- Need to finish bug fixes today. I'm thinking I should start with one of the two big issues (cropper & overscrol) and move on to the smaller ones as a break.
 - Cropper fix: So there are two fixes I can think of for the cropper. 1. I could resize the image when it's uploaded to match the resize VIA css. 2. I can find a way to also change the parameters of the cropper to change with the scaling of the CSS. I think the first option is easier, however, it's way less optimal. the second is 100% the prefered option.
 
 - Added links for the github repo and fixed the scaling issues on the introscreen.
 
 
-## August 22nd: 
+## Notes from Final Meeting:
 
 
 - Fixed the rubberband/overscroll issues with the CRT filter on mobile
+- Fix bug where unusable characters in JokerInput crash game
+- Clear button shadow on mobile, remove github link on mobile/move it to intro screen
+- look at cleaning up the cost drop down
+- Fix scroll issue on intro page (add back in height check for div)
+- fix it so nothing gets mashed when it's not in mobile
+- joker effect needs to prevent infinite enters (enters count as characters)
+- z index on joker info hover with lua downloader

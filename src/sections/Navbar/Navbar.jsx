@@ -53,8 +53,6 @@ const Navbar = ({
               right: "1.2%",
               position: "fixed",
               cursor: "pointer",
-              border: "1px solid black",
-              borderRadius: "100%",
             }}
             onMouseEnter={() => {
               setGitHubHovered(true);
