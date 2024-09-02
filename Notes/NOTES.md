@@ -589,9 +589,9 @@ TASKS FOR THE WEEK:
 
 - Fixed the rubberband/overscroll issues with the CRT filter on mobile
 - Fix bug where unusable characters in JokerInput crash game
-- Clear button shadow on mobile, remove github link on mobile/move it to intro screen
-- look at cleaning up the cost drop down
+- Clear button shadow on mobile, remove github link on mobile/move it to intro screen ✔️
+- look at cleaning up the cost drop down ✔️
 - Fix scroll issue on intro page (add back in height check for div)
-- fix it so nothing gets mashed when it's not in mobile
+- fix it so nothing gets mashed when it's not in mobile ✔️
 - joker effect needs to prevent infinite enters (enters count as characters)
 - z index on joker info hover with lua downloader

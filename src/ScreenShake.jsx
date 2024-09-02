@@ -92,8 +92,8 @@ const ScreenShake = () => {
 
   React.useEffect(() => {
     const handleResize = () => {
-      const screenSize = [window.innerHeight, window.innerWidth];
-      if (screenSize[0] < 769 || screenSize[1] < 1024) {
+      const screenSize = window.innerWidth;
+      if (screenSize < 1024) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -212,37 +212,51 @@ const ScreenShake = () => {
               </div>
             )}
             {!helpPageVisible && (
-              <>
-                <Navbar
-                  toggleButton={toggleButton}
-                  setToggleButton={setToggleButton}
-                  setHelpPageVisible={setHelpPageVisible}
-                  isMobile={isMobile}
-                />
-                <DndProvider backend={HTML5Backend}>
-                  <App
+              <div
+                style={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  overflowY: "auto",
+                }}
+              >
+                <div
+                  style={{
+                    height: "auto",
+                    flexGrow: "1",
+                  }}
+                >
+                  <Navbar
+                    toggleButton={toggleButton}
+                    setToggleButton={setToggleButton}
+                    setHelpPageVisible={setHelpPageVisible}
                     isMobile={isMobile}
-                    luaJokerEffect={luaJokerEffect}
-                    setLuaJokerEffect={setLuaJokerEffect}
-                    luaLocals={luaLocals}
-                    setLuaLocals={setLuaLocals}
-                    luaTableInsert={luaTableInsert}
-                    setLuaTableInsert={setLuaTableInsert}
-                    dataFromName={dataFromName}
-                    setDataFromName={setDataFromName}
-                    image={image}
-                    setImage={setImage}
-                    dataFromRarity={dataFromRarity}
-                    dataFromCost={dataFromCost}
-                    dataFromDescription={dataFromDescription}
-                    setDataFromRarity={setDataFromRarity}
-                    setDataFromCost={setDataFromCost}
-                    setDataFromDescription={setDataFromDescription}
-                    isCropped={isCropped}
-                    setIsCropped={setIsCropped}
                   />
-                </DndProvider>
-              </>
+                  <DndProvider backend={HTML5Backend}>
+                    <App
+                      isMobile={isMobile}
+                      luaJokerEffect={luaJokerEffect}
+                      setLuaJokerEffect={setLuaJokerEffect}
+                      luaLocals={luaLocals}
+                      setLuaLocals={setLuaLocals}
+                      luaTableInsert={luaTableInsert}
+                      setLuaTableInsert={setLuaTableInsert}
+                      dataFromName={dataFromName}
+                      setDataFromName={setDataFromName}
+                      image={image}
+                      setImage={setImage}
+                      dataFromRarity={dataFromRarity}
+                      dataFromCost={dataFromCost}
+                      dataFromDescription={dataFromDescription}
+                      setDataFromRarity={setDataFromRarity}
+                      setDataFromCost={setDataFromCost}
+                      setDataFromDescription={setDataFromDescription}
+                      isCropped={isCropped}
+                      setIsCropped={setIsCropped}
+                    />
+                  </DndProvider>
+                </div>
+              </div>
             )}
           </animated.div>
         )}
