@@ -587,7 +587,6 @@ TASKS FOR THE WEEK:
 ## Notes from Final Meeting:
 
 
-- Fixed the rubberband/overscroll issues with the CRT filter on mobile
 - Fix bug where unusable characters in JokerInput crash game
 - Clear button shadow on mobile, remove github link on mobile/move it to intro screen ✔️
 - look at cleaning up the cost drop down ✔️
@@ -595,3 +594,9 @@ TASKS FOR THE WEEK:
 - fix it so nothing gets mashed when it's not in mobile ✔️
 - joker effect needs to prevent infinite enters (enters count as characters)
 - z index on joker info hover with lua downloader
+
+
+## UH OH:
+
+
+- Balamod has been completely overhauled. I need to fix EVERYTHING.

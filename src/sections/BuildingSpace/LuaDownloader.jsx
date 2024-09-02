@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import JSZip from "jszip";
-import center_hook from "../../assets/center_hook.jsx";
 import { saveAs } from "file-saver";
 import React from "react";
 import { IMAGES } from "../../config/assetImports.js";
@@ -25,10 +24,39 @@ const LuaDownloader = ({
   dataFromCost,
   dataFromRarity,
 }) => {
-  // Create shake effect to apply to voucher when download button is clicked:
+  const [manifest, setManifest] = React.useState(null);
+  const modFile = localVariables + jokerEffect + tableInsert;
+  const [isClicked, setIsClicked] = React.useState(false);
   const [rotate, setRotate] = React.useState(false);
-
   const [voucherClicked, setVoucherClicked] = React.useState(false);
+  const [downloadState, setDownloadState] = React.useState(false);
+
+  const getJokerID = (name) => {
+    if (name == null) {
+      //do nothing
+    } else {
+      const jokerLC = name.toLowerCase();
+      const jokerID = jokerLC.replace(" ", "_");
+      return jokerID;
+    }
+  };
+
+  React.useEffect(() => {
+    if (downloadState) {
+      const jokerID = getJokerID(jokerName);
+      setManifest(`{
+  "id": "${jokerID}",
+  "name": "${jokerName}",
+  "version": "1.0.0",
+  "description": [
+      "BuffoonBuilder Mod"
+  ],
+  "author": "BuffoonBuilder",
+  "load_before": [],
+  "load_after": []
+}`);
+    }
+  }, [downloadState, jokerName]);
 
   const props = useSpring({
     to: async (next) => {
@@ -44,8 +72,6 @@ const LuaDownloader = ({
     config: { duration: 25 },
   });
 
-  // Create state to determine if everything required for download is present:
-  const [downloadState, setDownloadState] = React.useState(false);
   React.useEffect(() => {
     if (
       jokerEffect == null ||
@@ -59,9 +85,6 @@ const LuaDownloader = ({
     }
   }, [jokerEffect, localVariables, jokerName, image]);
 
-  // Set up state for button styles & create handler for click:
-  const [isClicked, setIsClicked] = React.useState(false);
-
   const handleClick = () => {
     setRotate(true);
     setIsClicked(true);
@@ -70,29 +93,13 @@ const LuaDownloader = ({
     }, 200); // Change back after 200ms
   };
 
-  // Create zip file:
   const zip = new JSZip();
-  const pack = zip.folder("pack");
-  // If there's no name, deny the download. I need to add the denial in the if true statement:
-  const getJokerID = (name) => {
-    if (name == null) {
-      //do nothing
-    } else {
-      const jokerLC = name.toLowerCase();
-      const jokerID = jokerLC.replace(" ", "_");
-      return jokerID;
-    }
-  };
+  const modFolder = zip.folder(`${getJokerID(jokerName)}`);
+  const assets = modFolder.folder("assets");
 
-  // This creates an ID for the joker filename and compiles the main mod file, adding the ID to the appropriate places:
-  const jokerID = getJokerID(jokerName);
-  const modFile = localVariables + jokerEffect + tableInsert;
+  modFolder.file(`main.lua`, modFile);
+  modFolder.file(`manifest.json`, manifest);
 
-  // Create correct paths for Balamod compatibility. Add the center hook api to the zip:
-  zip.folder("mods").file(`${jokerID}.lua`, modFile);
-  zip.folder("apis").file(`center_hook.lua`, center_hook);
-
-  // Verify the image, then convert it (needs to be converted in order to be downloaded properly) & add it to the zip under the correct paths:
   if (image) {
     const base64Data = image.split(",")[1];
     const binaryString = atob(base64Data);
@@ -102,19 +109,23 @@ const LuaDownloader = ({
     for (let i = 0; i < len; i++) {
       bytes[i] = binaryString.charCodeAt(i);
     }
-    pack.folder("1x").file(`${jokerID}.png`, bytes, { binary: true });
-    pack.folder("2x").file(`${jokerID}.png`, bytes, { binary: true });
+    assets
+      .folder("textures")
+      .folder("1x")
+      .file(`${"j_" + getJokerID(jokerName)}.png`, bytes, { binary: true });
+    assets
+      .folder("textures")
+      .folder("2x")
+      .file(`${"j_" + getJokerID(jokerName)}.png`, bytes, { binary: true });
   }
 
-  // Download the joker to the user's computer:
   const downloadJoker = () => {
     handleClick();
     zip.generateAsync({ type: "blob" }).then((content) => {
-      saveAs(content, `${jokerID}.zip`);
+      saveAs(content, `${getJokerID(jokerName)}.zip`);
     });
   };
 
-  // Set up an alert to let the user know they're missing required info:
   const missingInfoAlert = () => {
     console.log("Missing info!"); //replace with alert
   };

@@ -33,60 +33,45 @@ const JokerInfo = ({
     if (dataFromName && dataFromDescription && dataFromCost != null) {
       const luaJokerNameLower = dataFromName.toLowerCase();
       const luaJokerID = luaJokerNameLower.replaceAll(" ", "_");
-      updateLuaLocals(`--All mods made using the center_hook api (https://github.com/nicholassam6425/balatro-mods)
+      updateLuaLocals(`local mod_id = "${luaJokerID}"
 
-        local mod_id = "${luaJokerID}"
-        local mod_name = "${dataFromName}"
-        local mod_version = "1.0"
-        local mod_author = "BuffoonBuilder"`);
+-- logger
+local logging = require("logging")
+local logger = logging.getLogger(mod_id)
+
+-- APIs
+local joker = require('joker')
+
+-- config
+local mod_config = {}`);
 
       const luaJokerTableID = "j_" + luaJokerID;
-      updateLuaTableInsert(`
-        
-        table.insert(mods, {
-          mod_id = mod_id,
-          name = mod_name,
-          version = mod_version,
-          author = mod_author,
-          enabled = true,
-          on_enable = function()
-              centerHook.addJoker(self, "${luaJokerTableID}", -- id
-              '${dataFromName}', -- name
-              jokerEffect, -- effect function
-              nil, -- order
-              true, -- unlocked
-              true, -- discovered
-              ${dataFromCost}, -- cost
-              {
-                  x = 0,
-                  y = 0
-              }, -- sprite position
-              nil, -- internal effect description
-              {
-                  extra = {
-                      x_mult = 2
-                  }
-              }, -- config
-              {'${dataFromDescription}'}, -- description text
-              ${dataFromRarity}, -- rarity
-              true, -- blueprint compatibility
-              true, -- eternal compatibility
-              nil, -- exclusion pool flag
-              nil, -- inclusion pool flag
-              nil, -- unlock condition
-              true, -- collection alert
-              "pack", -- sprite path
-              ("${luaJokerID}.png"), -- sprite name
-              {
-                  px = 71,
-                  py = 95
-              } -- sprite size
-              )
-          end,
-          on_disable = function()
-              centerHook.removeJoker(self, "${luaJokerTableID}")
-          end
-      })`);
+      updateLuaTableInsert(`        
+       local function on_enable()
+    -- Add an example joker
+    joker.add({
+        mod_id = mod_id,
+        id = "${luaJokerTableID}",
+        name = "${dataFromName}",
+        desc = {'${dataFromDescription}'},
+        rarity = ${dataFromRarity},
+        effect = "${dataFromDescription}",
+        calculate_joker_effect = jokerEffect,
+        unlocked = true,
+        discovered = true,
+        cost = ${dataFromCost},
+        blueprint_compat = true
+    })
+end
+
+local function on_disable()
+    joker.remove("${luaJokerID}")
+end
+
+return {
+    on_enable = on_enable,
+    on_disable = on_disable
+}`);
     }
   }, [
     dataFromName,
