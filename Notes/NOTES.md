@@ -593,10 +593,16 @@ TASKS FOR THE WEEK:
 - Fix scroll issue on intro page (add back in height check for div)
 - fix it so nothing gets mashed when it's not in mobile ✔️
 - joker effect needs to prevent infinite enters (enters count as characters)
-- z index on joker info hover with lua downloader
+- z index on joker info hover with lua downloader ✔️
 
 
 ## UH OH:
 
 
 - Balamod has been completely overhauled. I need to fix EVERYTHING.
+
+
+## Last Day:
+
+
+- Need to clean up inputs a little bit. Right now, enter counts as a character, so you can make a description that's just enters. I need to fix this, and, I need to make sure any special characters that could mess stuff up are removed.

@@ -1,13 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const JokerInput = ({
-  inputType,
-  handler,
-  length,
-  type,
-  defaultValue,
-  isMobile,
-}) => {
+const JokerInput = ({ inputType, handler, length, type, isMobile }) => {
   const handleInputChange = (event) => {
     if (inputType == "input-joker-cost") {
       if (event.target.value <= 0) {
@@ -19,7 +12,8 @@ const JokerInput = ({
 
   const sendDataToPreview = () => {
     const data = event.target.value;
-    handler(data);
+    let escapedData = data.replace(/[\\'"]/g, "");
+    handler(escapedData);
   };
 
   return (
@@ -32,7 +26,6 @@ const JokerInput = ({
               className={inputType}
               onChange={handleInputChange}
               maxLength={length}
-              value={defaultValue}
             />
           )}
           {inputType == "input-joker-cost" && (

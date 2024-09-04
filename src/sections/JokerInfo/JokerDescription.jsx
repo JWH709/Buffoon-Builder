@@ -3,11 +3,11 @@ const JokerDescription = ({
   inputTitle,
   inputType,
   setDataFromDescription,
-  defaultDescription,
 }) => {
-  const sendDataToPreview = () => {
-    const data = event.target.value;
-    setDataFromDescription(data);
+  const sendDataToPreview = (event) => {
+    let data = event.target.value;
+    let escapedData = data.replace(/[\\'"]/g, "");
+    setDataFromDescription(escapedData);
   };
 
   return (
@@ -20,11 +20,9 @@ const JokerDescription = ({
               resize: "none",
             }}
             name="effect"
-            id=""
             className={inputType}
             onChange={sendDataToPreview}
             maxLength={66}
-            value={defaultDescription}
           ></textarea>
         </div>
       </div>

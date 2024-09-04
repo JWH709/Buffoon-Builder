@@ -86,14 +86,6 @@ return {
   if (dataFromCost) {
     defaultCost = dataFromCost;
   }
-  let defaultName = "";
-  if (dataFromName) {
-    defaultName = dataFromName;
-  }
-  let defaultDescription = "";
-  if (dataFromDescription) {
-    defaultDescription = dataFromDescription;
-  }
   return (
     <>
       <div className="joker-details-container">
@@ -174,7 +166,6 @@ return {
               inputType={"input-joker-effect"}
               setDataFromDescription={setDataFromDescription}
               dataFromDescription={dataFromDescription}
-              defaultDescription={defaultDescription}
             />
           </div>
         </div>
@@ -199,7 +190,6 @@ return {
               length={18}
               type={"text"}
               dataFromName={dataFromName}
-              defaultValue={defaultName}
               isMobile={isMobile}
             />
           </div>
