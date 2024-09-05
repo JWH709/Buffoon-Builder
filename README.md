@@ -1,6 +1,6 @@
-# Buffoon Builder
+# ![The Buffoon Builder](https://raw.githubusercontent.com/JWH709/Buffoon-Builder/main/src/assets/logo.png)  Buffoon Builder 
 
-- [Buffoon Builder](#buffoon-builder)
+- [  Buffoon Builder](#--buffoon-builder)
   - [Overview](#overview)
     - [What is Buffoon Builder?](#what-is-buffoon-builder)
     - [How to use Buffoon Builder](#how-to-use-buffoon-builder)
@@ -17,7 +17,7 @@
 
 ### What is Buffoon Builder?
 
-Buffoon Builder is a React-based web app that uses nicholassam6425's [center hook API](https://github.com/nicholassam6425/balatro-mods?tab=readme-ov-file#center-hook-apiscenter_hooklua) to create custom Jokers for Balatro. To use Buffoon Builder, you must have a valid copy of Balatro for PC and a working version of UwUDev's [Balamod mod loader](https://github.com/balamod/balamod).
+Buffoon Builder is a React-based web app that uses a modding tool called [Balamod](https://github.com/balamod/balamod) to create custom Jokers for Balatro. To use Buffoon Builder, you must have a valid copy of Balatro for PC and a working version of UwUDev's [Balamod mod loader](https://github.com/balamod/balamod).
 
 ### How to use Buffoon Builder
 
@@ -31,7 +31,7 @@ Buffoon Builder was built in React to be compatible with Balamod. Due to Balatro
 - **Condition:** `if context.example_condition:get_example() == 1 then`
 - **Result:** `return { example_mult = 2, card = card }`
 
-The three required values are then combined in a format that satisfies the required fields for the center hook API to add a Joker to the game via Balamod:
+The three required values are then combined in a format that satisfies the required fields for the joker API provided by Balamod to add a Joker to the game:
 ```lua
 local function jokerEffect(card, context)
     if card.ability.name == 'Example' and context.individual and context.cardarea == G.play then
@@ -44,7 +44,7 @@ local function jokerEffect(card, context)
     end
 end
 ```
-The same process is repeated for information about the card such as name, image, cost, description, etc. Once a user has finished adding all the details needed for a Joker, they can then download a `.zip` file that contains all the files needed to add their Joker to the game. The user then needs to find the Balamod folder on their PC and drag and drop the three folders found inside the zip there.
+The same process is repeated for information about the card such as name, image, cost, description, etc. Once a user has finished adding all the details needed for a Joker, they can then download a `.zip` file that contains all the files needed to add their Joker to the game. The user then needs to find the Balamod folder on their PC and drag and drop the folder found inside the zip there.
 
 ## Notable Features
 
