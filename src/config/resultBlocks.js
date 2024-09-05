@@ -6,7 +6,9 @@ const resultBlocks = [
         styles: ['rgb(0,147,255)','2px 2px rgb(0,90,166)'],
         additionalInput: 'number',
         compatibilities: "",
-        inputType: 'mult'
+        inputType: 'mult',
+        exception: 'none'
+
       },
       {
         title: "Chips +",
@@ -15,7 +17,9 @@ const resultBlocks = [
         styles: ['rgb(0,147,255)','2px 2px rgb(0,90,166)'],
         additionalInput: 'number',
         compatibilities: "",
-        inputType: 'chips'
+        inputType: 'chips',
+        exception: 'none'
+
       },
       {
         title: "Mult x",
@@ -24,8 +28,20 @@ const resultBlocks = [
         styles: ['rgb(0,147,255)','2px 2px rgb(0,90,166)'],
         additionalInput: 'number',
         compatibilities: "",
-        inputType: 'mult'
+        inputType: 'mult',
+        exception: 'none'
+
     },
+    {
+      title: "Retrigger",
+      id: "vb-4",
+      LUA: "message = localize('k_again_ex'), repetitions = 1,",
+      styles: ['rgb(0,147,255)','2px 2px rgb(0,90,166)'],
+      additionalInput: 'none',
+      compatibilities: "",
+      inputType: 'mult',
+      exception: 'retrigger'
+  },
   ];
   
   export default resultBlocks;

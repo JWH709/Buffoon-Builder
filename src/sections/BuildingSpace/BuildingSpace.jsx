@@ -12,34 +12,53 @@ const BuildingSpace = ({
   tableInsert,
   image,
 }) => {
-  const jokerEffectDeclaration = `local function jokerEffect(card, context)
-  if card.ability.name == "${jokerName}" `;
-  const jokerEffectEnd = `    
-      end
-  end`;
-  let [contextLua, setContextLua] = React.useState(null);
-  let [conditionsLua, setConditionsLua] = React.useState(null);
-  let [resultsLua, setResultsLua] = React.useState(null);
+  const [contextLua, setContextLua] = React.useState(null);
+  const [conditionsLua, setConditionsLua] = React.useState(null);
+  const [resultsLua, setResultsLua] = React.useState(null);
+  const [exceptionLua, setExceptionLua] = React.useState(null);
 
   React.useEffect(() => {
     if (contextLua == null || conditionsLua == null || resultsLua == null) {
       updateLuaJokerEffect(null);
     } else {
-      updateLuaJokerEffect(
-        jokerEffectDeclaration +
-          contextLua +
-          conditionsLua +
-          resultsLua +
-          jokerEffectEnd
-      );
+      console.log(contextLua);
+      console.log(conditionsLua);
+      switch (exceptionLua) {
+        case "retrigger":
+          updateLuaJokerEffect(
+            `local function jokerEffect(card, context)
+              if context.repetition then 
+            ` +
+              contextLua +
+              ` if card.ability.name == "${jokerName}" and ` +
+              conditionsLua +
+              resultsLua +
+              `                 end
+     end
+  end`
+          );
+          break;
+        case "none":
+          updateLuaJokerEffect(
+            `local function jokerEffect(card, context)
+  if card.ability.name == "${jokerName}" ` +
+              contextLua +
+              conditionsLua +
+              resultsLua +
+              `    
+      end
+  end`
+          );
+          break;
+      }
     }
   }, [
     contextLua,
     conditionsLua,
     resultsLua,
     updateLuaJokerEffect,
-    jokerEffectDeclaration,
-    jokerEffectEnd,
+    exceptionLua,
+    jokerName,
   ]);
 
   return (
@@ -48,16 +67,22 @@ const BuildingSpace = ({
         <BuildingList
           updateLua={setContextLua}
           blockType={ItemTypes.CONTEXTBLOCK}
+          exceptionLua={exceptionLua}
+          setExceptionLua={setExceptionLua}
         />
         <BuildingList
           updateLua={setConditionsLua}
           blockType={ItemTypes.CONDITIONBLOCK}
+          exceptionLua={exceptionLua}
+          setExceptionLua={setExceptionLua}
         />
       </div>
       <div className="building-space-row">
         <BuildingList
           updateLua={setResultsLua}
           blockType={ItemTypes.RESULTSBLOCK}
+          exceptionLua={exceptionLua}
+          setExceptionLua={setExceptionLua}
         />
         <LuaDownloader
           jokerName={jokerName}

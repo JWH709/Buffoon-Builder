@@ -15,6 +15,8 @@ const BuldingList = ({
   isMobile,
   blockMemory,
   setBlockMemory,
+  setExceptionLua,
+  exceptionLua,
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
@@ -187,8 +189,11 @@ const BuldingList = ({
               id={droppedItem.id}
               additionalInput={droppedItem.additionalInput}
               inputType={droppedItem.inputType}
+              exception={droppedItem.exception}
               blockType={blockType}
               updateLua={updateLua}
+              setExceptionLua={setExceptionLua}
+              exceptionLua={exceptionLua}
             />
           )}
           {blockMemory && isMobile && (
@@ -200,8 +205,11 @@ const BuldingList = ({
                 id={blockMemory.id}
                 additionalInput={blockMemory.additionalInput}
                 inputType={blockMemory.inputType}
+                exception={blockMemory.exception}
                 blockType={blockType}
                 updateLua={updateLua}
+                setExceptionLua={setExceptionLua}
+                exceptionLua={exceptionLua}
               />
             </>
           )}
@@ -212,6 +220,8 @@ const BuldingList = ({
         updateLua={updateLua}
         isMobile={isMobile}
         setBlockMemory={setBlockMemory}
+        droppedItem={droppedItem}
+        setExceptionLua={setExceptionLua}
       />
     </div>
   );

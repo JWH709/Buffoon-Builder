@@ -33,6 +33,7 @@ const BlockTab = ({ blockArray, blockType, isMobile, setBlockMemory }) => {
               styles={block.styles}
               additionalInput={block.additionalInput}
               inputType={block.inputType}
+              exception={block.exception}
               blockType={blockType}
               isMobile={isMobile}
               setBlockMemory={setBlockMemory}

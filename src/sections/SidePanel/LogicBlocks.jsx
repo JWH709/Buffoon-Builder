@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useDrag } from "react-dnd";
 
-function Block(additionalInput, id, inputType, lua, styles, title) {
+function Block(additionalInput, id, inputType, lua, styles, title, exception) {
   (this.additionalInput = additionalInput),
     (this.id = id),
     (this.inputType = inputType),
     (this.lua = lua),
     (this.styles = styles),
-    (this.title = title);
+    (this.title = title),
+    (this.exception = exception);
 }
 
 const LogicBlock = ({
@@ -18,12 +19,13 @@ const LogicBlock = ({
   lua,
   additionalInput,
   inputType,
+  exception,
   isMobile,
   setBlockMemory,
 }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: blockType,
-    item: { title, styles, id, lua, additionalInput, inputType },
+    item: { title, styles, id, lua, additionalInput, inputType, exception },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -36,7 +38,8 @@ const LogicBlock = ({
       inputType,
       lua,
       styles,
-      title
+      title,
+      exception
     );
     setBlockMemory(newBlock);
   };

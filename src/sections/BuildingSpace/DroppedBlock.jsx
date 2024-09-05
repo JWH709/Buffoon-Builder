@@ -9,18 +9,34 @@ const DroppedBlock = ({
   id,
   additionalInput,
   inputType,
+  exception,
   blockType,
   updateLua,
+  setExceptionLua,
+  exceptionLua,
 }) => {
   const [inputUpdate, setInputUpdate] = React.useState(null);
 
   React.useEffect(() => {
+    if (exception == "none") {
+      setExceptionLua("none");
+    } else {
+      setExceptionLua(exception);
+    }
     switch (blockType) {
       case "context-block":
-        updateLua("and " + lua);
+        if (exceptionLua == "retrigger") {
+          updateLua(`if context.cardarea == G.play then `);
+        } else {
+          updateLua("and " + lua);
+        }
         break;
       case "condition-block":
-        updateLua(" then if " + lua);
+        if (exceptionLua == "retrigger") {
+          updateLua(lua);
+        } else {
+          updateLua(" then if " + lua);
+        }
         break;
       case "results-block":
         updateLua(` then return {
@@ -29,7 +45,16 @@ const DroppedBlock = ({
       }
   end`);
     }
-  }, [blockType, lua, inputUpdate, updateLua]);
+  }, [
+    blockType,
+    lua,
+    inputUpdate,
+    updateLua,
+    exception,
+    setExceptionLua,
+    exceptionLua,
+    id,
+  ]);
   let blockHeight = "50px";
   if (title.length > 15) {
     blockHeight = "100px";
