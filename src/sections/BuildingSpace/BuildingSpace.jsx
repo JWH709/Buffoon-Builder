@@ -11,11 +11,12 @@ const BuildingSpace = ({
   localVariables,
   tableInsert,
   image,
+  exceptionLua,
+  setExceptionLua,
 }) => {
   const [contextLua, setContextLua] = React.useState(null);
   const [conditionsLua, setConditionsLua] = React.useState(null);
   const [resultsLua, setResultsLua] = React.useState(null);
-  const [exceptionLua, setExceptionLua] = React.useState(null);
 
   React.useEffect(() => {
     if (contextLua == null || conditionsLua == null || resultsLua == null) {

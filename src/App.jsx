@@ -30,6 +30,8 @@ const App = ({
   setDataFromCost,
   isCropped,
   setIsCropped,
+  setExceptionLua,
+  exceptionLua,
 }) => {
   return (
     <>
@@ -43,6 +45,8 @@ const App = ({
             localVariables={luaLocals}
             tableInsert={luaTableInsert}
             image={image}
+            setExceptionLua={setExceptionLua}
+            exceptionLua={exceptionLua}
           />
           <JokerInfo
             updateLuaLocals={setLuaLocals}
@@ -89,6 +93,8 @@ const App = ({
           setDataFromDescription={setDataFromDescription}
           isCropped={isCropped}
           setIsCropped={setIsCropped}
+          setExceptionLua={setExceptionLua}
+          exceptionLua={exceptionLua}
         />
       )}
     </>

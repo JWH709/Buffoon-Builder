@@ -28,6 +28,7 @@ const ScreenShake = () => {
   const [contextMemory, setContextMemory] = React.useState(null);
   const [conditionsMemory, setConditionsMemory] = React.useState(null);
   const [resultsMemory, setResultsMemory] = React.useState(null);
+  const [exceptionLua, setExceptionLua] = React.useState(null);
 
   const shakeFactor = 5;
   const shakeRef = React.useRef(null);
@@ -253,6 +254,8 @@ const ScreenShake = () => {
                       setDataFromDescription={setDataFromDescription}
                       isCropped={isCropped}
                       setIsCropped={setIsCropped}
+                      setExceptionLua={setExceptionLua}
+                      exceptionLua={exceptionLua}
                     />
                   </DndProvider>
                 </div>
@@ -319,6 +322,8 @@ const ScreenShake = () => {
                     setDataFromDescription={setDataFromDescription}
                     isCropped={isCropped}
                     setIsCropped={setIsCropped}
+                    setExceptionLua={setExceptionLua}
+                    exceptionLua={exceptionLua}
                   />
                 </DndProvider>
               </>

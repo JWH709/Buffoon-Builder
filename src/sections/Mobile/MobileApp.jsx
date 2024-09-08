@@ -35,6 +35,8 @@ const MobileApp = ({
   setDataFromCost,
   isCropped,
   setIsCropped,
+  exceptionLua,
+  setExceptionLua,
 }) => {
   const jokerEffectDeclaration = `local function jokerEffect(card, context)
     if card.ability.name == "${dataFromName}" `;
@@ -191,6 +193,8 @@ const MobileApp = ({
                       isMobile={isMobile}
                       blockMemory={contextMemory}
                       setBlockMemory={setContextMemory}
+                      setExceptionLua={setExceptionLua}
+                      exceptionLua={exceptionLua}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -200,6 +204,8 @@ const MobileApp = ({
                       isMobile={isMobile}
                       blockMemory={conditionsMemory}
                       setBlockMemory={setConditionsMemory}
+                      setExceptionLua={setExceptionLua}
+                      exceptionLua={exceptionLua}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -209,6 +215,8 @@ const MobileApp = ({
                       isMobile={isMobile}
                       blockMemory={resultsMemory}
                       setBlockMemory={setResultsMemory}
+                      setExceptionLua={setExceptionLua}
+                      exceptionLua={exceptionLua}
                     />
                   </SwiperSlide>
                 </Swiper>
