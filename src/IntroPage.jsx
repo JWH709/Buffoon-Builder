@@ -1,15 +1,13 @@
 /* eslint-disable react/prop-types */
 import { IMAGES } from "./config/assetImports";
 import React from "react";
-//I get an error message over the way overflow is being set, however there doesn't seem to be any issue. I need x removed and y dynamic, so I guess I'll just let it ride for now
-//ToDo: useSpring
 const IntroPage = ({ setHelpPageVisible }) => {
   const [isSmall, setIsSmall] = React.useState(false);
 
   React.useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 1664) {
+      if (screenWidth < 1764) {
         setIsSmall(true);
       } else {
         setIsSmall(false);
