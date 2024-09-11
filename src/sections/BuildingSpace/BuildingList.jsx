@@ -78,8 +78,10 @@ const BuldingList = ({
   React.useEffect(() => {
     if (blockMemory != null) {
       setDroppedItem(blockMemory);
+    } else if (droppedItem != null) {
+      setBlockMemory(droppedItem);
     }
-  }, [blockMemory, setDroppedItem]);
+  }, [setBlockMemory, blockMemory, setDroppedItem, droppedItem]);
 
   React.useEffect(() => {
     switch (blockType) {
