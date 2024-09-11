@@ -46,6 +46,13 @@ const BuldingList = ({
     }
   };
 
+  const handleBlockMemory = React.useCallback(
+    (i) => {
+      setBlockMemory(i);
+    },
+    [setBlockMemory]
+  );
+
   const [, drop] = useDrop({
     accept: blockType,
     drop: (item) => {
@@ -58,13 +65,6 @@ const BuldingList = ({
     },
     collect: () => ({}),
   });
-
-  const handleBlockMemory = React.useCallback(
-    (i) => {
-      setBlockMemory(i);
-    },
-    [setBlockMemory]
-  );
 
   React.useEffect(() => {
     switch (blockType) {
@@ -222,6 +222,7 @@ const BuldingList = ({
         setBlockMemory={setBlockMemory}
         droppedItem={droppedItem}
         setExceptionLua={setExceptionLua}
+        blockMemory={blockMemory}
       />
     </div>
   );

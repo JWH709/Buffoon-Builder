@@ -8,6 +8,7 @@ const ClearListButton = ({
   setBlockMemory,
   droppedItem,
   setExceptionLua,
+  blockMemory,
 }) => {
   //Set up state for button styles & create handler for click:
   const [isClicked, setIsClicked] = React.useState(false);
@@ -17,7 +18,7 @@ const ClearListButton = ({
       setBlockMemory(null);
       setDroppedItem(null);
       updateLua(null);
-      if (droppedItem.exception != "none") {
+      if (blockMemory.exception != "none") {
         setExceptionLua("none");
       }
     } else {

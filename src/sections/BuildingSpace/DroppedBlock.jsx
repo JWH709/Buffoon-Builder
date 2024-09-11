@@ -55,10 +55,6 @@ const DroppedBlock = ({
     exceptionLua,
     id,
   ]);
-  let blockHeight = "50px";
-  if (title.length > 15) {
-    blockHeight = "100px";
-  }
   return (
     <div
       className="logic-block"
@@ -66,13 +62,19 @@ const DroppedBlock = ({
       style={{
         backgroundColor: styles[0],
         textShadow: styles[1],
-        height: blockHeight,
+        height: "auto",
         padding: "5px",
+        whiteSpace: "normal",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        maxWidth: "90%",
       }}
     >
       <h2
         style={{
           userSelect: "none",
+          overflowWrap: "break-word",
+          wordWrap: "break-word",
         }}
       >
         {title}

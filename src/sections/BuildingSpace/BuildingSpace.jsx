@@ -22,8 +22,6 @@ const BuildingSpace = ({
     if (contextLua == null || conditionsLua == null || resultsLua == null) {
       updateLuaJokerEffect(null);
     } else {
-      console.log(contextLua);
-      console.log(conditionsLua);
       switch (exceptionLua) {
         case "retrigger":
           updateLuaJokerEffect(
