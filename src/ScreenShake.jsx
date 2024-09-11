@@ -256,6 +256,12 @@ const ScreenShake = () => {
                       setIsCropped={setIsCropped}
                       setExceptionLua={setExceptionLua}
                       exceptionLua={exceptionLua}
+                      contextMemory={contextMemory}
+                      setContextMemory={setContextMemory}
+                      conditionsMemory={conditionsMemory}
+                      setConditionsMemory={setConditionsMemory}
+                      resultsMemory={resultsMemory}
+                      setResultsMemory={setResultsMemory}
                     />
                   </DndProvider>
                 </div>

@@ -18,20 +18,20 @@ const ClearListButton = ({
       setBlockMemory(null);
       setDroppedItem(null);
       updateLua(null);
-      if (blockMemory.exception != "none") {
+      if (blockMemory?.exception && blockMemory.exception != "none") {
         setExceptionLua("none");
       }
     } else {
       setDroppedItem(null);
       updateLua(null);
-      if (droppedItem.exception != "none") {
+      if (droppedItem?.exception && droppedItem.exception != "none") {
         setExceptionLua("none");
       }
     }
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
-    }, 200); // Change back after 200ms
+    }, 200);
   };
 
   return (

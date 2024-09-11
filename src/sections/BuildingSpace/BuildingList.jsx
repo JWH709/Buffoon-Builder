@@ -34,6 +34,14 @@ const BuldingList = ({
     }
   }, [displaySwipeInfo, setDisplaySwipeInfo]);
 
+  React.useEffect(() => {
+    if (isMobile) {
+      setDroppedItem(blockMemory);
+    } else {
+      setBlockMemory(droppedItem);
+    }
+  }, [isMobile, blockMemory, droppedItem, setBlockMemory]);
+
   const fadeOut = useSpring({
     opacity: 0,
     from: { opacity: 1 },
@@ -61,10 +69,17 @@ const BuldingList = ({
         handleBlockMemory(item);
       } else {
         setDroppedItem(item);
+        handleBlockMemory(item);
       }
     },
     collect: () => ({}),
   });
+
+  React.useEffect(() => {
+    if (blockMemory != null) {
+      setDroppedItem(blockMemory);
+    }
+  }, [blockMemory, setDroppedItem]);
 
   React.useEffect(() => {
     switch (blockType) {

@@ -13,6 +13,12 @@ const BuildingSpace = ({
   image,
   exceptionLua,
   setExceptionLua,
+  contextMemory,
+  setContextMemory,
+  conditionsMemory,
+  setConditionsMemory,
+  resultsMemory,
+  setResultsMemory,
 }) => {
   const [contextLua, setContextLua] = React.useState(null);
   const [conditionsLua, setConditionsLua] = React.useState(null);
@@ -68,12 +74,16 @@ const BuildingSpace = ({
           blockType={ItemTypes.CONTEXTBLOCK}
           exceptionLua={exceptionLua}
           setExceptionLua={setExceptionLua}
+          blockMemory={contextMemory}
+          setBlockMemory={setContextMemory}
         />
         <BuildingList
           updateLua={setConditionsLua}
           blockType={ItemTypes.CONDITIONBLOCK}
           exceptionLua={exceptionLua}
           setExceptionLua={setExceptionLua}
+          conditionsMemory={conditionsMemory}
+          setBlockMemory={setConditionsMemory}
         />
       </div>
       <div className="building-space-row">
@@ -82,6 +92,8 @@ const BuildingSpace = ({
           blockType={ItemTypes.RESULTSBLOCK}
           exceptionLua={exceptionLua}
           setExceptionLua={setExceptionLua}
+          resultsMemory={resultsMemory}
+          setBlockMemory={setResultsMemory}
         />
         <LuaDownloader
           jokerName={jokerName}

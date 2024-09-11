@@ -47,6 +47,12 @@ const App = ({
             image={image}
             setExceptionLua={setExceptionLua}
             exceptionLua={exceptionLua}
+            contextMemory={contextMemory}
+            setContextMemory={setContextMemory}
+            conditionsMemory={conditionsMemory}
+            setConditionsMemory={setConditionsMemory}
+            resultsMemory={resultsMemory}
+            setResultsMemory={setResultsMemory}
           />
           <JokerInfo
             updateLuaLocals={setLuaLocals}
